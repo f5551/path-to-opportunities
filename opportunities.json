@@ -56,6 +56,39 @@
     "verified_at": "2026-10-18"
   },
   {
+    "id": "opp-melbourne-research-scholarship",
+    "type": "scholarship",
+    "title_ar": "منحة ملبورن للأبحاث",
+    "title_en": "Melbourne Research Scholarship",
+    "organization": "University of Melbourne",
+    "country": "Australia",
+    "field": "All eligible graduate research fields",
+    "level": [
+      "Master's by Research",
+      "PhD"
+    ],
+    "funding_type": "unspecified",
+    "deadline": null,
+    "source_url": "https://scholarships.unimelb.edu.au/awards/melbourne-research-scholarship",
+    "verified_at": "2026-10-21"
+  },
+  {
+    "id": "opp-waikato-doctoral-scholarship",
+    "type": "scholarship",
+    "title_ar": "منحة جامعة وايكاتو للدكتوراه",
+    "title_en": "University of Waikato Doctoral Scholarship",
+    "organization": "University of Waikato",
+    "country": "New Zealand",
+    "field": "Eligible doctoral research fields",
+    "level": [
+      "PhD"
+    ],
+    "funding_type": "full",
+    "deadline": null,
+    "source_url": "https://www.waikato.ac.nz/int/study/scholarships/find-a-scholarship/university-of-waikato-doctoral-scholarship/",
+    "verified_at": "2026-10-21"
+  },
+  {
     "id": "opp-demo-crs-01",
     "type": "course",
     "title_ar": "[تجريبي] دورة أساسيات تطوير الويب الحديث المتكامل",

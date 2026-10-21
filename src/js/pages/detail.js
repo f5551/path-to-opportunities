@@ -112,7 +112,7 @@ function renderDetail() {
         <ul style="list-style-type: disc; padding-inline-start: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
           <li>توفّر المؤهل الأكاديمي المطلوب لمستوى (${escHtml(levelDisplay)}) قبل موعد بدء البرنامج.</li>
           <li>تقديم السيرة الذاتية وخطاب الدافع بصيغة معتمدة.</li>
-          <li>الالتزام بكافة المواعيد المحددة وإتمام الطلب قبل (${escHtml(deadlineDisplay)}).</li>
+          <li>${opp.deadline ? `الالتزام بكافة المواعيد المحددة وإتمام الطلب قبل (${escHtml(deadlineDisplay)}).` : `التقديم متاح حالياً بصورة مستمرة / دورية وفق دورات القبول الجامعي.`}</li>
           <li>تاريخ آخر مراجعة وتحقق للبيانات: ${escHtml(verifiedDisplay)}.</li>
         </ul>
       `;
@@ -121,7 +121,7 @@ function renderDetail() {
         <ul style="list-style-type: disc; padding-inline-start: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
           <li>Meet prerequisite credentials for level (${escHtml(levelDisplay)}) prior to program intake.</li>
           <li>Submit a structured Curriculum Vitae and a tailored Statement of Purpose.</li>
-          <li>Ensure final submission prior to the deadline: (${escHtml(deadlineDisplay)}).</li>
+          <li>${opp.deadline ? `Ensure final submission prior to the deadline: (${escHtml(deadlineDisplay)}).` : `Applications are currently open on an ongoing basis according to intake rounds.`}</li>
           <li>Record verification timestamp: ${escHtml(verifiedDisplay)}.</li>
         </ul>
       `;
