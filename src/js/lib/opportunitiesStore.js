@@ -178,7 +178,9 @@ export async function loadOpportunitiesAsync() {
   } catch {}
 
   try {
-    const res = await fetch("/opportunities.json");
+    const baseUrl = (typeof import.meta !== "undefined" && import.meta.env?.BASE_URL) || "/";
+    const cleanBase = baseUrl.endsWith("/") ? baseUrl : baseUrl + "/";
+    const res = await fetch(`${cleanBase}opportunities.json`);
     if (res.ok) {
       const data = await res.json();
       if (Array.isArray(data)) {

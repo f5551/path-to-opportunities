@@ -79,11 +79,11 @@ test("4.4 Full translation dictionary coverage for all HTML elements", () => {
   });
 });
 
-test("4.5 opportunities.json is available in public directory for runtime serving", () => {
-  assert.ok(fs.existsSync("public/opportunities.json"), "public/opportunities.json must exist for dev/prod serving");
-  const publicData = JSON.parse(fs.readFileSync("public/opportunities.json", "utf8"));
+test("4.5 Canonical opportunities.json exists at root and is valid JSON array", () => {
+  assert.ok(fs.existsSync("opportunities.json"), "Canonical opportunities.json must exist at root");
   const rootData = JSON.parse(fs.readFileSync("opportunities.json", "utf8"));
-  assert.strictEqual(publicData.length, rootData.length, "public/opportunities.json must match root data length");
+  assert.ok(Array.isArray(rootData) && rootData.length > 0, "Root data must be non-empty array");
+  assert.ok(fs.existsSync("opportunities.schema.json"), "opportunities.schema.json must exist");
 });
 
 console.log("\n==========================================");

@@ -1,10 +1,38 @@
 import { resolve } from "path";
+import fs from "fs";
 import { defineConfig } from "vite";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [
     tailwindcss(),
+    {
+      name: "opportunities-json-sync",
+      configureServer(server) {
+        server.middlewares.use((req, res, next) => {
+          const reqPath = req.url ? req.url.split("?")[0] : "";
+          if (reqPath.endsWith("/opportunities.json")) {
+            const filePath = resolve(import.meta.dirname, "opportunities.json");
+            if (fs.existsSync(filePath)) {
+              res.setHeader("Content-Type", "application/json");
+              res.end(fs.readFileSync(filePath, "utf8"));
+              return;
+            }
+          }
+          next();
+        });
+      },
+      generateBundle() {
+        const filePath = resolve(import.meta.dirname, "opportunities.json");
+        if (fs.existsSync(filePath)) {
+          this.emitFile({
+            type: "asset",
+            fileName: "opportunities.json",
+            source: fs.readFileSync(filePath, "utf8"),
+          });
+        }
+      },
+    },
   ],
 
   // Static assets (fonts, etc.) live in /public — served at root
