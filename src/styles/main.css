@@ -123,6 +123,10 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+:target {
+  scroll-margin-top: calc(var(--header-height) + 1.25rem);
+}
+
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -278,7 +282,7 @@ body {
 .desktop-nav {
   display: none;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.5rem;
 }
 
 @media (min-width: 1024px) {
@@ -290,7 +294,7 @@ body {
 .nav-link {
   display: inline-flex;
   align-items: center;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 0.875rem;
   font-size: 0.9375rem;
   font-weight: 500;
   color: var(--color-text-2);
@@ -2109,6 +2113,7 @@ body.drawer-open {
   padding-block: 4.5rem 4rem;
   background-color: var(--color-bg);
   border-top: 1px solid var(--color-border);
+  scroll-margin-top: calc(var(--header-height) + 1.25rem);
 }
 
 .about-card {

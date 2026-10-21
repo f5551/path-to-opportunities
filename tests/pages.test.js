@@ -58,6 +58,9 @@ test("4.3 Shared Navigation exists across all pages", () => {
     assert.ok(content.includes('id="mobile-drawer"'), `Page ${file} must include mobile-drawer`);
     assert.ok(content.includes('id="lang-toggle"'), `Page ${file} must include lang-toggle`);
     assert.ok(content.includes('id="mobile-menu-toggle"'), `Page ${file} must include mobile-menu-toggle`);
+    assert.ok(content.includes('href="opportunities.html"'), `Page ${file} must link to opportunities.html`);
+    assert.ok(content.includes('href="guide.html"'), `Page ${file} must link to guide.html`);
+    assert.ok(content.includes('href="index.html#about"'), `Page ${file} must link to index.html#about`);
   });
 });
 

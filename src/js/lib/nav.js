@@ -76,33 +76,44 @@ export function initNav(options = {}) {
     }
   });
 
+  // Close drawer when clicking any drawer link
+  mobileDrawer?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      closeDrawer();
+    });
+  });
+
   // 3. Highlight Current Active Nav Link
   highlightActiveNavLinks();
+  window.addEventListener("hashchange", highlightActiveNavLinks);
 }
 
 /**
- * Matches window.location.pathname to nav anchors
+ * Matches window.location to nav anchors
  */
 function highlightActiveNavLinks() {
   const path = window.location.pathname.toLowerCase();
-  const search = window.location.search.toLowerCase();
+  const hash = window.location.hash.toLowerCase();
   const navLinks = document.querySelectorAll(".nav-link, .drawer-nav-link");
 
+  const isHome = path.endsWith("/") || path.endsWith("index.html") || path === "";
+  const isOpportunities = path.endsWith("opportunities.html");
+  const isAboutHash = hash === "#about";
+
   navLinks.forEach((link) => {
-    const href = link.getAttribute("href")?.toLowerCase() || "";
+    const rawHref = link.getAttribute("href") || "";
+    const href = rawHref.toLowerCase();
     let isActive = false;
 
-    if (href === "/" || href === "index.html" || href === "./" || href === "./index.html") {
-      isActive = path.endsWith("/") || path.endsWith("index.html") || path === "";
+    if (href.endsWith("#about") || href === "#about") {
+      isActive = isHome && isAboutHash;
+    } else if (href === "/" || href === "index.html" || href === "./" || href === "./index.html") {
+      isActive = isHome && !isAboutHash;
     } else if (href.includes("opportunities.html")) {
-      if (href.includes("?type=")) {
-        isActive = search.includes(href.split("?")[1]);
-      } else {
-        isActive = path.endsWith("opportunities.html") && !search.includes("type=");
-      }
+      isActive = isOpportunities;
     } else {
       const cleanHref = href.split("#")[0].replace("./", "");
-      if (cleanHref && path.includes(cleanHref)) {
+      if (cleanHref && path.endsWith(cleanHref)) {
         isActive = true;
       }
     }
