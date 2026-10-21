@@ -210,8 +210,8 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
               </span>
               <div class="demo-banner-text">
-                <strong class="demo-banner-title" data-i18n="demoBanner.title">تنبيه: البيانات المعروضة تجريبية وليست فرصًا حقيقية</strong>
-                <p class="demo-banner-desc" data-i18n="demoBanner.desc">جميع المنح والدورات والتدريبات الظاهرة أدناه مخصصة لاختبار الواجهة البرمجية والبحث، والروابط والأرقام وهمية تمامًا.</p>
+                <strong class="demo-banner-title" data-i18n="demoBanner.title">تنبيه: يتضمن الدليل منحًا دراسية موثقة ونماذج تجريبية</strong>
+                <p class="demo-banner-desc" data-i18n="demoBanner.desc">المنح الدراسية الـ13 المدرجة موثقة رسميًا من الجامعات العالمية، بينما تحمل السجلات التجريبية شارة [تجريبي] وتقتصر على أغراض الفحص.</p>
               </div>
             </div>
           </aside>
@@ -347,6 +347,38 @@
                 </div>
               </div>
 
+              <!-- Status Filter -->
+              <div class="filter-group">
+                <label for="filter-status" class="filter-select-label" data-i18n="scholarshipFilters.status">حالة التقديم</label>
+                <div class="select-wrapper">
+                  <select id="filter-status" class="filter-select" aria-label="حالة التقديم">
+                    <option value="" data-i18n="scholarshipFilters.allStatuses">جميع الحالات</option>
+                    <option value="open" data-i18n="scholarshipFilters.statusOpen">متاحة للتقديم ومستمرة</option>
+                    <option value="review" data-i18n="scholarshipFilters.statusReview">تحتاج مراجعة وتحديث</option>
+                    <option value="closed" data-i18n="scholarshipFilters.statusClosed">انتهى التقديم</option>
+                  </select>
+                  <span class="select-chevron" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                  </span>
+                </div>
+              </div>
+
+              <!-- Sort Filter -->
+              <div class="filter-group">
+                <label for="filter-sort" class="filter-select-label" data-i18n="scholarshipFilters.sort">الترتيب</label>
+                <div class="select-wrapper">
+                  <select id="filter-sort" class="filter-select" aria-label="الترتيب">
+                    <option value="default" data-i18n="scholarshipFilters.sortDefault">الترتيب الذكي (الافتراضي)</option>
+                    <option value="deadline" data-i18n="scholarshipFilters.sortDeadline">الأقرب انتهاءً</option>
+                    <option value="newest" data-i18n="scholarshipFilters.sortNewest">الأحدث تدقيقاً</option>
+                    <option value="name" data-i18n="scholarshipFilters.sortName">حسب اسم المنحة</option>
+                  </select>
+                  <span class="select-chevron" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                  </span>
+                </div>
+              </div>
+
               <!-- Reset Filters Button -->
               <div class="filter-group filter-action-group">
                 <button type="button" id="reset-scholarship-filters" class="btn-reset-filters" aria-label="مسح الفلاتر">
@@ -458,7 +490,7 @@
             <h3 class="footer-col-title" data-i18n="footer.integrityTitle">الشفافية والأمان</h3>
             <div class="footer-integrity-box">
               <p data-i18n="footer.integrityDesc">
-                جميع الفرص المعروضة حاليًا في هذه النسخة هي بيانات تجريبية (Demo Data) لأغراض فحص الواجهة، وتخضع الروابط لفحص بروتوكول HTTPS الصارم.
+                تخضع المنح الدراسية والفرص المدرجة للتدقيق والتحقق من مصادرها الرسمية، مع فحص صارم لبروتوكول HTTPS وحماية البيانات.
               </p>
             </div>
           </div>

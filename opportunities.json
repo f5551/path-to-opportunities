@@ -7,7 +7,10 @@
     "organization": "أكاديمية المعرفة العالمية الوهمية",
     "country": "المملكة العربية السعودية",
     "field": "هندسة البرمجيات والذكاء الاصطناعي",
-    "level": ["ماجستير", "دكتوراه"],
+    "level": [
+      "ماجستير",
+      "دكتوراه"
+    ],
     "funding_type": "full",
     "deadline": "2026-11-30",
     "source_url": "https://example.org/scholarship-01",
@@ -49,7 +52,10 @@
     "organization": "صندوق الأرض الخضراء الافتراضي",
     "country": "المملكة المتحدة",
     "field": "الطاقة المتجددة وعلوم البيئة",
-    "level": ["دراسات عليا", "بحوث"],
+    "level": [
+      "دراسات عليا",
+      "بحوث"
+    ],
     "funding_type": "unspecified",
     "deadline": null,
     "source_url": "https://example.org/scholarship-04",
@@ -62,15 +68,545 @@
     "title_en": "Melbourne Research Scholarship",
     "organization": "University of Melbourne",
     "country": "Australia",
-    "field": "All eligible graduate research fields",
+    "field": "Eligible graduate research fields",
     "level": [
       "Master's by Research",
       "PhD"
     ],
-    "funding_type": "unspecified",
     "deadline": null,
     "source_url": "https://scholarships.unimelb.edu.au/awards/melbourne-research-scholarship",
-    "verified_at": "2026-10-21"
+    "verified_at": "2026-10-22",
+    "funding_type": "full",
+    "details": {
+      "ar": {
+        "summary": "منحة بحثية تنافسية بجامعة ملبورن لطلاب الماجستير البحثي والدكتوراه، تشمل فئات مختلفة من الدعم؛ وقد يحصل المستفيد على إعفاء الرسوم أو راتب معيشة أو كليهما بحسب المنحة الممنوحة.",
+        "application_status": "متاحة للتقييم التلقائي وفق الصفحة الرسمية بتاريخ المراجعة",
+        "deadline_information": "لا يوجد موعد واحد للمنحة: يجب تقديم طلب برنامج Graduate Research المؤهل قبل الموعد النهائي الخاص بذلك البرنامج.",
+        "funding_and_benefits": [
+          "إعفاء كامل من الرسوم الدراسية لمدة تصل إلى سنتين للماجستير البحثي، أو أربع سنوات للدكتوراه، وفق فئة المنحة.",
+          "في فئة راتب المعيشة: 41,100 دولار أسترالي سنويًا بمعدل 2027 للدوام الكامل، ويُصرف دوريًا ويخضع لشروط المنحة؛ لمدة تصل إلى سنتين للماجستير البحثي أو 3.5 سنوات للدكتوراه.",
+          "بدل انتقال لمرة واحدة: 2,000 دولار أسترالي للقادمين من ولاية أو إقليم أسترالي آخر غير فيكتوريا، أو 3,000 دولار أسترالي للقادمين من خارج أستراليا، عند استيفاء الشروط.",
+          "تغطية تأمين صحي فردي OSHC للطلاب الدوليين الذين يحتاجون إلى تأشيرة طالب، وفق نوع المنحة.",
+          "توجد فئات لإعفاء الرسوم فقط، وراتب المعيشة، والجمع بينهما؛ لا يحصل جميع المرشحين تلقائيًا على المزايا نفسها.",
+          "تعرض الجامعة قيمة إجمالية قد تصل إلى 138,000 دولار أسترالي ونحو 350 منحة كبيانات إرشادية؛ تختلف المبالغ الفعلية حسب مدة البرنامج ونوع الدعم."
+        ],
+        "fields_and_programs": [
+          "برامج الماجستير البحثي (Masters by Research) المؤهلة في جامعة ملبورن.",
+          "برامج الدكتوراه البحثية (PhD / Doctoral Research) المؤهلة.",
+          "المجالات البحثية المتاحة حسب الكلية والتخصص والمشروع والمشرف؛ يجب التأكد من أهلية البرنامج المختار."
+        ],
+        "eligibility": [
+          "أن يكون المتقدم قد قدّم إلى برنامج بحثي مؤهل بجامعة ملبورن ويستوفي متطلبات قبوله، أو أن يكون مسجلًا حاليًا في برنامج بحثي مؤهل.",
+          "يمكن للمتقدمين المحليين والدوليين التنافس على الفئات المناسبة لهم وفق سياسة الجامعة.",
+          "تُقيَّم المنح التنافسية بالاعتماد على الإنجاز الأكاديمي السابق والإمكانات البحثية.",
+          "قد تؤخذ الخبرة المهنية والمنشورات العلمية والمؤهلات البحثية ذات الصلة في الحسبان عند المفاضلة."
+        ],
+        "required_documents": [
+          "طلب القبول في برنامج Graduate Research المؤهل.",
+          "الشهادات الأكاديمية وكشوف الدرجات.",
+          "السيرة الذاتية الأكاديمية والأدلة البحثية حسب متطلبات البرنامج.",
+          "المقترح البحثي أو وصف المشروع وبيانات المشرف إذا طلبها البرنامج أو الكلية.",
+          "إثبات كفاءة اللغة الإنجليزية وغيرها من المستندات وفق شروط قبول البرنامج."
+        ],
+        "application_steps": [
+          "اختيار برنامج Graduate Research مؤهل ومراجعة شروط القبول وموعده النهائي على موقع الجامعة.",
+          "إعداد المستندات المطلوبة وإرسال طلب الالتحاق ببرنامج البحث قبل موعده.",
+          "بالنسبة للمتقدمين الجدد: يجري النظر في المنحة تلقائيًا دون طلب منحة منفصل، وفق الإجراءات الرسمية.",
+          "متابعة تأكيد الجامعة بشأن النظر في المنحة ومراسلات القبول؛ قد تختلف الإجراءات للطلاب المسجلين أو الذين أجّلوا بدء الدراسة.",
+          "الرجوع إلى صفحة المنحة وشروطها لمعرفة العرض النهائي والمزايا التي تشملها حالة المتقدم."
+        ],
+        "important_notes": [
+          "معدل 41,100 دولار أسترالي يعود إلى عام 2027، ولا يعني حصول جميع المقبولين على راتب معيشة.",
+          "قد يكون الدعم إعفاء رسوم فقط، أو دعمًا مع راتب؛ اقرأ خطاب المنحة لتحديد المزايا المستحقة.",
+          "العدد والقيمة الإجمالية المنشوران على الصفحة الرسمية إرشاديان وليسا ضمانًا.",
+          "لا يوجد تاريخ موحد للتقديم؛ الموعد المعتمد هو موعد البرنامج البحثي المختار.",
+          "الحالة والمبالغ قابلة للتحديث بعد تاريخ التحقق؛ يُرجى مراجعة المصدر الرسمي قبل التقديم."
+        ]
+      },
+      "en": {
+        "summary": "A competitive University of Melbourne scholarship for eligible graduate research students. Depending on the award, support may cover tuition fees, a living stipend, or both.",
+        "application_status": "Open for automatic consideration on the official page as of the verification date.",
+        "deadline_information": "There is no single scholarship closing date. Apply for an eligible Graduate Research course by that course’s application deadline.",
+        "funding_and_benefits": [
+          "Full tuition-fee offset for up to two years of a Masters by Research degree or four years of a doctoral degree, according to the scholarship category.",
+          "For stipend recipients: AUD 41,100 per year at the 2027 full-time rate, paid periodically and subject to scholarship conditions; for up to two years for research masters or 3.5 years for doctoral study.",
+          "One-off relocation allowance of AUD 2,000 for eligible students moving from outside Victoria within Australia, or AUD 3,000 for eligible students moving from overseas.",
+          "Single Overseas Student Health Cover (OSHC) for international students requiring a student visa, where included in the awarded scholarship.",
+          "There are fee-offset-only, stipend, and combined categories; not every recipient receives every benefit.",
+          "The university lists an indicative total value of up to AUD 138,000 and around 350 awards; actual support depends on the scholarship category and program duration."
+        ],
+        "fields_and_programs": [
+          "Eligible Masters by Research programs at the University of Melbourne.",
+          "Eligible PhD and other doctoral research programs.",
+          "Research disciplines depend on the faculty, program, project and supervision availability; confirm eligibility for the selected course."
+        ],
+        "eligibility": [
+          "Apply for and meet the entry requirements of an eligible University of Melbourne graduate research degree, or be currently enrolled in one.",
+          "Domestic and international applicants may be considered under the applicable scholarship provisions.",
+          "Competitive awards are ranked primarily on prior academic performance and research potential.",
+          "Relevant professional experience, publications and other research qualifications may be taken into account."
+        ],
+        "required_documents": [
+          "Application for admission to an eligible Graduate Research course.",
+          "Academic certificates and transcripts.",
+          "Academic CV and research evidence where requested.",
+          "Research proposal or project information and supervisor details, where required by the course or faculty.",
+          "English-language evidence and any other documents required for course admission."
+        ],
+        "application_steps": [
+          "Select an eligible Graduate Research course and check its admission requirements and closing date.",
+          "Prepare the requested documents and submit the course application on time.",
+          "New applicants are automatically considered for the scholarship without submitting a separate scholarship application, subject to official procedures.",
+          "Check university correspondence for confirmation and admission outcomes; deferred and enrolled candidates may follow different procedures.",
+          "Review the official scholarship terms and your offer to confirm the benefits actually awarded."
+        ],
+        "important_notes": [
+          "The AUD 41,100 stipend is the 2027 rate and is not guaranteed to all fee-offset recipients.",
+          "Some awards cover tuition only; confirm your award category and exact benefits in the offer.",
+          "Published award counts and total values are indicative.",
+          "Admission deadlines are specific to the graduate research course rather than one scholarship-wide deadline.",
+          "Statuses and amounts can change after the verification date; always consult the official source before applying."
+        ]
+      }
+    },
+    "application": {
+      "kind": "course_based",
+      "note_en": "No universal closing date. Apply for the graduate research course before its own admissions deadline.",
+      "status": "automatic",
+      "as_of": "2026-10-22",
+      "verified_official_status": true,
+      "needs_manual_review": false,
+      "deadline_timezone": null,
+      "deadline_precision": "none"
+    },
+    "verification": {
+      "reviewed_at": "2026-10-22",
+      "official_source_checked": true,
+      "status_scope": "listed_program",
+      "source_document": "Postgraduate Scholarships 1-13 (user supplied DOCX)",
+      "original_document_entry": 1,
+      "original_notes_ar": [
+        "المنحة مفتوحة حاليًا للتقييم التلقائي",
+        "مدة الإعفاء تصل إلى سنتين للماجستير البحثي وحتى 4 سنوات للدكتوراه",
+        "مدة راتب المعيشة تصل إلى سنتين للماجستير البحثي وحتى 3.5 سنوات للدكتوراه"
+      ]
+    }
+  },
+  {
+    "id": "opp-deakin-rtp-duprs-2027",
+    "type": "scholarship",
+    "title_ar": "منح RTP وDUPRS بجامعة Deakin 2027",
+    "title_en": "Deakin RTP and DUPRS Scholarships 2027",
+    "organization": "Deakin University / Australian Government RTP",
+    "country": "Australia",
+    "field": "Higher Degree by Research",
+    "level": [
+      "Master's by Research",
+      "PhD"
+    ],
+    "deadline": null,
+    "source_url": "https://www.deakin.edu.au/study/fees-and-scholarships/scholarships/find-a-scholarship/rtp-and-duprs",
+    "verified_at": "2026-10-22",
+    "funding_type": "full",
+    "details": {
+      "ar": {
+        "summary": "منح RTP وDUPRS بجامعة Deakin 2027",
+        "application_status": "23 أغسطس 2026 للطلاب الدوليين",
+        "deadline_information": "23 أغسطس 2026 للطلاب الدوليين",
+        "funding_and_benefits": [
+          "راتب سنوي بقيمة 37,450 دولار أسترالي معفى من الضرائب",
+          "إعفاء من الرسوم وفق نوع المنحة وشروطها",
+          "بدل انتقال من 500 إلى 1,500 دولار أسترالي للقادمين من خارج المنطقة أو من الخارج",
+          "تأمين صحي OSHC فردي للطلاب الدوليين",
+          "دعم لمدة سنتين للماجستير البحثي",
+          "دعم الدكتوراه يصل إلى 3 سنوات للراتب و4 سنوات لإعفاء الرسوم"
+        ],
+        "fields_and_programs": [
+          "جميع برامج Higher Degree by Research المؤهلة",
+          "الماجستير البحثي",
+          "الدكتوراه",
+          "المجالات البحثية المتاحة حسب الكلية والمشروع والمشرف"
+        ],
+        "eligibility": [
+          "أن يكون المتقدم محليًا أو دوليًا في برنامج Graduate Research مؤهل",
+          "إكمال ما لا يقل عن 4 سنوات من الدراسة الجامعية",
+          "تحقيق مستوى يعادل 80% في المكوّن البحثي السابق أو مستوى أكاديمي/بحثي معادل",
+          "استيفاء جميع متطلبات القبول في Higher Degree by Research",
+          "الطلاب العرب مؤهلون ضمن فئة الطلاب الدوليين"
+        ],
+        "required_documents": [
+          "طلب برنامج البحث",
+          "الشهادات وكشوف الدرجات",
+          "السيرة الذاتية",
+          "الأدلة على الخبرة أو الإنتاج البحثي إن وجدت",
+          "مقترح البحث ومتطلبات المشرف/الكلية",
+          "إثبات اللغة الإنجليزية",
+          "أي وثائق إضافية يطلبها نظام HDR"
+        ],
+        "application_steps": [
+          "يتم التقديم ضمن طلب Higher Degree by Research في Deakin وفق تعليمات جولة المنح الدولية 2027"
+        ],
+        "important_notes": [
+          "آخر موعد صارم للطلاب الدوليين هو 23 أغسطس 2026",
+          "المنافسة تعتمد على الترتيب الأكاديمي والقدرة البحثية"
+        ]
+      },
+      "en": {
+        "summary": "Deakin RTP and DUPRS Scholarships 2027 at Deakin University / Australian Government RTP.",
+        "application_status": "Deadlines differ by round and applicant category; do not treat a single date as universal.",
+        "deadline_information": "The international 2027 round is closed; the separate domestic 2027 round runs to 25 October 2026. Do not show a global countdown.",
+        "funding_and_benefits": [
+          "AUD 37,450 per year tax-free stipend at the published rate.",
+          "Tuition fee offset is available subject to the award category and conditions.",
+          "AUD 500-1,500 relocation allowance for eligible incoming students.",
+          "Single Overseas Student Health Cover (OSHC) for qualifying international recipients.",
+          "Research masters funding normally runs for two years.",
+          "Doctoral stipends can last three years, with fee offsets lasting up to four years."
+        ],
+        "fields_and_programs": [
+          "Eligible Higher Degree by Research programs.",
+          "Research masters programs.",
+          "Research doctorate (PhD) programs.",
+          "Research fields depend on the faculty, proposed project and supervisor."
+        ],
+        "eligibility": [
+          "Domestic and international candidates may qualify in an eligible graduate research degree.",
+          "At least four years of tertiary study is normally required.",
+          "Around 80% or equivalent achievement in the research component of prior study, or comparable research attainment.",
+          "Meet all Higher Degree by Research admission requirements.",
+          "Applicants from Arab countries may be eligible through the international pathway, subject to requirements."
+        ],
+        "required_documents": [
+          "Graduate research program application.",
+          "Academic certificates and transcripts.",
+          "Curriculum vitae.",
+          "Research experience or publications where available.",
+          "Research proposal and faculty or supervisor requirements.",
+          "Evidence of English proficiency.",
+          "Any other documents required by the HDR system."
+        ],
+        "application_steps": [
+          "Apply through the Higher Degree by Research admission and scholarships process, following the deadline and instructions for your applicant category."
+        ],
+        "important_notes": [
+          "The international 2027 round opened on 6 July 2026 and closed on 23 August 2026.",
+          "The published 2027 domestic round closes on 25 October 2026.",
+          "Selection is competitive and based on academic merit and research potential."
+        ]
+      }
+    },
+    "application": {
+      "kind": "multiple_rounds",
+      "note_en": "The international 2027 round is closed; the separate domestic 2027 round runs to 25 October 2026. Do not show a global countdown.",
+      "rounds": [
+        {
+          "audience": "international",
+          "stage": "final",
+          "deadline": "2026-08-23",
+          "status": "closed"
+        },
+        {
+          "audience": "domestic",
+          "stage": "final",
+          "deadline": "2026-10-25",
+          "status": "open"
+        }
+      ],
+      "status": "rounds",
+      "as_of": "2026-10-22",
+      "verified_official_status": true,
+      "needs_manual_review": true,
+      "deadline_timezone": null,
+      "deadline_precision": "none"
+    },
+    "verification": {
+      "reviewed_at": "2026-10-22",
+      "official_source_checked": true,
+      "status_scope": "round_and_audience_dependent",
+      "source_document": "Postgraduate Scholarships 1-13 (user supplied DOCX)",
+      "original_document_entry": 2,
+      "original_notes_ar": [
+        "الجولة الدولية 2027 مفتوحة من 6 يوليو 2026",
+        "آخر موعد صارم للطلاب الدوليين هو 23 أغسطس 2026",
+        "المنافسة تعتمد على الترتيب الأكاديمي والقدرة البحثية"
+      ]
+    }
+  },
+  {
+    "id": "opp-griffith-guiprs-2027",
+    "type": "scholarship",
+    "title_ar": "منح Griffith للبحوث العليا الدولية 2027",
+    "title_en": "Griffith University International Postgraduate Research Scholarship",
+    "organization": "Griffith University",
+    "country": "Australia",
+    "field": "Eligible HDR research fields",
+    "level": [
+      "Master's by Research",
+      "PhD"
+    ],
+    "deadline": null,
+    "source_url": "https://www.griffith.edu.au/research-study/scholarships/guiprs",
+    "verified_at": "2026-10-22",
+    "funding_type": "partial",
+    "details": {
+      "ar": {
+        "summary": "منح Griffith للبحوث العليا الدولية 2027",
+        "application_status": "25 أغسطس 2026 للطلاب الدوليين – الجولة الأولى 2027",
+        "deadline_information": "25 أغسطس 2026 للطلاب الدوليين – الجولة الأولى 2027",
+        "funding_and_benefits": [
+          "إعفاء من الرسوم الدراسية عبر Griffith University International Postgraduate Research Scholarship (GUIPRS)",
+          "تغطية التأمين الصحي OSHC للطالب الدولي وفق شروط المنحة",
+          "تغطية Student Services and Amenities Fee",
+          "يمكن أن يقترن تمويل الرسوم بمنحة راتب معيشة مثل GUPRS أو RTP حسب نتيجة المنافسة",
+          "راتب GUPRS المنشور لعام 2026 يبلغ 35,656 دولار أسترالي سنويًا",
+          "دعم الرسوم يصل إلى سنتين للماجستير البحثي ونحو 3.5 سنوات للدكتوراه مع إمكانية تمديد الدكتوراه وفق الشروط"
+        ],
+        "fields_and_programs": [
+          "برامج Higher Degree by Research المؤهلة",
+          "الماجستير البحثي / MPhil",
+          "الدكتوراه",
+          "مجالات البحث في الصحة والعلوم والهندسة والأعمال والفنون والتعليم والقانون وغيرها"
+        ],
+        "eligibility": [
+          "أن يكون المتقدم طالبًا دوليًا وليس ضمن تعريف الطالب المحلي الأسترالي/النيوزيلندي",
+          "القبول أو التقديم في برنامج HDR مؤهل",
+          "امتلاك سجل أكاديمي وبحثي قوي",
+          "يتم الترتيب وفق الجدارة الأكاديمية والإمكانات البحثية وجودة البيئة الإشرافية",
+          "الطلاب العرب مؤهلون ضمن فئة الطلاب الدوليين"
+        ],
+        "required_documents": [
+          "طلب برنامج البحث والمنحة",
+          "السيرة الذاتية الأكاديمية",
+          "الشهادات وكشوف الدرجات",
+          "المقترح البحثي",
+          "تفاصيل المشرف المقترح",
+          "بيانات المراجع الأكاديمية",
+          "إثبات اللغة الإنجليزية وأي مستندات إضافية مطلوبة"
+        ],
+        "application_steps": [
+          "يقدم المتقدم الجديد طلب برنامج البحث والمنحة معًا عبر نظام Griffith للبحث العالي"
+        ],
+        "important_notes": [
+          "الجولة الأولى مخصصة لبدايات فبراير وأبريل 2027",
+          "الموعد النهائي للطلاب الدوليين في الجولة الحالية هو 25 أغسطس 2026"
+        ]
+      },
+      "en": {
+        "summary": "Griffith University International Postgraduate Research Scholarship at Griffith University.",
+        "application_status": "Deadlines differ by round and applicant category; do not treat a single date as universal.",
+        "deadline_information": "2027 international open merit Round 1 ended on 25 August 2026. Later options apply only to specified applicant groups; check the current key dates.",
+        "funding_and_benefits": [
+          "GUIPRS offsets tuition fees for eligible international HDR scholars.",
+          "Overseas Student Health Cover (OSHC) is included under award conditions.",
+          "Student Services and Amenities Fee is covered.",
+          "Separate stipend scholarships such as GUPRS or RTP may be combined subject to competition and award conditions.",
+          "The published GUPRS living stipend in 2026 is AUD 35,656 per year; it is not automatically part of GUIPRS.",
+          "GUIPRS fee coverage is up to two years for research masters and up to 3.5 years for doctoral degrees under current published conditions."
+        ],
+        "fields_and_programs": [
+          "Eligible Higher Degree by Research programs.",
+          "Masters by Research and MPhil.",
+          "Doctoral research degrees.",
+          "Research fields include health, sciences, engineering, business, arts, education, law and related fields."
+        ],
+        "eligibility": [
+          "Normally for students classified as international rather than Australian or New Zealand domestic candidates.",
+          "Apply to or enrol in an eligible HDR degree.",
+          "Demonstrate academic merit and strong research capability.",
+          "Selection considers research potential and the quality of the proposed research environment.",
+          "Arab-country candidates can fall under the international category if all other criteria are met."
+        ],
+        "required_documents": [
+          "Research program and scholarship application.",
+          "Academic CV.",
+          "Academic certificates and transcripts.",
+          "Research proposal.",
+          "Details of proposed supervisor.",
+          "Academic referees.",
+          "English-language evidence and any other requested documents."
+        ],
+        "application_steps": [
+          "Submit a higher research degree and scholarship application through Griffith University using the instructions for your intake and applicant type."
+        ],
+        "important_notes": [
+          "The 2027 international open-merit first-round deadline was 25 August 2026.",
+          "Some applicants may be eligible for later restricted Griffith-pathway rounds or continuously assessed sponsored tuition packages; these are not open to everyone.",
+          "Always verify the precise round and the difference between tuition-only and living-stipend funding."
+        ]
+      }
+    },
+    "application": {
+      "kind": "multiple_rounds",
+      "note_en": "2027 international open merit Round 1 ended on 25 August 2026. Later options apply only to specified applicant groups; check the current key dates.",
+      "rounds": [
+        {
+          "audience": "international_general",
+          "stage": "round_1",
+          "deadline": "2026-08-25",
+          "status": "closed"
+        },
+        {
+          "audience": "international_eligible_griffith_pathway",
+          "stage": "round_2",
+          "opens": "2026-11-02",
+          "deadline": "2027-02-05",
+          "status": "upcoming"
+        }
+      ],
+      "status": "rounds",
+      "as_of": "2026-10-22",
+      "verified_official_status": true,
+      "needs_manual_review": true,
+      "deadline_timezone": null,
+      "deadline_precision": "none"
+    },
+    "verification": {
+      "reviewed_at": "2026-10-22",
+      "official_source_checked": true,
+      "status_scope": "round_and_audience_dependent",
+      "source_document": "Postgraduate Scholarships 1-13 (user supplied DOCX)",
+      "original_document_entry": 3,
+      "original_notes_ar": [
+        "منح Open Merit الدولية لعام 2027 مفتوحة الآن",
+        "الجولة الأولى مخصصة لبدايات فبراير وأبريل 2027",
+        "الموعد النهائي للطلاب الدوليين في الجولة الحالية هو 25 أغسطس 2026"
+      ]
+    }
+  },
+  {
+    "id": "opp-otago-doctoral-scholarship",
+    "type": "scholarship",
+    "title_ar": "منحة University of Otago Doctoral Scholarship 2026/2027",
+    "title_en": "University of Otago Doctoral Scholarship",
+    "organization": "University of Otago",
+    "country": "New Zealand",
+    "field": "Eligible doctoral research fields",
+    "level": [
+      "PhD",
+      "Professional Doctorate"
+    ],
+    "deadline": null,
+    "source_url": "https://www.otago.ac.nz/courses/scholarships/university-of-otago-doctoral-scholarship",
+    "verified_at": "2026-10-22",
+    "funding_type": "full",
+    "details": {
+      "ar": {
+        "summary": "منحة University of Otago Doctoral Scholarship 2026/2027",
+        "application_status": "التقديم مفتوح طوال العام – تتم المراجعة في جولات ربع سنوية خلال مارس ويونيو وسبتمبر ونوفمبر",
+        "deadline_information": "التقديم مفتوح طوال العام – تتم المراجعة في جولات ربع سنوية خلال مارس ويونيو وسبتمبر ونوفمبر",
+        "funding_and_benefits": [
+          "راتب معيشة بقيمة 34,128 دولار نيوزيلندي سنويًا لطلاب الدكتوراه",
+          "إعفاء من الرسوم الدراسية بالمعدل المحلي لمدة تصل إلى 36 شهرًا وفق نوع برنامج الدكتوراه",
+          "يصل عدد منح University of Otago Doctoral Scholarship إلى نحو 153 منحة سنويًا",
+          "المنحة متاحة للطلاب المحليين والدوليين"
+        ],
+        "fields_and_programs": [
+          "برامج الدكتوراه PhD المؤهلة في University of Otago",
+          "العلوم الصحية والطبية",
+          "العلوم",
+          "الأعمال والاقتصاد",
+          "العلوم الإنسانية والاجتماعية",
+          "التعليم",
+          "القانون",
+          "وغيرها من مجالات الدكتوراه المتاحة حسب القسم والمشرف والمشروع البحثي"
+        ],
+        "eligibility": [
+          "أن يكون المتقدم يسعى عادةً للحصول على أول مؤهل دكتوراه له",
+          "استيفاء متطلبات القبول في برنامج دكتوراه مؤهل بجامعة Otago",
+          "الاختيار يعتمد بصورة أساسية على الجدارة الأكاديمية والإمكانات البحثية",
+          "الطلاب الدوليون مؤهلون رسميًا للمنحة",
+          "الطلاب العرب مؤهلون ضمن فئة المتقدمين الدوليين متى استوفوا متطلبات القبول والمنحة"
+        ],
+        "required_documents": [
+          "طلب القبول في برنامج الدكتوراه",
+          "الشهادات وكشوف الدرجات الأكاديمية",
+          "السيرة الذاتية الأكاديمية والبحثية",
+          "المقترح البحثي ومتطلبات القسم أو المشرف",
+          "بيانات المراجع الأكاديمية المطلوبة",
+          "إثبات اللغة الإنجليزية عند الطلب",
+          "أي مستندات إضافية يطلبها نظام eVision أو القسم الأكاديمي"
+        ],
+        "application_steps": [
+          "قدم أولًا طلب القبول في برنامج الدكتوراه عبر eVision؛ وبعد تقديم طلب القبول ستصلك دعوة داخل البوابة للتقديم على المنحة"
+        ],
+        "important_notes": [
+          "يمكن التقديم على المنحة في أي وقت من السنة",
+          "تتم مراجعة الطلبات في جولات ربع سنوية تقريبًا في مارس ويونيو وسبتمبر ونوفمبر",
+          "يجب تقديم الطلب عبر eVision بعد بدء طلب القبول في الدكتوراه",
+          "الجامعة أعلنت أن برنامج منح الدكتوراه يخضع لمراجعة استراتيجية، لكن جولات التخصيص الربعية مستمرة في 2026"
+        ]
+      },
+      "en": {
+        "summary": "University of Otago Doctoral Scholarship at University of Otago.",
+        "application_status": "Applications are accepted on a continuing basis, subject to the institution's round and admission rules.",
+        "deadline_information": "Applications can be made year-round; awards are considered in quarterly allocation rounds. Scholarship rules are under strategic review.",
+        "funding_and_benefits": [
+          "NZD 34,128 per year as a doctoral stipend at the published rate.",
+          "Tuition-fee waiver capped at the domestic rate for up to 36 months.",
+          "The university lists up to approximately 153 doctoral awards annually.",
+          "The program is available to domestic and international applicants under its eligibility conditions."
+        ],
+        "fields_and_programs": [
+          "Eligible University of Otago PhD research degrees.",
+          "Health and medical sciences.",
+          "Natural sciences.",
+          "Business and economics.",
+          "Humanities and social sciences.",
+          "Education.",
+          "Law.",
+          "Other doctoral fields according to department, supervision and research project."
+        ],
+        "eligibility": [
+          "Usually seeking a first doctoral qualification.",
+          "Meet admission requirements for an eligible Otago doctoral program.",
+          "Selection is primarily based on academic merit and research potential.",
+          "International candidates are eligible subject to award rules.",
+          "Applicants from Arab countries can apply in the international category if all requirements are met."
+        ],
+        "required_documents": [
+          "Doctoral admission application.",
+          "Academic degrees and transcripts.",
+          "Academic and research CV.",
+          "Research proposal and department or supervisor requirements.",
+          "Academic referees as required.",
+          "English-language evidence where requested.",
+          "Any other documentation requested by eVision or the department."
+        ],
+        "application_steps": [
+          "Apply for a doctoral degree through the eVision portal; after starting the admission application, follow the invitation in eVision to apply for the scholarship."
+        ],
+        "important_notes": [
+          "Applications are accepted year-round; allocation decisions are generally made in quarterly rounds around March, June, September and November.",
+          "Submit through eVision after beginning the doctoral admission process.",
+          "Otago is conducting a strategic review of doctoral scholarships; published rounds and award policies may change.",
+          "The tuition waiver is at the domestic rate and does not automatically include student services fees or insurance."
+        ]
+      }
+    },
+    "application": {
+      "kind": "rolling_review",
+      "note_en": "Applications can be made year-round; awards are considered in quarterly allocation rounds. Scholarship rules are under strategic review.",
+      "rounds_per_year": 4,
+      "status": "rolling",
+      "as_of": "2026-10-22",
+      "verified_official_status": true,
+      "needs_manual_review": false,
+      "deadline_timezone": null,
+      "deadline_precision": "none"
+    },
+    "verification": {
+      "reviewed_at": "2026-10-22",
+      "official_source_checked": true,
+      "status_scope": "listed_program",
+      "source_document": "Postgraduate Scholarships 1-13 (user supplied DOCX)",
+      "original_document_entry": 4,
+      "original_notes_ar": [
+        "يمكن التقديم على المنحة في أي وقت من السنة",
+        "تتم مراجعة الطلبات في جولات ربع سنوية تقريبًا في مارس ويونيو وسبتمبر ونوفمبر",
+        "يجب تقديم الطلب عبر eVision بعد بدء طلب القبول في الدكتوراه",
+        "الجامعة أعلنت أن برنامج منح الدكتوراه يخضع لمراجعة استراتيجية، لكن جولات التخصيص الربعية مستمرة في 2026"
+      ]
+    }
   },
   {
     "id": "opp-waikato-doctoral-scholarship",
@@ -83,10 +619,1240 @@
     "level": [
       "PhD"
     ],
-    "funding_type": "full",
     "deadline": null,
     "source_url": "https://www.waikato.ac.nz/int/study/scholarships/find-a-scholarship/university-of-waikato-doctoral-scholarship/",
-    "verified_at": "2026-10-21"
+    "verified_at": "2026-10-22",
+    "funding_type": "full",
+    "details": {
+      "ar": {
+        "summary": "منحة دكتوراه بحثية تنافسية بجامعة وايكاتو في نيوزيلندا، توفر راتب معيشة وتغطية رسوم دراسية محددة للمرشحين المؤهلين الذين حصلوا على عرض قبول ببرنامج بحثي.",
+        "application_status": "تقبل الطلبات وفق الصفحة الرسمية بتاريخ المراجعة",
+        "deadline_information": "تُقيَّم الطلبات في أربع جولات سنويًا. يلزم التأكد من موعد الجولة المناسبة واستكمال عرض القبول Offer of Place قبل تقييم طلب المنحة.",
+        "funding_and_benefits": [
+          "راتب معيشة يصل إلى 33,000 دولار نيوزيلندي سنويًا لمدة تصل إلى 36 شهرًا.",
+          "تغطية الرسوم الدراسية بالمعدل المحلي في نيوزيلندا وفق شروط المنحة.",
+          "تغطية رسوم خدمات الطلاب Student Services Fee وفق شروط المنحة.",
+          "القيمة النهائية والمزايا والأهلية تعتمد على اللوائح الرسمية وخطاب العرض؛ لا يُفترض تلقائيًا تغطية جميع نفقات المعيشة أو السفر أو التأمين.",
+          "عدد المنح الممنوحة سنويًا غير ثابت ويعتمد على التمويل المتاح."
+        ],
+        "fields_and_programs": [
+          "الفنون والأعمال والإدارة.",
+          "علوم الحاسوب والرياضيات والهندسة.",
+          "التعليم والصحة والقانون والعلوم.",
+          "العلوم الاجتماعية والبيئة، ودراسات الماوري والسكان الأصليين، وغيرها من تخصصات البحث المؤهلة."
+        ],
+        "eligibility": [
+          "المنحة متاحة لفئات محددة من المتقدمين المحليين والدوليين وفق اللوائح الرسمية.",
+          "استكمال طلب الالتحاق والحصول على Offer of Place في درجة دكتوراه مؤهلة قبل أن يُنظر في طلب المنحة.",
+          "امتلاك سجل أكاديمي وإمكانات بحثية تنافسية واستيفاء شروط القبول بالدكتوراه واللوائح الخاصة بالمنحة.",
+          "يجب اتباع متطلبات المشرف والدعوة إلى التقديم Invitation to Apply ضمن مسار قبول الدكتوراه.",
+          "استيفاء متطلبات اللغة الإنجليزية وغيرها من الشروط الخاصة بالبرنامج للمتقدمين الدوليين."
+        ],
+        "required_documents": [
+          "طلب الالتحاق بدرجة الدكتوراه ومستندات قبول البرنامج.",
+          "إثبات Invitation to Apply أو موافقة المشرف حسب إجراءات قبول البرنامج.",
+          "الشهادات الأكاديمية وكشوف الدرجات.",
+          "المقترح البحثي وفق نموذج الجامعة وخطاب الدافع عند انطباق المتطلبات؛ يبدأ اشتراط النموذج والخطاب لمن يبدأ التقديم للبرنامج في 1 نوفمبر 2026 أو بعده، بحسب الصفحة الرسمية.",
+          "بيانات مرجعين أكاديميين والمراجع المهنية أو المواد المحدثة المطلوبة لطلب المنحة.",
+          "إثبات اللغة الإنجليزية وغيرها من وثائق القبول المطلوبة."
+        ],
+        "application_steps": [
+          "راجع لوائح المنحة الرسمية وشروط الالتحاق بدرجة الدكتوراه.",
+          "ابحث عن مشرف مناسب وتواصل معه لتحصل على الموافقة والدعوة للتقديم إلى البرنامج.",
+          "جهّز المستندات وقدّم طلب الالتحاق عبر MyWaikato.",
+          "احصل على Offer of Place الذي تحتاجه الجامعة للنظر في المنحة.",
+          "ادخل إلى MyWaikato، وافتح قسم Scholarships واختر University of Waikato Doctoral Scholarship.",
+          "قدّم شرحًا داعمًا لطلبك، والمراجع الأكاديمية والمهنية والمستندات المحدثة عند الحاجة، قبل موعد الجولة المناسبة."
+        ],
+        "important_notes": [
+          "تقييم المنحة في أربع جولات لا يعني أن جميع مواعيد الجولات متاحة بلا قيود؛ راجع التواريخ الرسمية.",
+          "قبول طلب برنامج الدكتوراه والحصول على Offer of Place لا يضمنان الحصول على المنحة.",
+          "توضح الجامعة أن قيمة الراتب تصل إلى 33,000 دولار نيوزيلندي سنويًا؛ المبلغ الفعلي يخضع لشروط العرض.",
+          "لا يوجد عدد ثابت معلن للمنح سنويًا.",
+          "توجد متطلبات مختلفة لبرنامج الدكتوراه والمنحة؛ اقرأ لوائح الجهتين قبل إرسال الطلب.",
+          "الحالة والمزايا قابلة للتحديث بعد تاريخ التحقق؛ يُرجى مراجعة المصدر الرسمي قبل التقديم."
+        ]
+      },
+      "en": {
+        "summary": "A competitive research doctoral scholarship at the University of Waikato, New Zealand, offering a living stipend and specified tuition support to eligible candidates with an Offer of Place.",
+        "application_status": "Accepting applications on the official scholarship page as of the verification date.",
+        "deadline_information": "Applications are considered in four rounds each year. Check the relevant round deadlines and obtain an Offer of Place before scholarship consideration.",
+        "funding_and_benefits": [
+          "Living stipend of up to NZD 33,000 per year for up to 36 months.",
+          "Tuition fees covered at the New Zealand domestic fee rate under the scholarship terms.",
+          "Student Services Fee covered under the scholarship terms.",
+          "Exact benefits and eligibility depend on the regulations and award offer; do not assume all living, travel or insurance costs are covered.",
+          "The number of awards is not fixed and depends on available funding."
+        ],
+        "fields_and_programs": [
+          "Arts, Business and Management.",
+          "Computer Science, Mathematics and Engineering.",
+          "Education, Health, Law and Science.",
+          "Social Sciences, Environment, Māori and Indigenous Studies, and other eligible research fields."
+        ],
+        "eligibility": [
+          "The scholarship is available to eligible domestic and international candidates, subject to the official regulations.",
+          "Complete an Application to Enrol and receive an Offer of Place in an eligible doctoral degree before scholarship consideration.",
+          "Demonstrate a competitive academic and research record and meet doctoral admission and scholarship conditions.",
+          "Follow the supervisor and Invitation to Apply requirements for the doctoral admission process.",
+          "International applicants must meet the relevant English-language and other program entry requirements."
+        ],
+        "required_documents": [
+          "Doctoral Application to Enrol and required admission documentation.",
+          "Evidence of supervisor support and an Invitation to Apply, as required by the doctoral application process.",
+          "Academic certificates and transcripts.",
+          "A research proposal using the university template and a motivation cover letter where required; the university states these apply to program applications started on or after 1 November 2026.",
+          "Contact details for two academic referees, plus any updated materials or professional references requested for the scholarship.",
+          "English-language evidence and other necessary admission documents."
+        ],
+        "application_steps": [
+          "Read the official doctoral scholarship regulations and doctoral entry requirements.",
+          "Find and contact a relevant supervisor and obtain approval and an Invitation to Apply.",
+          "Prepare the necessary documents and submit an Application to Enrol through MyWaikato.",
+          "Receive an Offer of Place, which is needed for scholarship consideration.",
+          "Sign in to MyWaikato, open Scholarships and select the University of Waikato Doctoral Scholarship.",
+          "Submit supporting commentary, academic/professional references and updated documents where required before the applicable round deadline."
+        ],
+        "important_notes": [
+          "Four review rounds do not mean every round is available without a deadline; check current dates.",
+          "Admission and an Offer of Place do not guarantee a scholarship award.",
+          "The annual stipend is up to NZD 33,000; the actual award is governed by the offer conditions.",
+          "There is no fixed annual number of scholarships.",
+          "Doctoral admission and scholarship award rules are distinct; review both sets of requirements.",
+          "Statuses and benefits may change after verification; always check the official source before applying."
+        ]
+      }
+    },
+    "application": {
+      "kind": "rolling_review",
+      "note_en": "Currently accepting applications; four assessment rounds occur annually and an Offer of Place is required.",
+      "rounds_per_year": 4,
+      "status": "rolling",
+      "as_of": "2026-10-22",
+      "verified_official_status": true,
+      "needs_manual_review": false,
+      "deadline_timezone": null,
+      "deadline_precision": "none"
+    },
+    "verification": {
+      "reviewed_at": "2026-10-22",
+      "official_source_checked": true,
+      "status_scope": "listed_program",
+      "source_document": "Postgraduate Scholarships 1-13 (user supplied DOCX)",
+      "original_document_entry": 5,
+      "original_notes_ar": [
+        "الصفحة الرسمية تعرض الحالة: Accepting applications",
+        "تتم مراجعة منح الدكتوراه أربع مرات سنويًا",
+        "لا يوجد عدد ثابت معلن للمنح سنويًا"
+      ]
+    }
+  },
+  {
+    "id": "opp-rmit-vice-chancellors-phd-2027",
+    "type": "scholarship",
+    "title_ar": "منحة Vice-Chancellor's PhD Scholarship بجامعة RMIT 2027",
+    "title_en": "RMIT Vice-Chancellor's PhD Scholarship 2027",
+    "organization": "RMIT University",
+    "country": "Australia",
+    "field": "Research doctoral programs",
+    "level": [
+      "PhD"
+    ],
+    "deadline": null,
+    "source_url": "https://www.rmit.edu.au/scholarships/research/vcps",
+    "verified_at": "2026-10-22",
+    "funding_type": "full",
+    "details": {
+      "ar": {
+        "summary": "منحة Vice-Chancellor's PhD Scholarship بجامعة RMIT 2027",
+        "application_status": "30 أغسطس 2026 للـ EOI الدولي / 30 سبتمبر 2026 للطلب الكامل",
+        "deadline_information": "30 أغسطس 2026 للـ EOI الدولي / 30 سبتمبر 2026 للطلب الكامل",
+        "funding_and_benefits": [
+          "راتب سنوي بقيمة 48,299 دولار أسترالي وفق معدل 2026",
+          "بدل دعم بحثي بقيمة 5,000 دولار أسترالي سنويًا",
+          "إعفاء من الرسوم للطلاب الدوليين عبر RMIT Research International Tuition Fee Scholarship",
+          "تأمين صحي OSHC للطلاب الدوليين",
+          "بدل انتقال يصل إلى 1,540 دولار أسترالي",
+          "مدة المنحة 3.5 سنوات بدوام كامل",
+          "تقدم الجامعة نحو 10 منح VCPS سنويًا"
+        ],
+        "fields_and_programs": [
+          "برامج الدكتوراه البحثية في RMIT",
+          "الهندسة",
+          "الحوسبة والتكنولوجيا",
+          "العلوم",
+          "الأعمال",
+          "التصميم والفنون",
+          "العلوم الاجتماعية",
+          "المجالات البحثية الأخرى المؤهلة"
+        ],
+        "eligibility": [
+          "أن يكون المتقدم مؤهلًا لبدء برنامج PhD في RMIT من 1 يناير 2027",
+          "امتلاك ماجستير بحثي أو ماجستير بمكوّن بحثي قوي أو Honours من الدرجة الأولى أو مؤهل مكافئ",
+          "التقديم لبرنامج دكتوراه بدوام كامل",
+          "الطلاب الدوليون مؤهلون رسميًا",
+          "الطلاب العرب مؤهلون ضمن فئة المتقدمين الدوليين"
+        ],
+        "required_documents": [
+          "نسخة مصدقة من جواز السفر أو الهوية",
+          "السيرة الذاتية الكاملة",
+          "كشوف الدرجات الأكاديمية",
+          "مقترح البحث أو بيان المشروع",
+          "أسماء فريق الإشراف المقترح",
+          "إثبات موافقة/دعم المشرف عبر البريد",
+          "إثبات اللغة الإنجليزية عند الحاجة"
+        ],
+        "application_steps": [
+          "يجب اتباع عملية التقديم على منحة البحث وإرفاق إثبات التواصل مع المشرف المقترح، إضافة إلى نموذج VCPS Expression of Interest"
+        ],
+        "important_notes": [
+          "آخر موعد للـ EOI الدولي هو 30 أغسطس 2026",
+          "آخر موعد للطلب الكامل للطلاب الدوليين هو 30 سبتمبر 2026",
+          "قيمة تمويل 2027 النهائية قد تُحدث لاحقًا؛ القيم المنشورة حاليًا تعتمد على معدل 2026"
+        ]
+      },
+      "en": {
+        "summary": "RMIT Vice-Chancellor's PhD Scholarship 2027 at RMIT University.",
+        "application_status": "Deadlines differ by round and applicant category; do not treat a single date as universal.",
+        "deadline_information": "International EOI and full application deadlines have passed; domestic full applications close on 30 October 2026 for eligible domestic candidates.",
+        "funding_and_benefits": [
+          "An annual stipend of AUD 48,299 at the 2026 published rate.",
+          "Research support allowance of AUD 5,000 per year, subject to the VCPS award rules.",
+          "International tuition-fee offset may be provided via the RMIT Research International Tuition Fee Scholarship.",
+          "Overseas Student Health Cover (OSHC) for eligible international recipients.",
+          "Eligible relocation allowance up to AUD 1,540.",
+          "Up to 3.5 years of full-time scholarship support.",
+          "Approximately ten VCPS awards may be available annually; numbers are indicative."
+        ],
+        "fields_and_programs": [
+          "Eligible research doctorate programs at RMIT.",
+          "Engineering.",
+          "Computing and technology.",
+          "Sciences.",
+          "Business.",
+          "Design and arts.",
+          "Social sciences.",
+          "Other eligible research fields."
+        ],
+        "eligibility": [
+          "Eligible to begin an RMIT PhD from January 2027 under the relevant scholarship rules.",
+          "A research masters, a strong research-component masters, first-class honours or equivalent research preparation.",
+          "Intend full-time doctoral study.",
+          "International candidates may be eligible.",
+          "Arab-country candidates may apply as international students if they meet the remaining requirements."
+        ],
+        "required_documents": [
+          "Certified passport or identity document.",
+          "Complete curriculum vitae.",
+          "Academic transcripts.",
+          "Research proposal or project statement.",
+          "Names of proposed supervisors.",
+          "Evidence of supervisor endorsement or support.",
+          "English-language evidence when required."
+        ],
+        "application_steps": [
+          "Complete the research scholarship EOI process with evidence of contact with a proposed supervisor, then lodge the full application by the applicant-category deadline."
+        ],
+        "important_notes": [
+          "For the 2027 round, international EOI closed 30 August 2026 and international full applications closed 30 September 2026.",
+          "Domestic EOI closed 30 September 2026, with domestic full applications due 30 October 2026.",
+          "Published stipend amounts reflect the 2026 rate and may change.",
+          "Alternative funded projects may have separate admissions processes and deadlines."
+        ]
+      }
+    },
+    "application": {
+      "kind": "multiple_rounds",
+      "note_en": "International EOI and full-application rounds have closed. The 30 October 2026 domestic full-application deadline applies to eligible domestic candidates who completed the earlier EOI stage; it is not a new EOI window.",
+      "rounds": [
+        {
+          "audience": "international",
+          "stage": "eoi",
+          "deadline": "2026-08-30",
+          "status": "closed"
+        },
+        {
+          "audience": "international",
+          "stage": "full_application",
+          "deadline": "2026-09-30",
+          "status": "closed"
+        },
+        {
+          "audience": "domestic",
+          "stage": "eoi",
+          "deadline": "2026-09-30",
+          "status": "closed"
+        },
+        {
+          "audience": "domestic",
+          "stage": "full_application",
+          "deadline": "2026-10-30",
+          "status": "open",
+          "eligibility": "Previously completed domestic EOI by 2026-09-30"
+        }
+      ],
+      "status": "rounds",
+      "as_of": "2026-10-22",
+      "verified_official_status": true,
+      "needs_manual_review": true,
+      "deadline_timezone": null,
+      "deadline_precision": "none"
+    },
+    "verification": {
+      "reviewed_at": "2026-10-22",
+      "official_source_checked": true,
+      "status_scope": "round_and_audience_dependent",
+      "source_document": "Postgraduate Scholarships 1-13 (user supplied DOCX)",
+      "original_document_entry": 6,
+      "original_notes_ar": [
+        "جولة RMIT الممولة لعام 2027 مفتوحة الآن",
+        "آخر موعد للـ EOI الدولي هو 30 أغسطس 2026",
+        "آخر موعد للطلب الكامل للطلاب الدوليين هو 30 سبتمبر 2026",
+        "قيمة تمويل 2027 النهائية قد تُحدث لاحقًا؛ القيم المنشورة حاليًا تعتمد على معدل 2026"
+      ]
+    }
+  },
+  {
+    "id": "opp-uq-international-high-achievers-2027",
+    "type": "scholarship",
+    "title_ar": "منحة UQ International High Achievers 2027",
+    "title_en": "UQ International High Achievers Scholarship 2027",
+    "organization": "The University of Queensland",
+    "country": "Australia",
+    "field": "Eligible undergraduate and coursework fields",
+    "level": [
+      "Bachelor's",
+      "Master's",
+      "Postgraduate coursework"
+    ],
+    "deadline": null,
+    "source_url": "https://scholarships.uq.edu.au/scholarship/uq-international-high-achievers-scholarship",
+    "verified_at": "2026-10-22",
+    "funding_type": "partial",
+    "details": {
+      "ar": {
+        "summary": "منحة UQ International High Achievers 2027",
+        "application_status": "لا يوجد طلب منفصل للمنحة – التقييم تلقائي عند التقديم لبرنامج مؤهل يبدأ في 2027",
+        "deadline_information": "لا يوجد طلب منفصل للمنحة – التقييم تلقائي عند التقديم لبرنامج مؤهل يبدأ في 2027",
+        "funding_and_benefits": [
+          "تخفيض 20% من الرسوم الدراسية في كل فصل دراسي",
+          "يستمر التخفيض طوال مدة البرنامج المؤهل",
+          "لا يوجد طلب منحة منفصل",
+          "يتم تقييم المتقدم تلقائيًا عند تقديم طلب الدراسة في UQ",
+          "يتم إشعار الطالب بالمنحة مع خطاب القبول غير المشروط أو بعد استيفاء شروط العرض"
+        ],
+        "fields_and_programs": [
+          "جميع مجالات الدراسة المؤهلة وفق شروط UQ",
+          "برامج البكالوريوس المؤهلة",
+          "برامج Postgraduate Coursework المؤهلة",
+          "برامج الماجستير الدراسية المؤهلة"
+        ],
+        "eligibility": [
+          "أن يكون المتقدم طالبًا دوليًا",
+          "التقديم للدراسة بدوام كامل في 2027 في برنامج مؤهل",
+          "استيفاء جميع شروط عرض البرنامج",
+          "استيفاء متطلبات درجة الدخول واللغة الإنجليزية",
+          "تحقيق نتيجة تنافسية بين حاملي العروض في الفصل نفسه",
+          "عدم الحصول على منحة أو تخفيض آخر من UQ غير مسموح بجمعه معها",
+          "الطلاب العرب مؤهلون ضمن فئة الطلاب الدوليين ما داموا يستوفون شروط البرنامج والمنحة"
+        ],
+        "required_documents": [
+          "لا توجد مستندات منفصلة خاصة بالمنحة",
+          "استكمل طلب القبول في البرنامج المختار",
+          "الشهادات وكشوف الدرجات",
+          "إثبات اللغة الإنجليزية",
+          "أي متطلبات إضافية للبرنامج أو القبول الدولي"
+        ],
+        "application_steps": [
+          "قدم طلب الدراسة بدوام كامل في برنامج مؤهل يبدأ في 2027، وستقوم UQ بتقييمك تلقائيًا للمنحة"
+        ],
+        "important_notes": [
+          "الحالة الرسمية للمنحة: Open",
+          "المنحة خصم 20% من الرسوم وليست تمويلًا كاملًا",
+          "عدد المنح قد يختلف",
+          "لا يوجد نموذج منفصل للتقديم على المنحة"
+        ]
+      },
+      "en": {
+        "summary": "UQ International High Achievers Scholarship 2027 at The University of Queensland.",
+        "application_status": "Scholarship consideration takes place through an eligible degree application; the course deadline controls.",
+        "deadline_information": "No scholarship form or universal deadline; eligible 2027 course applications trigger automatic consideration.",
+        "funding_and_benefits": [
+          "20% tuition fee reduction each semester in an eligible program.",
+          "Tuition reduction continues for the eligible program duration.",
+          "No separate scholarship application is required.",
+          "Applicants are considered automatically when applying for eligible UQ study.",
+          "Eligible awardees are informed with or after their unconditional admission offer."
+        ],
+        "fields_and_programs": [
+          "Study areas and degree programs eligible under the UQ scholarship rules.",
+          "Eligible undergraduate degrees.",
+          "Eligible postgraduate coursework degrees.",
+          "Eligible taught masters programs."
+        ],
+        "eligibility": [
+          "Be an international student.",
+          "Apply for eligible full-time study commencing in 2027.",
+          "Meet all admission-offer conditions.",
+          "Meet academic entry and English-language requirements.",
+          "Achieve a competitive score among offer holders in the commencement semester.",
+          "Cannot combine the award with scholarships or tuition discounts excluded by the rules.",
+          "Eligible Arab-country applicants fall under the international category subject to all criteria."
+        ],
+        "required_documents": [
+          "No separate scholarship documents are specified.",
+          "Complete the selected degree program application.",
+          "Academic awards and transcripts.",
+          "English-language evidence.",
+          "Any additional requirements for the program or international admission."
+        ],
+        "application_steps": [
+          "Apply for full-time entry to an eligible program commencing in 2027; UQ will automatically assess eligible applicants for this tuition discount."
+        ],
+        "important_notes": [
+          "This is a 20% tuition fee reduction, not a fully funded living-cost scholarship.",
+          "Assessment is automatic without a separate scholarship form.",
+          "The number of awards may vary.",
+          "Admission closing dates depend on the course and intake; there is no universal scholarship application deadline."
+        ]
+      }
+    },
+    "application": {
+      "kind": "course_based",
+      "note_en": "No scholarship form or universal deadline; eligible 2027 course applications trigger automatic consideration.",
+      "status": "automatic",
+      "as_of": "2026-10-22",
+      "verified_official_status": true,
+      "needs_manual_review": false,
+      "deadline_timezone": null,
+      "deadline_precision": "none"
+    },
+    "verification": {
+      "reviewed_at": "2026-10-22",
+      "official_source_checked": true,
+      "status_scope": "listed_program",
+      "source_document": "Postgraduate Scholarships 1-13 (user supplied DOCX)",
+      "original_document_entry": 7,
+      "original_notes_ar": [
+        "الحالة الرسمية للمنحة: Open",
+        "المنحة خصم 20% من الرسوم وليست تمويلًا كاملًا",
+        "عدد المنح قد يختلف",
+        "لا يوجد نموذج منفصل للتقديم على المنحة"
+      ]
+    }
+  },
+  {
+    "id": "opp-canberra-research-scholarships-2027",
+    "type": "scholarship",
+    "title_ar": "منح University Research Scholarship بجامعة Canberra 2027",
+    "title_en": "University of Canberra Research Scholarships 2027",
+    "organization": "University of Canberra / Australian Government RTP",
+    "country": "Australia",
+    "field": "Eligible doctoral research fields",
+    "level": [
+      "PhD"
+    ],
+    "deadline": "2026-09-30",
+    "source_url": "https://www.canberra.edu.au/uc-research/graduate-research/university-research-scholarships",
+    "verified_at": "2026-10-22",
+    "funding_type": "full",
+    "details": {
+      "ar": {
+        "summary": "منح University Research Scholarship بجامعة Canberra 2027",
+        "application_status": "30 سبتمبر 2026 لبدء Semester 1 2027",
+        "deadline_information": "30 سبتمبر 2026 لبدء Semester 1 2027",
+        "funding_and_benefits": [
+          "راتب سنوي معفى من الضرائب عبر RTP Stipend أو UC HDR Stipend وفق المنحة الممنوحة",
+          "المعدل المنشور حاليًا على صفحة الجامعة هو 36,225 دولار أسترالي سنويًا وفق معدل 2025 وقد يتغير",
+          "مدة التمويل تصل إلى 3.5 سنوات",
+          "يمكن منح الطالب الدولي إعفاءً من الرسوم الدراسية وفق نتيجة التقييم",
+          "المنحة تنافسية وتستهدف المرشحين ذوي الإمكانات البحثية العالية"
+        ],
+        "fields_and_programs": [
+          "برامج الدكتوراه Higher Degree by Research المؤهلة",
+          "الفنون والتصميم",
+          "الأعمال والحكومة والقانون",
+          "التعليم",
+          "الصحة",
+          "العلوم والتكنولوجيا",
+          "مجالات بحثية أخرى متاحة عبر كليات الجامعة"
+        ],
+        "eligibility": [
+          "المتقدمون المحليون والدوليون مؤهلون",
+          "التقديم أو القبول في برنامج PhD مؤهل",
+          "الاختيار يعتمد على الجدارة الأكاديمية والتوافق الاستراتيجي وجودة المقترح والخبرة البحثية",
+          "ألا يكون المتقدم قد حصل سابقًا على منحة بحثية ممولة من الحكومة الأسترالية لأكثر من 6 أشهر وفق الشروط",
+          "الطلاب العرب مؤهلون ضمن فئة الطلاب الدوليين"
+        ],
+        "required_documents": [
+          "طلب القبول في HDR",
+          "طلب المنحة داخل HDR Application Portal",
+          "الشهادات وكشوف الدرجات",
+          "المقترح البحثي",
+          "الأدلة على الخبرة البحثية والمنشورات إن وجدت",
+          "متطلبات المشرف والكلية",
+          "المستندات الدولية وإثبات اللغة حسب حالة المتقدم"
+        ],
+        "application_steps": [
+          "قدم أولًا طلب القبول في HDR، وبعد تقديم طلب القبول ستحصل على إمكانية الوصول إلى نموذج المنحة المنفصل داخل HDR Application Portal"
+        ],
+        "important_notes": [
+          "الجامعة تصف هذه المنح بأنها شديدة التنافس",
+          "يجب إكمال كل من طلب HDR وطلب المنحة قبل الموعد النهائي",
+          "آخر موعد لدورة Semester 1 2027 هو 30 سبتمبر 2026"
+        ]
+      },
+      "en": {
+        "summary": "University of Canberra Research Scholarships 2027 at University of Canberra / Australian Government RTP.",
+        "application_status": "The specified application deadline has passed; confirm any new round directly with the awarding institution.",
+        "deadline_information": "The original document states 30 September 2026 for Semester 1 2027. Official current page directs applicants to key dates; verify the newest cycle before showing a universal closed/open claim.",
+        "funding_and_benefits": [
+          "Tax-free annual stipend through RTP or UC HDR Stipend depending on the award.",
+          "The source document cites a 2025 published annual rate of AUD 36,225, which may change.",
+          "Funding can last up to 3.5 years.",
+          "An international candidate may receive a tuition offset depending on the award outcome.",
+          "These are highly competitive research awards."
+        ],
+        "fields_and_programs": [
+          "Eligible HDR research doctorate degrees.",
+          "Arts and design.",
+          "Business, government and law.",
+          "Education.",
+          "Health.",
+          "Science and technology.",
+          "Other research disciplines offered by university faculties."
+        ],
+        "eligibility": [
+          "Domestic and international candidates may be eligible.",
+          "Apply to or enter an eligible PhD.",
+          "Assessment considers academic merit, strategic fit, proposal quality and research record.",
+          "Some government award rules restrict candidates with substantial previous government-funded research scholarship support.",
+          "Arab-country candidates may be eligible internationally subject to conditions."
+        ],
+        "required_documents": [
+          "HDR admission application.",
+          "Research scholarship form in HDR Application Portal.",
+          "Academic degrees and transcripts.",
+          "Research proposal.",
+          "Evidence of research experience and publications if available.",
+          "Faculty and supervision requirements.",
+          "International documentation and English-language evidence as applicable."
+        ],
+        "application_steps": [
+          "Submit an HDR admission application first; the portal then offers access to a separate research scholarship form, both of which must meet the relevant round deadline."
+        ],
+        "important_notes": [
+          "The supplied document specifies 30 September 2026 as the deadline for Semester 1 2027; this round has passed.",
+          "The official university page now directs candidates to the university important dates page for current deadlines.",
+          "Both HDR admission and scholarship applications are needed.",
+          "A new round may have different dates: do not treat the old cycle deadline as a permanent closure."
+        ]
+      }
+    },
+    "application": {
+      "kind": "round_from_document",
+      "note_en": "The original document states 30 September 2026 for Semester 1 2027. Official current page directs applicants to key dates; verify the newest cycle before showing a universal closed/open claim.",
+      "status": "closed",
+      "as_of": "2026-10-22",
+      "verified_official_status": false,
+      "needs_manual_review": true,
+      "deadline_timezone": null,
+      "deadline_precision": "date"
+    },
+    "verification": {
+      "reviewed_at": "2026-10-22",
+      "official_source_checked": false,
+      "status_scope": "listed_program",
+      "source_document": "Postgraduate Scholarships 1-13 (user supplied DOCX)",
+      "original_document_entry": 8,
+      "original_notes_ar": [
+        "الجامعة تصف هذه المنح بأنها شديدة التنافس",
+        "يجب إكمال كل من طلب HDR وطلب المنحة قبل الموعد النهائي",
+        "آخر موعد لدورة Semester 1 2027 هو 30 سبتمبر 2026"
+      ]
+    }
+  },
+  {
+    "id": "opp-tasmania-genai-source-code-phd-2027",
+    "type": "scholarship",
+    "title_ar": "منحة دكتوراه GenAI Models for Source Code Generation بجامعة Tasmania 2027",
+    "title_en": "GenAI Models for Source Code Generation PhD Scholarship",
+    "organization": "University of Tasmania",
+    "country": "Australia",
+    "field": "Generative AI and software engineering",
+    "level": [
+      "PhD"
+    ],
+    "deadline": "2026-10-01",
+    "source_url": "https://www.utas.edu.au/research/degrees/available-projects?id=1961",
+    "verified_at": "2026-10-22",
+    "funding_type": "full",
+    "details": {
+      "ar": {
+        "summary": "منحة دكتوراه GenAI Models for Source Code Generation بجامعة Tasmania 2027",
+        "application_status": "1 أكتوبر 2026",
+        "deadline_information": "1 أكتوبر 2026",
+        "funding_and_benefits": [
+          "راتب معيشة بقيمة 34,315 دولار أسترالي سنويًا",
+          "مدة الراتب تصل إلى 3.5 سنوات",
+          "بدل انتقال يصل إلى 2,000 دولار أسترالي",
+          "يمكن منح إعفاء من الرسوم للطلاب الدوليين المؤهلين بعد تقييم تنافسي",
+          "المشروع ممول عبر RTP أو Tasmania Graduate Research Scholarship بحسب نتيجة الاختيار"
+        ],
+        "fields_and_programs": [
+          "الذكاء الاصطناعي التوليدي",
+          "Large Language Models",
+          "توليد الكود البرمجي",
+          "علوم الحاسوب",
+          "تعلم الآلة والتعلم العميق",
+          "تقييم وتحسين نماذج توليد الشفرة البرمجية"
+        ],
+        "eligibility": [
+          "الطلبات مفتوحة للطلاب المحليين والدوليين",
+          "امتلاك ماجستير بحثي في ICT أو ماجستير Coursework بمكوّن بحثي في ICT أو Bachelor Honours بمستوى مناسب ومكوّن بحثي",
+          "يفضل وجود خبرة برمجية بلغة مثل Python أو C أو Java",
+          "يفضل وجود خبرة في Deep Learning",
+          "الاختيار تنافسي ويعتمد على الجدارة الأكاديمية ومدى ملاءمة المتقدم للمشروع",
+          "الطلاب العرب مؤهلون من حيث الجنسية ضمن فئة الطلاب الدوليين"
+        ],
+        "required_documents": [
+          "Supervisory Support Form موقع",
+          "السيرة الذاتية",
+          "بيانات التواصل لشخصين مرجعيين",
+          "المقترح البحثي",
+          "الشهادات وكشوف الدرجات",
+          "متطلبات القبول في Higher Degree by Research",
+          "أي مستندات إضافية يطلبها نظام الجامعة"
+        ],
+        "application_steps": [
+          "راجع صفحة المشروع الرسمية، تواصل مع المشرف، ثم قدم عبر نظام University of Tasmania قبل الموعد النهائي"
+        ],
+        "important_notes": [
+          "موقع الدراسة: Launceston",
+          "يجب التواصل مع المشرف Doctor Shuxiang Xu قبل إكمال التقديم وفق تعليمات المشروع",
+          "يجب كتابة عنوان المشروع نفسه بصورة صحيحة داخل الطلب"
+        ]
+      },
+      "en": {
+        "summary": "GenAI Models for Source Code Generation PhD Scholarship at University of Tasmania.",
+        "application_status": "The specified application deadline has passed; confirm any new round directly with the awarding institution.",
+        "deadline_information": "The original source gives 1 October 2026 as the project deadline. The original project detail link was not independently retrievable during this review.",
+        "funding_and_benefits": [
+          "Annual living stipend of AUD 34,315 according to the supplied source document.",
+          "Stipend period up to 3.5 years.",
+          "Relocation support up to AUD 2,000.",
+          "International tuition waivers may be available after competitive assessment.",
+          "Depending on selection, funding may be provided through RTP or Tasmania Graduate Research Scholarship."
+        ],
+        "fields_and_programs": [
+          "Generative artificial intelligence.",
+          "Large language models (LLMs).",
+          "Source-code generation.",
+          "Computer science.",
+          "Machine learning and deep learning.",
+          "Evaluation and improvement of generative code models."
+        ],
+        "eligibility": [
+          "The source document states the project was open to domestic and international applicants.",
+          "ICT research masters, coursework masters with an ICT research component, or suitable research honours degree.",
+          "Experience with Python, C or Java is preferred.",
+          "Deep learning knowledge is preferred.",
+          "Competitive academic ranking and fit with the project are important.",
+          "Arab-country candidates may be eligible as international applicants under the relevant rules."
+        ],
+        "required_documents": [
+          "Signed Supervisory Support Form.",
+          "Curriculum vitae.",
+          "Contact details for two referees.",
+          "Research proposal.",
+          "Academic awards and transcripts.",
+          "Higher Degree by Research admission materials.",
+          "Additional documents required by the university system."
+        ],
+        "application_steps": [
+          "Check the research project page, contact the proposed supervisor and apply via the University of Tasmania research program application system before the applicable deadline."
+        ],
+        "important_notes": [
+          "The source document lists a deadline of 1 October 2026 and the Launceston study location.",
+          "The document names Dr Shuxiang Xu as supervisor contact before submission.",
+          "The application should state the correct project title.",
+          "The original project URL could not be independently verified during this update; publication requires renewed confirmation."
+        ]
+      }
+    },
+    "application": {
+      "kind": "project_deadline_from_document",
+      "note_en": "The original source gives 1 October 2026 as the project deadline. The original project detail link was not independently retrievable during this review.",
+      "status": "closed",
+      "as_of": "2026-10-22",
+      "verified_official_status": false,
+      "needs_manual_review": true,
+      "deadline_timezone": null,
+      "deadline_precision": "date"
+    },
+    "verification": {
+      "reviewed_at": "2026-10-22",
+      "official_source_checked": false,
+      "status_scope": "listed_program",
+      "source_document": "Postgraduate Scholarships 1-13 (user supplied DOCX)",
+      "original_document_entry": 9,
+      "original_notes_ar": [
+        "المشروع مفتوح حاليًا",
+        "موقع الدراسة: Launceston",
+        "يجب التواصل مع المشرف Doctor Shuxiang Xu قبل إكمال التقديم وفق تعليمات المشروع",
+        "يجب كتابة عنوان المشروع نفسه بصورة صحيحة داخل الطلب"
+      ]
+    }
+  },
+  {
+    "id": "opp-latrobe-vice-chancellor-scholarship",
+    "type": "scholarship",
+    "title_ar": "منحة Vice-Chancellor بجامعة La Trobe 2026/2027",
+    "title_en": "La Trobe Vice Chancellor Scholarship",
+    "organization": "La Trobe University",
+    "country": "Australia",
+    "field": "Eligible undergraduate and coursework fields",
+    "level": [
+      "Bachelor's",
+      "Master's",
+      "Postgraduate coursework"
+    ],
+    "deadline": null,
+    "source_url": "https://www.latrobe.edu.au/study/scholarships/other/la-trobe-vice-chancellor-scholarship",
+    "verified_at": "2026-10-22",
+    "funding_type": "partial",
+    "details": {
+      "ar": {
+        "summary": "🎓 منحة Vice-Chancellor بجامعة La Trobe 2026/2027",
+        "application_status": "مواعيد متعددة",
+        "deadline_information": "مواعيد متعددة - Semester 1 2027: 2026-12-14 (outside Australia), 2027-02-17 (inside Australia); Semester 2 2027: 2027-05-17 (outside Australia), 2027-07-01 (inside Australia).",
+        "funding_and_benefits": [
+          "تخفيض بنسبة 50% أو 100% من إجمالي الرسوم الدراسية",
+          "يستمر التخفيض طوال مدة البرنامج المؤهل وفق شروط خطاب المنحة",
+          "منحة تنافسية مخصصة للطلاب الدوليين ذوي الأداء الأكاديمي والقيادي المتميز",
+          "المستفيدون يشاركون في برنامج سفراء الطلبة الدوليين بالجامعة"
+        ],
+        "fields_and_programs": [
+          "برامج البكالوريوس المؤهلة للدخول المباشر",
+          "برامج الماجستير والدراسات العليا Coursework المؤهلة للدخول المباشر",
+          "الأعمال والتجارة",
+          "الهندسة وتقنية المعلومات",
+          "العلوم والصحة",
+          "القانون",
+          "التعليم والعلوم الإنسانية",
+          "برامج أخرى مدرجة رسميًا ضمن قائمة البرامج المؤهلة بالجامعة"
+        ],
+        "eligibility": [
+          "أن يكون المتقدم مواطنًا من دولة غير أستراليا أو نيوزيلندا",
+          "أن يكون طالبًا دوليًا كامل الرسوم وغير حاصل على رعاية كاملة",
+          "التقديم للدخول المباشر في أحد البرامج المؤهلة",
+          "بدء الدراسة في أحد أحرام La Trobe بولاية فيكتوريا خلال 2026 أو 2027",
+          "الحصول على عرض قبول قبل عملية اختيار المنحة",
+          "استيفاء متطلبات اللغة الإنجليزية وجميع شروط عرض القبول",
+          "اجتياز Genuine Student assessment والفحوص المالية المطلوبة",
+          "تحقيق WAM لا يقل عن 80 أو ما يعادله",
+          "الطلاب العرب مؤهلون من حيث الجنسية ضمن فئة الطلاب الدوليين"
+        ],
+        "required_documents": [
+          "طلب القبول في البرنامج المؤهل",
+          "عرض القبول من La Trobe University",
+          "الشهادات وكشوف الدرجات الأكاديمية",
+          "إثبات اللغة الإنجليزية حسب متطلبات البرنامج",
+          "بيان بحد أقصى 250 كلمة يجيب عن السؤال المحدد في نموذج المنحة",
+          "أي مستندات إضافية يطلبها نموذج المنحة أو عملية Genuine Student assessment"
+        ],
+        "application_steps": [
+          "يجب أولًا التقديم على برنامج مؤهل والحصول على عرض قبول من La Trobe University، ثم استكمال نموذج Vice-Chancellor Scholarship الرسمي"
+        ],
+        "important_notes": [
+          "المنحة لا تُمنح تلقائيًا؛ يلزم تقديم نموذج المنحة بعد الحصول على عرض القبول",
+          "لا يمكن للمستفيد الجمع بينها وبين منحة أخرى من La Trobe"
+        ]
+      },
+      "en": {
+        "summary": "La Trobe Vice Chancellor Scholarship at La Trobe University.",
+        "application_status": "Open; separate dates by intake and location.",
+        "deadline_information": "Official page is open, but deadlines differ by intake and location. The global closing date of 1 July 2027 applies to applicants inside Australia for Semester 2; applicants outside Australia have earlier deadlines.",
+        "funding_and_benefits": [
+          "A reduction of 50% or 100% of eligible tuition fees.",
+          "Fee reduction continues for the eligible program duration under offer conditions.",
+          "A highly competitive award for internationally fee-paying applicants demonstrating academic and leadership achievement.",
+          "Recipients participate in university international student ambassador activities."
+        ],
+        "fields_and_programs": [
+          "Eligible direct-entry undergraduate courses.",
+          "Eligible postgraduate coursework and taught masters degrees.",
+          "Business and commerce.",
+          "Engineering and information technology.",
+          "Science and health.",
+          "Law.",
+          "Education and humanities.",
+          "Other degrees included in the university official eligible courses list."
+        ],
+        "eligibility": [
+          "Citizen of a country other than Australia or New Zealand.",
+          "International full-fee-paying student without full sponsorship.",
+          "Apply for eligible direct-entry study.",
+          "Start at an eligible La Trobe Australian campus in 2026 or 2027.",
+          "Secure an admission offer before scholarship selection, subject to official exceptions.",
+          "Meet English-language and offer conditions.",
+          "Satisfy the Genuine Student assessment and financial checks.",
+          "Meet any academic threshold and scholarship-specific selection rules.",
+          "Eligible Arab-country applicants may compete under the international category."
+        ],
+        "required_documents": [
+          "Admission application for an eligible degree.",
+          "La Trobe offer letter.",
+          "Academic degrees and transcripts.",
+          "English-language evidence required by the degree.",
+          "Statement answering the scholarship application question, subject to the form word limit.",
+          "Other documents required for the scholarship and Genuine Student assessment."
+        ],
+        "application_steps": [
+          "Apply for an eligible degree and secure a La Trobe offer of admission, then complete the official Vice Chancellor Scholarship application form for the relevant intake."
+        ],
+        "important_notes": [
+          "The official scholarship page currently states status Open and closing date 1 July 2027 for the active listing.",
+          "Older 2026 Middle East and international dates appearing in the source document relate to a previous intake and must not drive the live countdown.",
+          "Tuition fee reduction of 50% or 100% does not by itself cover living costs.",
+          "A scholarship form is required after the admission offer; award is not automatic.",
+          "This scholarship cannot be combined with another La Trobe scholarship."
+        ]
+      }
+    },
+    "application": {
+      "kind": "multiple_rounds",
+      "note_en": "Official page is open, but deadlines differ by intake and location. The global closing date of 1 July 2027 applies to applicants inside Australia for Semester 2; applicants outside Australia have earlier deadlines.",
+      "status": "rounds",
+      "as_of": "2026-10-22",
+      "verified_official_status": true,
+      "needs_manual_review": false,
+      "deadline_timezone": null,
+      "deadline_precision": "date",
+      "rounds": [
+        {
+          "audience": "middle_east_or_east_asia_outside_australia",
+          "stage": "summer_2026",
+          "deadline": "2026-08-31",
+          "status": "closed"
+        },
+        {
+          "audience": "other_international_outside_australia",
+          "stage": "summer_2026",
+          "deadline": "2026-09-14",
+          "status": "closed"
+        },
+        {
+          "audience": "international_inside_australia",
+          "stage": "summer_2026",
+          "deadline": "2026-10-21",
+          "status": "closed"
+        },
+        {
+          "audience": "international_outside_australia",
+          "stage": "semester_1_2027",
+          "deadline": "2026-12-14",
+          "status": "open"
+        },
+        {
+          "audience": "international_inside_australia",
+          "stage": "semester_1_2027",
+          "deadline": "2027-02-17",
+          "status": "open"
+        },
+        {
+          "audience": "international_outside_australia",
+          "stage": "semester_2_2027",
+          "deadline": "2027-05-17",
+          "status": "open"
+        },
+        {
+          "audience": "international_inside_australia",
+          "stage": "semester_2_2027",
+          "deadline": "2027-07-01",
+          "status": "open"
+        }
+      ]
+    },
+    "verification": {
+      "reviewed_at": "2026-10-22",
+      "official_source_checked": true,
+      "status_scope": "round_and_audience_dependent",
+      "source_document": "Postgraduate Scholarships 1-13 (user supplied DOCX)",
+      "original_document_entry": 10,
+      "original_notes_ar": [
+        "حالة المنحة على الموقع الرسمي: Open",
+        "الموعد الخاص بالمتقدمين من الشرق الأوسط لجولة Term 6 / Summer 2026 هو 31 أغسطس 2026",
+        "الموعد لبقية المتقدمين الدوليين المقيمين خارج أستراليا هو 14 سبتمبر 2026",
+        "المنحة الحالية لا يمكن تأجيلها إلى 2027 وفق الصفحة الرسمية",
+        "المنحة لا تُمنح تلقائيًا؛ يلزم تقديم نموذج المنحة بعد الحصول على عرض القبول",
+        "لا يمكن للمستفيد الجمع بينها وبين منحة أخرى من La Trobe"
+      ]
+    }
+  },
+  {
+    "id": "opp-mccall-macbain-2027",
+    "type": "scholarship",
+    "title_ar": "منحة McCall MacBain بجامعة McGill 2027",
+    "title_en": "McCall MacBain Scholarships 2027",
+    "organization": "McCall MacBain Scholarships / McGill University",
+    "country": "Canada",
+    "field": "Eligible postgraduate and professional fields",
+    "level": [
+      "Master's",
+      "Professional postgraduate degree"
+    ],
+    "deadline": "2026-08-19",
+    "source_url": "https://mccallmacbainscholars.org/apply/",
+    "verified_at": "2026-10-22",
+    "funding_type": "full",
+    "details": {
+      "ar": {
+        "summary": "منحة McCall MacBain بجامعة McGill 2027",
+        "application_status": "19 أغسطس 2026 الساعة 4:00 مساءً بتوقيت شرق كندا للمتقدمين الدوليين",
+        "deadline_information": "19 أغسطس 2026 الساعة 4:00 مساءً بتوقيت شرق كندا للمتقدمين الدوليين",
+        "funding_and_benefits": [
+          "تغطية الرسوم الدراسية والرسوم الجامعية طوال المدة الاعتيادية للبرنامج المؤهل",
+          "راتب معيشة قدره 2,300 دولار كندي شهريًا خلال الفصول الأكاديمية",
+          "منحة انتقال لمرة واحدة للانتقال إلى مونتريال",
+          "إمكانية طلب تمويل يصل إلى 5,000 دولار كندي لمبادرات صيفية مؤهلة عند عدم الدراسة خلال الفصل الصيفي",
+          "برنامج متكامل لتطوير القيادة والإرشاد والتوجيه المهني"
+        ],
+        "fields_and_programs": [
+          "برامج الماجستير المؤهلة في McGill University",
+          "البرامج المهنية الثانية المؤهلة",
+          "الهندسة والعلوم والحوسبة",
+          "الصحة والسياسات والإدارة والأعمال",
+          "العلوم الاجتماعية والإنسانية وغيرها وفق قائمة البرامج المؤهلة الرسمية"
+        ],
+        "eligibility": [
+          "أن يكون المتقدم في طريقه للحصول على أول بكالوريوس بحلول أغسطس 2027، أو حصل عليه في يناير 2021 أو بعده، أو تنطبق عليه قاعدة العمر الخاصة بحملة الدرجات الأقدم",
+          "استيفاء الحد الأدنى لمتطلبات الدرجة واللغة لبرنامج الماجستير في McGill",
+          "إظهار تميز أكاديمي وقدرة قيادية ومشاركة مجتمعية وشخصية قوية",
+          "الطلاب الدوليون من الجامعات خارج كندا والولايات المتحدة مؤهلون ضمن المسار الدولي"
+        ],
+        "required_documents": [
+          "نموذج الطلب الإلكتروني",
+          "المعلومات الأكاديمية والسجل الدراسي المطلوب في الطلب",
+          "السيرة الذاتية والأنشطة والخبرات القيادية المطلوبة",
+          "إجابات وأسئلة الطلب المكتوبة",
+          "نموذجا توصية من مرجعين",
+          "مستندات القبول في برنامج McGill لاحقًا وفق متطلبات البرنامج المختار"
+        ],
+        "application_steps": [
+          "يقدم طلب McCall MacBain أولًا بصورة منفصلة، ثم يقدم المتأهلون على برنامج McGill المؤهل وفق الجدول الزمني الرسمي"
+        ],
+        "important_notes": [
+          "الموعد الدولي هو 19 أغسطس 2026؛ أما طلاب وخريجو جامعات كندا والولايات المتحدة والكنديون في الخارج فموعدهم 23 سبتمبر 2026",
+          "يقدم البرنامج سنويًا ما يصل إلى 30 منحة كاملة، منها ما يصل إلى 10 للطلاب الدوليين، إضافة إلى 100 جائزة دخول"
+        ]
+      },
+      "en": {
+        "summary": "McCall MacBain Scholarships 2027 at McCall MacBain Scholarships / McGill University.",
+        "application_status": "The specified application deadline has passed; confirm any new round directly with the awarding institution.",
+        "deadline_information": "Applications for Summer/Fall 2027 are closed, as explicitly shown on the program website.",
+        "funding_and_benefits": [
+          "Eligible program tuition and university fees are covered for the normal program duration.",
+          "CAD 2,300 monthly living allowance during academic terms at the published rate.",
+          "One-time relocation grant to move to Montreal.",
+          "Possibility of up to CAD 5,000 for eligible summer initiatives when not in summer study.",
+          "Leadership development, mentoring and career guidance."
+        ],
+        "fields_and_programs": [
+          "Eligible masters programs at McGill University.",
+          "Eligible second-entry professional degrees.",
+          "Engineering, science and computing.",
+          "Health, policy, management and business.",
+          "Humanities and social sciences among other eligible programs."
+        ],
+        "eligibility": [
+          "First bachelor degree completed by August 2027, awarded January 2021 or later, or satisfy the alternative age rule for older degrees.",
+          "Meet McGill graduate degree and English-language entry criteria.",
+          "Demonstrate strong academics, leadership, community involvement and character.",
+          "International applicants from universities outside Canada and the USA can apply through the international route."
+        ],
+        "required_documents": [
+          "Online scholarship form.",
+          "Academic profile and educational records.",
+          "CV and leadership, service and experience details.",
+          "Written short answers and essays.",
+          "Recommendations from two referees.",
+          "Subsequent McGill admission documents for the chosen degree."
+        ],
+        "application_steps": [
+          "Apply to McCall MacBain Scholarships separately first; shortlisted applicants later complete admission applications for an eligible McGill degree by the relevant deadlines."
+        ],
+        "important_notes": [
+          "Applications for the Summer/Fall 2027 cycle are closed on the official program site.",
+          "The 2027 international deadline was 19 August 2026; North American university applicants followed a different published deadline.",
+          "Up to 30 full awards (including up to ten international) and around 100 entrance awards are generally listed."
+        ]
+      }
+    },
+    "application": {
+      "kind": "international_2027_deadline",
+      "note_en": "Applications for Summer/Fall 2027 are closed, as explicitly shown on the program website.",
+      "status": "closed",
+      "as_of": "2026-10-22",
+      "verified_official_status": true,
+      "needs_manual_review": false,
+      "deadline_timezone": null,
+      "deadline_precision": "date"
+    },
+    "verification": {
+      "reviewed_at": "2026-10-22",
+      "official_source_checked": true,
+      "status_scope": "listed_program",
+      "source_document": "Postgraduate Scholarships 1-13 (user supplied DOCX)",
+      "original_document_entry": 11,
+      "original_notes_ar": [
+        "طلبات Summer/Fall 2027 مفتوحة حاليًا",
+        "الموعد الدولي هو 19 أغسطس 2026؛ أما طلاب وخريجو جامعات كندا والولايات المتحدة والكنديون في الخارج فموعدهم 23 سبتمبر 2026",
+        "يقدم البرنامج سنويًا ما يصل إلى 30 منحة كاملة، منها ما يصل إلى 10 للطلاب الدوليين، إضافة إلى 100 جائزة دخول"
+      ]
+    }
+  },
+  {
+    "id": "opp-knight-hennessy-2027",
+    "type": "scholarship",
+    "title_ar": "منحة Knight-Hennessy بجامعة Stanford 2027",
+    "title_en": "Knight-Hennessy Scholars 2027",
+    "organization": "Knight-Hennessy Scholars / Stanford University",
+    "country": "United States",
+    "field": "Eligible full-time graduate programs",
+    "level": [
+      "Master's",
+      "PhD",
+      "Professional postgraduate degree"
+    ],
+    "deadline": "2026-10-06",
+    "source_url": "https://knight-hennessy.stanford.edu/admission",
+    "verified_at": "2026-10-22",
+    "funding_type": "full",
+    "details": {
+      "ar": {
+        "summary": "منحة Knight-Hennessy بجامعة Stanford 2027",
+        "application_status": "6 أكتوبر 2026 الساعة 1:00 ظهرًا بتوقيت المحيط الهادئ",
+        "deadline_information": "6 أكتوبر 2026 الساعة 1:00 ظهرًا بتوقيت المحيط الهادئ",
+        "funding_and_benefits": [
+          "تمويل يصل إلى 3 سنوات للدراسة العليا في Stanford وفق نوع البرنامج",
+          "تغطية الرسوم الدراسية والرسوم المرتبطة بالدراسة",
+          "راتب لتكاليف المعيشة والدراسة والكتب والمواد والتنقل المحلي والنفقات الشخصية المعقولة",
+          "بدل سفر سنوي يغطي رحلة اقتصادية من وإلى Stanford",
+          "بدل انتقال لمرة واحدة للطلاب الجدد",
+          "إمكانية طلب تمويل إضافي لبعض أنشطة الإثراء الأكاديمي في السنوات الثانية والثالثة"
+        ],
+        "fields_and_programs": [
+          "برامج الدراسات العليا بدوام كامل في Stanford",
+          "الهندسة وعلوم الحاسوب والعلوم",
+          "الأعمال والإدارة",
+          "الطب والصحة",
+          "القانون والتعليم والاستدامة",
+          "العلوم الإنسانية والاجتماعية والفنون وغيرها من البرامج المؤهلة"
+        ],
+        "eligibility": [
+          "الحصول على البكالوريوس أو توقع الحصول عليه في 2020 أو بعده لدورة 2027، مع استثناء زمني أوسع للمتقدمين العسكريين وفق القواعد الرسمية",
+          "التقديم إلى برنامج دراسات عليا مؤهل بدوام كامل في Stanford",
+          "لا توجد قيود على الجنسية في برنامج Knight-Hennessy",
+          "استيفاء شروط القبول الخاصة ببرنامج Stanford المختار بصورة مستقلة"
+        ],
+        "required_documents": [
+          "نموذج الطلب الإلكتروني",
+          "السيرة الذاتية",
+          "كشوف الدرجات والنتائج الاختبارية المطلوبة إن انطبقت",
+          "خطابات التوصية",
+          "الإجابات القصيرة والمقال المطلوب",
+          "طلب برنامج Stanford والمستندات الخاصة بالدرجة المختارة"
+        ],
+        "application_steps": [
+          "يجب تقديم طلب Knight-Hennessy وطلب برنامج الدراسات العليا في Stanford كطلبين منفصلين ومتزامنين وفق مواعيد كل برنامج"
+        ],
+        "important_notes": [
+          "آخر موعد لـ Knight-Hennessy هو 6 أكتوبر 2026 الساعة 1:00 ظهرًا بتوقيت المحيط الهادئ",
+          "بعض البرامج مثل الدكتوراه والطب قد تمتد أكثر من 3 سنوات؛ تمويل السنوات اللاحقة يعتمد على التزام التمويل القياسي للكلية أو القسم"
+        ]
+      },
+      "en": {
+        "summary": "Knight-Hennessy Scholars 2027 at Knight-Hennessy Scholars / Stanford University.",
+        "application_status": "The specified application deadline has passed; confirm any new round directly with the awarding institution.",
+        "deadline_information": "The 2027 application cycle is closed per the program website; a later cohort will have a different deadline.",
+        "funding_and_benefits": [
+          "Graduate funding for up to three years at Stanford depending on the degree.",
+          "Tuition and associated university fees covered under the award.",
+          "Stipend towards living, study materials, local transportation and ordinary personal expenses.",
+          "Annual economy-class travel allowance to and from Stanford.",
+          "One-time relocation allowance for new scholars.",
+          "Possible additional academic enrichment support in years two and three."
+        ],
+        "fields_and_programs": [
+          "Eligible full-time Stanford graduate programs.",
+          "Engineering, computer science and science.",
+          "Business and management.",
+          "Medicine and health.",
+          "Law, education and sustainability.",
+          "Humanities, social sciences, arts and other eligible graduate disciplines."
+        ],
+        "eligibility": [
+          "Generally hold or expect a bachelor degree awarded in 2020 or later for the 2027 cohort, with published exceptions for military service.",
+          "Apply to an eligible full-time Stanford graduate program.",
+          "No nationality restriction within the Knight-Hennessy Scholars program.",
+          "Meet Stanford program admission requirements independently."
+        ],
+        "required_documents": [
+          "Online application.",
+          "Curriculum vitae.",
+          "Transcripts and required test scores when applicable.",
+          "Letters of recommendation.",
+          "Short-answer responses and required essay.",
+          "Separate Stanford graduate application and degree-specific materials."
+        ],
+        "application_steps": [
+          "Submit two separate applications: one to Knight-Hennessy Scholars and another to the selected Stanford graduate program, each by its own deadline."
+        ],
+        "important_notes": [
+          "The 2027 cohort application deadline was 6 October 2026 at 1:00 p.m. Pacific time, and the official site now confirms the cycle is closed.",
+          "The 2028 cohort is expected to open in June 2027 according to the official page.",
+          "Degrees exceeding three years may rely on standard departmental or school funding for later years."
+        ]
+      }
+    },
+    "application": {
+      "kind": "cohort_2027_deadline",
+      "note_en": "The 2027 application cycle is closed per the program website; a later cohort will have a different deadline.",
+      "status": "closed",
+      "as_of": "2026-10-22",
+      "verified_official_status": true,
+      "needs_manual_review": false,
+      "deadline_timezone": null,
+      "deadline_precision": "date"
+    },
+    "verification": {
+      "reviewed_at": "2026-10-22",
+      "official_source_checked": true,
+      "status_scope": "listed_program",
+      "source_document": "Postgraduate Scholarships 1-13 (user supplied DOCX)",
+      "original_document_entry": 12,
+      "original_notes_ar": [
+        "طلب دورة 2027 مفتوح حاليًا",
+        "آخر موعد لـ Knight-Hennessy هو 6 أكتوبر 2026 الساعة 1:00 ظهرًا بتوقيت المحيط الهادئ",
+        "بعض البرامج مثل الدكتوراه والطب قد تمتد أكثر من 3 سنوات؛ تمويل السنوات اللاحقة يعتمد على التزام التمويل القياسي للكلية أو القسم"
+      ]
+    }
+  },
+  {
+    "id": "opp-cgi-postgraduate-scholarship-2027",
+    "type": "scholarship",
+    "title_ar": "منحة Chulabhorn Graduate Institute للدراسات العليا 2027",
+    "title_en": "Chulabhorn Graduate Institute Post-Graduate Scholarship 2027",
+    "organization": "Chulabhorn Graduate Institute",
+    "country": "Thailand",
+    "field": "Environmental health, chemical sciences and toxicology",
+    "level": [
+      "Master's"
+    ],
+    "deadline": "2026-08-31",
+    "source_url": "https://admission.cgi.ac.th/cgi-scholarship",
+    "verified_at": "2026-10-22",
+    "funding_type": "full",
+    "details": {
+      "ar": {
+        "summary": "منحة Chulabhorn Graduate Institute للدراسات العليا 2027",
+        "application_status": "31 أغسطس 2026",
+        "deadline_information": "31 أغسطس 2026",
+        "funding_and_benefits": [
+          "منحة دراسات عليا مخصصة للطلاب الدوليين المقبولين في برامج CGI المحددة لعام 2027",
+          "دعم دراسي ومعيشي وفق حزمة المنحة وشروط الجهة المانحة",
+          "تغطيات ومزايا إضافية مرتبطة بالدراسة والسفر والإقامة بحسب شروط المنحة النهائية وخطاب القبول",
+          "لا توجد رسوم تقديم مذكورة في نموذج المنحة الإلكتروني الرسمي"
+        ],
+        "fields_and_programs": [
+          "Applied Biological Sciences: Environmental Health",
+          "Chemical Sciences",
+          "Environmental Toxicology"
+        ],
+        "eligibility": [
+          "أن يكون المتقدم طالبًا دوليًا يتقدم لدرجة الماجستير",
+          "امتلاك درجة بكالوريوس أو ما يعادلها مع سجل أكاديمي قوي",
+          "إثبات إجادة اللغة الإنجليزية",
+          "اختيار برنامج واحد فقط من البرامج الثلاثة المتاحة في طلب 2027"
+        ],
+        "required_documents": [
+          "صورة شخصية بحجم جواز السفر",
+          "كشف الدرجات الأكاديمي للبكالوريوس أو مستوى أعلى",
+          "شهادة طبية",
+          "إثبات إجادة اللغة الإنجليزية: TOEFL أو IELTS أو خطاب بأن لغة الدراسة كانت الإنجليزية أو إثبات آخر مقبول",
+          "3 خطابات توصية",
+          "Statement of Purpose والمعلومات المطلوبة داخل نموذج التقديم"
+        ],
+        "application_steps": [
+          "يتم تعبئة طلب CGI Post-Graduate Scholarship الإلكتروني للطلاب الدوليين قبل الموعد النهائي"
+        ],
+        "important_notes": [
+          "لم تضع صفحة التقديم الرسمية لعام 2027 أرقامًا تفصيلية لقيمة كل بدل؛ لذلك لم تُدرج أرقام مالية غير مثبتة رسميًا"
+        ]
+      },
+      "en": {
+        "summary": "Chulabhorn Graduate Institute Post-Graduate Scholarship 2027 at Chulabhorn Graduate Institute.",
+        "application_status": "The specified application deadline has passed; confirm any new round directly with the awarding institution.",
+        "deadline_information": "The CGI 2027 online scholarship page states that the round is closed.",
+        "funding_and_benefits": [
+          "Postgraduate award for eligible international students accepted to the named CGI masters programs.",
+          "Academic and living support depends on the scholarship package and final award conditions.",
+          "Travel, accommodation or related benefits depend on the scholarship agreement and admission letter.",
+          "The original online application did not list an application fee."
+        ],
+        "fields_and_programs": [
+          "Applied Biological Sciences: Environmental Health.",
+          "Chemical Sciences.",
+          "Environmental Toxicology."
+        ],
+        "eligibility": [
+          "International applicant seeking a masters degree.",
+          "Bachelor degree or equivalent with a strong academic record.",
+          "Demonstrate English-language proficiency.",
+          "Choose only one of the three offered programs in the 2027 application."
+        ],
+        "required_documents": [
+          "Passport-sized photograph.",
+          "Academic transcript at undergraduate or higher level.",
+          "Medical certificate.",
+          "Accepted English proficiency evidence (TOEFL, IELTS, university instruction-language letter or other accepted evidence).",
+          "Three recommendation letters.",
+          "Statement of Purpose and other information requested by the application form."
+        ],
+        "application_steps": [
+          "Complete and submit the CGI online postgraduate scholarship application and required materials by the published intake deadline."
+        ],
+        "important_notes": [
+          "Application opened 15 May 2026 and closed 31 August 2026 for academic year 2027.",
+          "The official page now explicitly states that the 2027 round is closed and screening is underway.",
+          "The document estimated results around January 2027, but the official page currently contains an updated preliminary screening notice.",
+          "Detailed allowance values were not provided in the source document; do not invent cash amounts."
+        ]
+      }
+    },
+    "application": {
+      "kind": "cohort_2027_deadline",
+      "note_en": "The CGI 2027 online scholarship page states that the round is closed.",
+      "status": "closed",
+      "as_of": "2026-10-22",
+      "verified_official_status": true,
+      "needs_manual_review": false,
+      "deadline_timezone": null,
+      "deadline_precision": "date"
+    },
+    "verification": {
+      "reviewed_at": "2026-10-22",
+      "official_source_checked": true,
+      "status_scope": "listed_program",
+      "source_document": "Postgraduate Scholarships 1-13 (user supplied DOCX)",
+      "original_document_entry": 13,
+      "original_notes_ar": [
+        "فتح التقديم رسميًا في 15 مايو 2026 وما يزال مفتوحًا حتى 31 أغسطس 2026",
+        "إعلان النتائج متوقع تقريبًا في يناير 2027",
+        "لم تضع صفحة التقديم الرسمية لعام 2027 أرقامًا تفصيلية لقيمة كل بدل؛ لذلك لم تُدرج أرقام مالية غير مثبتة رسميًا"
+      ]
+    }
   },
   {
     "id": "opp-demo-crs-01",

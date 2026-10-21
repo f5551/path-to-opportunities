@@ -13,7 +13,7 @@
 // Vite handles JSON imports natively — no server needed.
 // The file is included at build time and tree-shaken as an ES module.
 import rawData from "../../../opportunities.json" with { type: "json" };
-import { filterOpportunities, getScholarshipFilterOptions } from "../features/list.js";
+import { filterOpportunities, getScholarshipFilterOptions, buildSearchIndex } from "../features/list.js";
 
 /** @type {Array<object>} */
 let _all = [];
@@ -79,6 +79,7 @@ export function loadOpportunities() {
       if (rawData.length > 0 && _all.length !== rawData.length) {
         console.warn(`[Store] ${rawData.length - _all.length} invalid items were filtered out.`);
       }
+      buildSearchIndex(_all);
     } else {
       _all = [];
       _loadError = new Error("opportunities.json is not an array");

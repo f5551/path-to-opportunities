@@ -2,7 +2,8 @@
  * opportunities.js — Dedicated Directory & Filter Hub Controller
  *
  * Handles live search, tab switching, multi-criteria scholarship filters,
- * URL query parameters (?q=... & ?type=...), skeleton loading, and animations.
+ * status filtering, multi-strategy sorting, URL query parameters,
+ * skeleton loading, and micro-interaction animations.
  */
 
 import { initI18n, t } from "../lib/i18n.js";
@@ -24,6 +25,8 @@ const state = {
     level: "",
     field: "",
     fundingType: "",
+    status: "",
+    sort: "default",
   },
 };
 
@@ -42,6 +45,8 @@ const filterCountry = document.getElementById("filter-country");
 const filterLevel = document.getElementById("filter-level");
 const filterField = document.getElementById("filter-field");
 const filterFunding = document.getElementById("filter-funding");
+const filterStatus = document.getElementById("filter-status");
+const filterSort = document.getElementById("filter-sort");
 const resetScholarshipFiltersBtn = document.getElementById("reset-scholarship-filters");
 
 // ─── Render Functions ─────────────────────────────────────
@@ -106,19 +111,23 @@ function populateScholarshipFilters() {
   if (filterLevel) filterLevel.setAttribute("aria-label", t("scholarshipFilters.level"));
   if (filterField) filterField.setAttribute("aria-label", t("scholarshipFilters.field"));
   if (filterFunding) filterFunding.setAttribute("aria-label", t("scholarshipFilters.funding"));
+  if (filterStatus) filterStatus.setAttribute("aria-label", t("scholarshipFilters.status"));
+  if (filterSort) filterSort.setAttribute("aria-label", t("scholarshipFilters.sort"));
 
-  populateSelect(
+  populateLocalizedSelect(
     filterCountry,
     options.countries,
     state.scholarshipFilters.country,
-    t("scholarshipFilters.allCountries")
+    t("scholarshipFilters.allCountries"),
+    "countries"
   );
 
-  populateSelect(
+  populateLocalizedSelect(
     filterLevel,
     options.levels,
     state.scholarshipFilters.level,
-    t("scholarshipFilters.allLevels")
+    t("scholarshipFilters.allLevels"),
+    "levels"
   );
 
   populateSelect(
@@ -133,6 +142,14 @@ function populateScholarshipFilters() {
     options.fundingTypes,
     state.scholarshipFilters.fundingType
   );
+
+  if (filterStatus) {
+    filterStatus.value = state.scholarshipFilters.status || "";
+  }
+
+  if (filterSort) {
+    filterSort.value = state.scholarshipFilters.sort || "default";
+  }
 }
 
 function populateSelect(selectEl, values, currentValue, defaultLabel) {
@@ -149,6 +166,25 @@ function populateSelect(selectEl, values, currentValue, defaultLabel) {
     const opt = document.createElement("option");
     opt.value = val;
     opt.textContent = val;
+    if (val === current) opt.selected = true;
+    selectEl.appendChild(opt);
+  });
+}
+
+function populateLocalizedSelect(selectEl, values, currentValue, defaultLabel, translationNamespace) {
+  if (!selectEl) return;
+  const current = currentValue || "";
+  selectEl.innerHTML = "";
+
+  const defaultOpt = document.createElement("option");
+  defaultOpt.value = "";
+  defaultOpt.textContent = defaultLabel;
+  selectEl.appendChild(defaultOpt);
+
+  values.forEach((val) => {
+    const opt = document.createElement("option");
+    opt.value = val;
+    opt.textContent = t(`${translationNamespace}.${val}`, { defaultValue: val });
     if (val === current) opt.selected = true;
     selectEl.appendChild(opt);
   });
@@ -178,32 +214,76 @@ function resetScholarshipFilterState() {
   state.scholarshipFilters.level = "";
   state.scholarshipFilters.field = "";
   state.scholarshipFilters.fundingType = "";
+  state.scholarshipFilters.status = "";
+  state.scholarshipFilters.sort = "default";
 
   if (filterCountry) filterCountry.value = "";
   if (filterLevel) filterLevel.value = "";
   if (filterField) filterField.value = "";
   if (filterFunding) filterFunding.value = "";
-}
-
-async function applyFilters() {
-  const results = filter({
-    type: state.activeFilter,
-    query: state.searchQuery,
-    country: state.scholarshipFilters.country,
-    level: state.scholarshipFilters.level,
-    field: state.scholarshipFilters.field,
-    fundingType: state.scholarshipFilters.fundingType,
-  });
-
-  await animateGridRefresh(grid);
-  await renderOpportunities(results);
+  if (filterStatus) filterStatus.value = "";
+  if (filterSort) filterSort.value = "default";
 }
 
 // ─── URL Parameters Sync ──────────────────────────────────
+function syncUrlParams() {
+  try {
+    const url = new URL(window.location.href);
+
+    if (state.activeFilter && state.activeFilter !== "all") {
+      url.searchParams.set("type", state.activeFilter);
+    } else {
+      url.searchParams.delete("type");
+    }
+
+    if (state.searchQuery && state.searchQuery.trim()) {
+      url.searchParams.set("q", state.searchQuery.trim());
+    } else {
+      url.searchParams.delete("q");
+    }
+
+    if (state.activeFilter === "scholarship") {
+      const sf = state.scholarshipFilters;
+      if (sf.country) url.searchParams.set("country", sf.country);
+      else url.searchParams.delete("country");
+
+      if (sf.level) url.searchParams.set("level", sf.level);
+      else url.searchParams.delete("level");
+
+      if (sf.field) url.searchParams.set("field", sf.field);
+      else url.searchParams.delete("field");
+
+      if (sf.fundingType) url.searchParams.set("funding", sf.fundingType);
+      else url.searchParams.delete("funding");
+
+      if (sf.status && sf.status !== "all") url.searchParams.set("status", sf.status);
+      else url.searchParams.delete("status");
+
+      if (sf.sort && sf.sort !== "default") url.searchParams.set("sort", sf.sort);
+      else url.searchParams.delete("sort");
+    } else {
+      url.searchParams.delete("country");
+      url.searchParams.delete("level");
+      url.searchParams.delete("field");
+      url.searchParams.delete("funding");
+      url.searchParams.delete("status");
+      url.searchParams.delete("sort");
+    }
+
+    window.history.replaceState({}, "", url.toString());
+  } catch {}
+}
+
 function initFromUrlParams() {
   const params = new URLSearchParams(window.location.search);
   const q = params.get("q");
   const type = params.get("type");
+  const country = params.get("country");
+  const level = params.get("level");
+  const field = params.get("field");
+  const funding = params.get("funding");
+  const status = params.get("status");
+  const sort = params.get("sort");
 
   if (q) {
     state.searchQuery = q;
@@ -218,12 +298,38 @@ function initFromUrlParams() {
       tab.classList.toggle("active", match);
       tab.setAttribute("aria-selected", match ? "true" : "false");
     });
-
-    if (type === "scholarship") {
-      populateScholarshipFilters();
-      scholarshipFiltersWrap?.classList.remove("hidden");
-    }
   }
+
+  if (country) state.scholarshipFilters.country = country;
+  if (level) state.scholarshipFilters.level = level;
+  if (field) state.scholarshipFilters.field = field;
+  if (funding) state.scholarshipFilters.fundingType = funding;
+  if (status) state.scholarshipFilters.status = status;
+  if (sort) state.scholarshipFilters.sort = sort;
+
+  if (state.activeFilter === "scholarship") {
+    populateScholarshipFilters();
+    scholarshipFiltersWrap?.classList.remove("hidden");
+  }
+}
+
+async function applyFilters() {
+  const lang = document.documentElement.lang || "ar";
+  const results = filter({
+    type: state.activeFilter,
+    query: state.searchQuery,
+    country: state.scholarshipFilters.country,
+    level: state.scholarshipFilters.level,
+    field: state.scholarshipFilters.field,
+    fundingType: state.scholarshipFilters.fundingType,
+    status: state.scholarshipFilters.status,
+    sort: state.scholarshipFilters.sort,
+    lang,
+  });
+
+  syncUrlParams();
+  await animateGridRefresh(grid);
+  await renderOpportunities(results);
 }
 
 // ─── Wire Event Listeners ─────────────────────────────────
@@ -251,17 +357,6 @@ function wireEvents() {
         resetScholarshipFilterState();
       }
 
-      // Sync URL parameter seamlessly without reload
-      try {
-        const url = new URL(window.location.href);
-        if (newFilter === "all") {
-          url.searchParams.delete("type");
-        } else {
-          url.searchParams.set("type", newFilter);
-        }
-        window.history.replaceState({}, "", url.toString());
-      } catch {}
-
       await animateTabPress(tab);
       await applyFilters();
     });
@@ -282,6 +377,14 @@ function wireEvents() {
   });
   filterFunding?.addEventListener("change", (e) => {
     state.scholarshipFilters.fundingType = e.target.value;
+    applyFilters();
+  });
+  filterStatus?.addEventListener("change", (e) => {
+    state.scholarshipFilters.status = e.target.value;
+    applyFilters();
+  });
+  filterSort?.addEventListener("change", (e) => {
+    state.scholarshipFilters.sort = e.target.value;
     applyFilters();
   });
 
@@ -331,8 +434,7 @@ function wireEvents() {
 
     try {
       const url = new URL(window.location.href);
-      url.searchParams.delete("type");
-      url.searchParams.delete("q");
+      url.search = "";
       window.history.replaceState({}, "", url.pathname);
     } catch {}
 

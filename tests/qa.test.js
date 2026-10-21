@@ -18,6 +18,12 @@ import {
   escAttr,
 } from "../src/js/lib/searchUtils.js";
 import { formatDate } from "../src/js/lib/i18n.js";
+import {
+  parseCalendarDate,
+  getDayDiff,
+  getOpportunityStatus,
+} from "../src/js/lib/scholarshipStatus.js";
+import { getOrgInitials } from "../src/js/components/OpportunityCard.js";
 
 const results = [];
 function test(name, fn) {
@@ -331,6 +337,208 @@ test("3.2 getFeatured returns valid items up to requested limit", () => {
     assert.ok(isValidOpportunity(f));
     assert.ok(data.some((d) => d.id === f.id));
   });
+});
+
+test("3.3 Organization initials generator produces accurate 2-letter monograms", () => {
+  assert.strictEqual(getOrgInitials("University of Melbourne"), "UM");
+  assert.strictEqual(getOrgInitials("The University of Queensland"), "UQ");
+  assert.strictEqual(getOrgInitials("جامعة ملبورن"), "جم");
+  assert.strictEqual(getOrgInitials("RMIT University"), "RU");
+  assert.strictEqual(getOrgInitials("Harvard University"), "HU");
+  assert.strictEqual(getOrgInitials("Oxford"), "OX");
+  assert.strictEqual(getOrgInitials(""), "OP");
+});
+
+test("3.4 Calendar-accurate date diff calculation with zero timezone drift", () => {
+  const dateObj = parseCalendarDate("2026-12-14");
+  assert.ok(dateObj instanceof Date);
+  assert.strictEqual(dateObj.getUTCFullYear(), 2026);
+  assert.strictEqual(dateObj.getUTCMonth(), 11);
+  assert.strictEqual(dateObj.getUTCDate(), 14);
+
+  assert.strictEqual(parseCalendarDate("invalid-date"), null);
+  assert.strictEqual(getDayDiff(null), null);
+});
+
+test("3.5 Scholarship status engine correctly identifies states (automatic, rolling, rounds, closed)", () => {
+  const melbourne = data.find((d) => d.id === "opp-melbourne-research-scholarship");
+  assert.ok(melbourne, "Melbourne scholarship must exist");
+  const melbStatus = getOpportunityStatus(melbourne, "ar");
+  assert.strictEqual(melbStatus.code, "automatic");
+  assert.strictEqual(melbStatus.badgeClass, "status-auto");
+  assert.strictEqual(melbStatus.canApply, true);
+
+  const otago = data.find((d) => d.id === "opp-otago-doctoral-scholarship");
+  assert.ok(otago, "Otago scholarship must exist");
+  const otagoStatus = getOpportunityStatus(otago, "ar");
+  assert.strictEqual(otagoStatus.code, "rolling");
+  assert.strictEqual(otagoStatus.badgeClass, "status-rolling");
+  assert.strictEqual(otagoStatus.canApply, true);
+
+  const closedHennessy = data.find((d) => d.id === "opp-knight-hennessy-2027");
+  assert.ok(closedHennessy, "Knight-Hennessy scholarship must exist");
+  const hennessyStatus = getOpportunityStatus(closedHennessy, "ar");
+  assert.strictEqual(hennessyStatus.isClosed, true);
+  assert.strictEqual(hennessyStatus.badgeClass, "status-closed");
+
+  const deakin = data.find((d) => d.id === "opp-deakin-rtp-duprs-2027");
+  assert.ok(deakin, "Deakin scholarship must exist");
+  const deakinStatus = getOpportunityStatus(deakin, "ar");
+  assert.strictEqual(deakinStatus.code, "rounds_closed");
+  assert.strictEqual(deakinStatus.isClosed, true);
+});
+
+// ─── 5. AUDIT, INDEXING & SMART RANKING ─────────────────
+
+test("5.1 Exactly 13 verified real scholarships and 4 demo scholarships", () => {
+  const scholarships = data.filter((d) => d.type === "scholarship");
+  const demoScholarships = scholarships.filter(
+    (s) => s.id.includes("demo") || s.title_ar.includes("تجريبي") || s.source_url.includes("example.org")
+  );
+  const realScholarships = scholarships.filter((s) => !demoScholarships.includes(s));
+
+  assert.strictEqual(realScholarships.length, 13, "Must contain exactly 13 real scholarships");
+  assert.strictEqual(demoScholarships.length, 4, "Must contain exactly 4 demo scholarships");
+
+  // Every real scholarship must have https source_url not pointing to example.org
+  realScholarships.forEach((s) => {
+    assert.ok(s.source_url.startsWith("https://"));
+    assert.ok(!s.source_url.includes("example.org"));
+    assert.ok(s.details?.ar?.summary, `Real scholarship ${s.id} must have Arabic summary`);
+    assert.ok(s.details?.en?.summary, `Real scholarship ${s.id} must have English summary`);
+  });
+});
+
+test("5.2 Zero duplicate scholarships across IDs, titles, universities, and official URLs", () => {
+  const realScholarships = data.filter(
+    (d) => d.type === "scholarship" && !d.id.includes("demo")
+  );
+  const ids = new Set();
+  const titlesAr = new Set();
+  const titlesEn = new Set();
+  const urls = new Set();
+
+  realScholarships.forEach((s) => {
+    assert.ok(!ids.has(s.id), `Duplicate ID: ${s.id}`);
+    ids.add(s.id);
+
+    assert.ok(!titlesAr.has(s.title_ar), `Duplicate title_ar: ${s.title_ar}`);
+    titlesAr.add(s.title_ar);
+
+    assert.ok(!titlesEn.has(s.title_en), `Duplicate title_en: ${s.title_en}`);
+    titlesEn.add(s.title_en);
+
+    assert.ok(!urls.has(s.source_url), `Duplicate official URL: ${s.source_url}`);
+    urls.add(s.source_url);
+  });
+});
+
+test("5.3 In-memory search index matches localized countries, degree levels, and research fields", () => {
+  // Searching "أستراليا" should return Australian scholarships
+  const ausResults = filter({ type: "scholarship", query: "أستراليا" });
+  assert.ok(ausResults.length >= 7, "Search for أستراليا should match Australian scholarships");
+  ausResults.forEach((r) => assert.strictEqual(r.country, "Australia"));
+
+  // Searching "دكتوراه" should return PhD scholarships
+  const phdResults = filter({ type: "scholarship", query: "دكتوراه" });
+  assert.ok(phdResults.length >= 8, "Search for دكتوراه should match PhD level scholarships");
+
+  // Searching "الذكاء الاصطناعي" should match Tasmania GenAI scholarship
+  const aiResults = filter({ type: "scholarship", query: "الذكاء الاصطناعي" });
+  assert.ok(aiResults.some((r) => r.id === "opp-tasmania-genai-source-code-phd-2027"));
+
+  // Searching "Stanford" should match Knight-Hennessy
+  const stanfordResults = filter({ type: "scholarship", query: "Stanford" });
+  assert.ok(stanfordResults.some((r) => r.id === "opp-knight-hennessy-2027"));
+});
+
+test("5.4 Status filter accurately partitions opportunities (open, closed, review)", () => {
+  const openOpps = filter({ type: "scholarship", status: "open" });
+  const closedOpps = filter({ type: "scholarship", status: "closed" });
+  const reviewOpps = filter({ type: "scholarship", status: "review" });
+
+  assert.ok(openOpps.length > 0, "Should have open scholarships");
+  assert.ok(closedOpps.length > 0, "Should have closed scholarships");
+  assert.ok(reviewOpps.length > 0, "Should have scholarships needing review");
+
+  openOpps.forEach((o) => {
+    const st = getOpportunityStatus(o, "ar");
+    assert.strictEqual(st.isClosed, false, `Open opp ${o.id} should not be marked closed`);
+  });
+
+  closedOpps.forEach((o) => {
+    const st = getOpportunityStatus(o, "ar");
+    assert.strictEqual(st.isClosed, true, `Closed opp ${o.id} must be marked closed`);
+  });
+});
+
+test("5.5 Multi-strategy sorting orders results accurately", () => {
+  // Default sorting: Open with upcoming deadline first, closed last
+  const defaultSorted = filter({ type: "scholarship", sort: "default" });
+  const firstClosedIdx = defaultSorted.findIndex((o) => getOpportunityStatus(o, "ar").isClosed);
+  const lastOpenIdx = defaultSorted.findLastIndex((o) => !getOpportunityStatus(o, "ar").isClosed);
+  assert.ok(firstClosedIdx > lastOpenIdx, "Closed opportunities must appear after open opportunities in default sort");
+
+  // Name sorting: alphabetical by title_ar
+  const nameSorted = filter({ type: "scholarship", sort: "name", lang: "ar" });
+  for (let i = 0; i < nameSorted.length - 1; i++) {
+    const titleA = nameSorted[i].title_ar;
+    const titleB = nameSorted[i + 1].title_ar;
+    assert.ok(titleA.localeCompare(titleB, "ar") <= 0, `Alphabetical mismatch: "${titleA}" after "${titleB}"`);
+  }
+
+  // Newest sorting: verified_at descending
+  const newestSorted = filter({ type: "scholarship", sort: "newest" });
+  for (let i = 0; i < newestSorted.length - 1; i++) {
+    const vA = newestSorted[i].verified_at || "";
+    const vB = newestSorted[i + 1].verified_at || "";
+    assert.ok(vA >= vB, `Date mismatch in newest sort: ${vA} < ${vB}`);
+  }
+});
+
+test("5.6 Dynamic temporal thresholds for scholarship statuses", () => {
+  const dummyOpp = (deadline, app = null) => ({
+    id: "opp-test",
+    type: "scholarship",
+    title_ar: "منحة تجريبية",
+    title_en: "Test Scholarship",
+    organization: "Test Org",
+    country: "Australia",
+    field: "Computer Science",
+    level: "PhD",
+    funding_type: "full",
+    deadline,
+    verified_at: "2026-10-22",
+    application: app,
+  });
+
+  const now = new Date();
+  const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+
+  // Today deadline
+  const todayStatus = getOpportunityStatus(dummyOpp(todayStr), "ar");
+  assert.strictEqual(todayStatus.code, "today");
+  assert.strictEqual(todayStatus.badgeText, "آخر يوم للتقديم");
+  assert.strictEqual(todayStatus.daysRemaining, 0);
+
+  // 3 days left
+  const in3Days = new Date(now.getTime() + 3 * 24 * 60 * 60 * 1000);
+  const in3DaysStr = `${in3Days.getFullYear()}-${String(in3Days.getMonth() + 1).padStart(2, "0")}-${String(in3Days.getDate()).padStart(2, "0")}`;
+  const urgentStatus = getOpportunityStatus(dummyOpp(in3DaysStr), "ar");
+  assert.strictEqual(urgentStatus.code, "closing_soon");
+  assert.strictEqual(urgentStatus.isUrgent, true);
+
+  // 30 days left
+  const in30Days = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000);
+  const in30DaysStr = `${in30Days.getFullYear()}-${String(in30Days.getMonth() + 1).padStart(2, "0")}-${String(in30Days.getDate()).padStart(2, "0")}`;
+  const openStatus = getOpportunityStatus(dummyOpp(in30DaysStr), "ar");
+  assert.strictEqual(openStatus.code, "open");
+  assert.strictEqual(openStatus.daysRemaining, 30);
+
+  // Past deadline
+  const pastStatus = getOpportunityStatus(dummyOpp("2025-01-01"), "ar");
+  assert.strictEqual(pastStatus.code, "closed");
+  assert.strictEqual(pastStatus.isClosed, true);
 });
 
 console.log("\n==========================================");
