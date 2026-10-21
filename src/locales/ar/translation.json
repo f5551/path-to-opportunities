@@ -17,7 +17,19 @@
       "closeMenu": "إغلاق القائمة",
       "favorites": "المفضلة",
       "notifications": "الإشعارات",
-      "soon": "قريبًا"
+      "soon": "قريبًا",
+      "language": "اللغة",
+      "switchLang": "تغيير اللغة",
+      "langAr": "العربية",
+      "langEn": "English"
+    },
+    "meta": {
+      "homeTitle": "طريق الفرص | PATH TO OPPORTUNITIES",
+      "opportunitiesTitle": "دليل الفرص | طريق الفرص",
+      "guideTitle": "دليل التقديم الشامل | طريق الفرص",
+      "detailTitle": "تفاصيل الفرصة | طريق الفرص",
+      "loginTitle": "تسجيل الدخول | طريق الفرص",
+      "registerTitle": "إنشاء حساب جديد | طريق الفرص"
     },
     "hero": {
       "badge": "منصة تعليمية متخصصة ومجانية 100%",

@@ -17,7 +17,19 @@
       "closeMenu": "Close Menu",
       "favorites": "Favorites",
       "notifications": "Notifications",
-      "soon": "Soon"
+      "soon": "Soon",
+      "language": "Language",
+      "switchLang": "Switch Language",
+      "langAr": "العربية",
+      "langEn": "English"
+    },
+    "meta": {
+      "homeTitle": "PATH TO OPPORTUNITIES | Educational & Career Hub",
+      "opportunitiesTitle": "Opportunities Directory | PATH TO OPPORTUNITIES",
+      "guideTitle": "Application Guide | PATH TO OPPORTUNITIES",
+      "detailTitle": "Opportunity Details | PATH TO OPPORTUNITIES",
+      "loginTitle": "Sign In | PATH TO OPPORTUNITIES",
+      "registerTitle": "Create Account | PATH TO OPPORTUNITIES"
     },
     "hero": {
       "badge": "100% Free Specialized Educational Discovery Platform",

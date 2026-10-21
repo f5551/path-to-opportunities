@@ -56,7 +56,8 @@ export async function initI18n() {
  * - Updates <html lang> and <html dir>
  * - Re-renders all data-i18n elements
  * - Updates placeholder text
- * - Updates aria-labels on lang toggle
+ * - Updates dynamic page title
+ * - Updates language switcher UI
  */
 export function applyLang(lang) {
   const html = document.documentElement;
@@ -78,24 +79,88 @@ export function applyLang(lang) {
     if (text && text !== key) el.placeholder = text;
   });
 
-  // aria-label on lang toggle button
-  const langToggle = document.getElementById("lang-toggle");
-  if (langToggle) {
-    langToggle.setAttribute(
-      "aria-label",
-      lang === "ar" ? "Switch to English" : "التبديل إلى العربية"
-    );
+  // Dynamic document title update (fallback/default for each page)
+  updateDocumentTitle();
+
+  // Update all language switcher triggers, menus, and drawer buttons
+  updateLangSwitcherUI(lang);
+}
+
+/**
+ * Updates document.title using localized meta titles
+ */
+function updateDocumentTitle() {
+  const path = window.location.pathname.toLowerCase();
+  let titleKey = "meta.homeTitle";
+  if (path.includes("opportunities.html")) {
+    titleKey = "meta.opportunitiesTitle";
+  } else if (path.includes("guide.html")) {
+    titleKey = "meta.guideTitle";
+  } else if (path.includes("login.html")) {
+    titleKey = "meta.loginTitle";
+  } else if (path.includes("register.html")) {
+    titleKey = "meta.registerTitle";
+  } else if (path.includes("detail.html")) {
+    titleKey = "meta.detailTitle";
   }
+  const translated = i18next.t(titleKey);
+  if (translated && translated !== titleKey) {
+    document.title = translated;
+  }
+}
+
+/**
+ * Synchronize all language switcher widgets across the document
+ */
+export function updateLangSwitcherUI(lang) {
+  const switchers = document.querySelectorAll(".lang-switcher");
+  switchers.forEach((switcher) => {
+    const trigger = switcher.querySelector(".lang-btn");
+    const currentLabel = switcher.querySelector(".lang-current-label");
+    if (currentLabel) {
+      currentLabel.textContent = lang === "ar" ? "العربية" : "English";
+    }
+    if (trigger) {
+      trigger.setAttribute(
+        "aria-label",
+        lang === "ar"
+          ? "تغيير اللغة (الحالية: العربية)"
+          : "Select language (Current: English)"
+      );
+    }
+
+    const options = switcher.querySelectorAll(".lang-option");
+    options.forEach((opt) => {
+      const isSelected = opt.dataset.langValue === lang;
+      opt.setAttribute("aria-selected", isSelected ? "true" : "false");
+      opt.classList.toggle("active", isSelected);
+    });
+  });
+
+  const drawerBtns = document.querySelectorAll(".drawer-lang-btn");
+  drawerBtns.forEach((btn) => {
+    const isSelected = btn.dataset.langValue === lang;
+    btn.setAttribute("aria-pressed", isSelected ? "true" : "false");
+    btn.classList.toggle("active", isSelected);
+  });
+}
+
+/** Switch specifically to target language */
+export async function setLanguage(next) {
+  if (!SUPPORTED.includes(next)) return i18next.language;
+  if (i18next.language !== next) {
+    await i18next.changeLanguage(next);
+    saveLang(next);
+  }
+  applyLang(next);
+  return next;
 }
 
 /** Switch to the other language */
 export async function toggleLang() {
   const current = i18next.language;
   const next = current === "ar" ? "en" : "ar";
-  await i18next.changeLanguage(next);
-  saveLang(next);
-  applyLang(next);
-  return next;
+  return setLanguage(next);
 }
 
 /** Convenience: translate a key */

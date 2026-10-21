@@ -48,16 +48,65 @@
             <a href="register.html" class="btn-auth-primary" data-i18n="nav.register">إنشاء حساب</a>
           </div>
 
-          <!-- Language switch -->
-          <button
-            id="lang-toggle"
-            class="btn-lang"
-            aria-label="Switch language / تغيير اللغة"
-            type="button"
-          >
-            <span class="lang-label-ar" data-lang-show="ar">EN</span>
-            <span class="lang-label-en" data-lang-show="en">AR</span>
-          </button>
+          <!-- Language Switcher Dropdown -->
+          <div class="lang-switcher" id="lang-switcher-header">
+            <button
+              id="lang-toggle"
+              class="lang-btn"
+              type="button"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+              aria-controls="lang-menu-header"
+              aria-label="تغيير اللغة (الحالية: العربية)"
+            >
+              <svg class="lang-icon-globe" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+                <path d="M2 12h20"/>
+              </svg>
+              <span class="lang-current-label">العربية</span>
+              <svg class="lang-icon-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m6 9 6 6 6-6"/>
+              </svg>
+            </button>
+
+            <ul
+              id="lang-menu-header"
+              class="lang-menu"
+              role="listbox"
+              aria-labelledby="lang-toggle"
+              tabindex="-1"
+            >
+              <li role="none">
+                <button
+                  type="button"
+                  role="option"
+                  class="lang-option active"
+                  data-lang-value="ar"
+                  aria-selected="true"
+                >
+                  <span class="lang-opt-name">العربية</span>
+                  <svg class="lang-opt-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </button>
+              </li>
+              <li role="none">
+                <button
+                  type="button"
+                  role="option"
+                  class="lang-option"
+                  data-lang-value="en"
+                  aria-selected="false"
+                >
+                  <span class="lang-opt-name">English</span>
+                  <svg class="lang-opt-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </button>
+              </li>
+            </ul>
+          </div>
 
           <!-- Mobile Hamburger Toggle -->
           <button
@@ -99,6 +148,40 @@
           <li><a href="guide.html" class="drawer-nav-link" data-i18n="nav.guide">دليل التقديم</a></li>
           <li><a href="index.html#about" class="drawer-nav-link" data-i18n="nav.about">عن المنصة</a></li>
         </ul>
+
+        <!-- Drawer Language Switcher -->
+        <div class="drawer-lang-section">
+          <div class="drawer-lang-title">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>
+            </svg>
+            <span data-i18n="nav.language">اللغة</span>
+          </div>
+          <div class="drawer-lang-toggle" role="group" aria-label="اختيار لغة العرض">
+            <button
+              type="button"
+              class="drawer-lang-btn active"
+              data-lang-value="ar"
+              aria-pressed="true"
+            >
+              <span>العربية</span>
+              <svg class="lang-opt-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </button>
+            <button
+              type="button"
+              class="drawer-lang-btn"
+              data-lang-value="en"
+              aria-pressed="false"
+            >
+              <span>English</span>
+              <svg class="lang-opt-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </button>
+          </div>
+        </div>
 
         <div class="drawer-auth-section">
           <a href="login.html" class="btn-auth-link" style="justify-content: center;" data-i18n="nav.login">تسجيل الدخول</a>

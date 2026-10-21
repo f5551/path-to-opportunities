@@ -5,7 +5,7 @@
  * and seamless language switching across all 6 pages.
  */
 
-import { toggleLang } from "./i18n.js";
+import { toggleLang, setLanguage } from "./i18n.js";
 
 /**
  * Initialize shared navigation interactions on any page
@@ -15,16 +15,8 @@ import { toggleLang } from "./i18n.js";
 export function initNav(options = {}) {
   const { onLangChange } = options;
 
-  // 1. Language Toggle Buttons (desktop + mobile)
-  const langToggleBtns = document.querySelectorAll(".btn-lang, #lang-toggle, #mobile-lang-toggle");
-  langToggleBtns.forEach((btn) => {
-    btn.addEventListener("click", async () => {
-      const newLang = await toggleLang();
-      if (typeof onLangChange === "function") {
-        await onLangChange(newLang);
-      }
-    });
-  });
+  // 1. Language Switcher Dropdown & Mobile Segmented Controls
+  initLanguageSwitchers(onLangChange);
 
   // 2. Mobile Drawer Elements
   const menuToggleBtn = document.getElementById("mobile-menu-toggle");
@@ -124,6 +116,154 @@ function highlightActiveNavLinks() {
     } else {
       link.classList.remove("active");
       link.removeAttribute("aria-current");
+    }
+  });
+}
+
+/**
+ * Initialize accessible dropdown and drawer language switcher components
+ */
+function initLanguageSwitchers(onLangChange) {
+  const switchers = document.querySelectorAll(".lang-switcher");
+
+  switchers.forEach((switcher) => {
+    const trigger = switcher.querySelector(".lang-btn, #lang-toggle");
+    const menu = switcher.querySelector(".lang-menu");
+    const options = Array.from(switcher.querySelectorAll(".lang-option"));
+
+    if (!trigger) return;
+
+    // Fallback if no dropdown menu attached
+    if (!menu || options.length === 0) {
+      trigger.addEventListener("click", async () => {
+        const newLang = await toggleLang();
+        if (typeof onLangChange === "function") {
+          await onLangChange(newLang);
+        }
+      });
+      return;
+    }
+
+    function openMenu() {
+      closeAllLangMenus();
+      switcher.classList.add("open");
+      trigger.setAttribute("aria-expanded", "true");
+      // Focus currently selected option or first option
+      const activeOpt =
+        options.find((o) => o.getAttribute("aria-selected") === "true") ||
+        options[0];
+      activeOpt?.focus();
+    }
+
+    function closeMenu(returnFocus = false) {
+      if (!switcher.classList.contains("open")) return;
+      switcher.classList.remove("open");
+      trigger.setAttribute("aria-expanded", "false");
+      if (returnFocus) {
+        trigger.focus();
+      }
+    }
+
+    // Toggle menu on trigger click
+    trigger.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isOpen = switcher.classList.contains("open");
+      if (isOpen) {
+        closeMenu(false);
+      } else {
+        openMenu();
+      }
+    });
+
+    // Keyboard trigger: ArrowDown / ArrowUp / Enter / Space opens menu
+    trigger.addEventListener("keydown", (e) => {
+      if (
+        e.key === "ArrowDown" ||
+        e.key === "ArrowUp" ||
+        e.key === "Enter" ||
+        e.key === " "
+      ) {
+        e.preventDefault();
+        openMenu();
+      }
+    });
+
+    // Options selection and keyboard navigation
+    options.forEach((opt, idx) => {
+      opt.addEventListener("click", async (e) => {
+        e.stopPropagation();
+        const targetLang = opt.dataset.langValue;
+        closeMenu(true);
+        if (targetLang) {
+          const newLang = await setLanguage(targetLang);
+          if (typeof onLangChange === "function") {
+            await onLangChange(newLang);
+          }
+        }
+      });
+
+      opt.addEventListener("keydown", async (e) => {
+        if (e.key === "ArrowDown") {
+          e.preventDefault();
+          const nextIdx = (idx + 1) % options.length;
+          options[nextIdx]?.focus();
+        } else if (e.key === "ArrowUp") {
+          e.preventDefault();
+          const prevIdx = (idx - 1 + options.length) % options.length;
+          options[prevIdx]?.focus();
+        } else if (e.key === "Home") {
+          e.preventDefault();
+          options[0]?.focus();
+        } else if (e.key === "End") {
+          e.preventDefault();
+          options[options.length - 1]?.focus();
+        } else if (e.key === "Escape") {
+          e.preventDefault();
+          closeMenu(true);
+        } else if (e.key === "Tab") {
+          closeMenu(false);
+        }
+      });
+    });
+  });
+
+  // Drawer segmented language buttons
+  const drawerLangBtns = document.querySelectorAll(".drawer-lang-btn");
+  drawerLangBtns.forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      const targetLang = btn.dataset.langValue;
+      if (targetLang) {
+        const newLang = await setLanguage(targetLang);
+        if (typeof onLangChange === "function") {
+          await onLangChange(newLang);
+        }
+      }
+    });
+  });
+
+  // Click outside to close open menus
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".lang-switcher")) {
+      closeAllLangMenus(false);
+    }
+  });
+
+  // Global ESC to close any open language menu
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeAllLangMenus(true);
+    }
+  });
+}
+
+function closeAllLangMenus(returnFocus = false) {
+  const openMenus = document.querySelectorAll(".lang-switcher.open");
+  openMenus.forEach((switcher) => {
+    switcher.classList.remove("open");
+    const trigger = switcher.querySelector(".lang-btn, #lang-toggle");
+    trigger?.setAttribute("aria-expanded", "false");
+    if (returnFocus) {
+      trigger?.focus();
     }
   });
 }

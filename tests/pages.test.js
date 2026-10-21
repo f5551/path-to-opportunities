@@ -89,6 +89,18 @@ test("4.5 Canonical opportunities.json exists at root and is valid JSON array", 
   assert.ok(fs.existsSync("opportunities.schema.json"), "opportunities.schema.json must exist");
 });
 
+test("4.6 Accessible Language Switcher Dropdown exists across all pages", () => {
+  PAGES.forEach(({ file }) => {
+    const content = fs.readFileSync(file, "utf8");
+    assert.ok(content.includes('class="lang-switcher"'), `Page ${file} must include .lang-switcher`);
+    assert.ok(content.includes('aria-haspopup="listbox"'), `Page ${file} must have aria-haspopup="listbox"`);
+    assert.ok(content.includes('class="lang-menu"'), `Page ${file} must include .lang-menu dropdown`);
+    assert.ok(content.includes('role="listbox"'), `Page ${file} must have role="listbox"`);
+    assert.ok(content.includes('role="option"'), `Page ${file} must have role="option"`);
+    assert.ok(content.includes('class="drawer-lang-section"'), `Page ${file} must include .drawer-lang-section in mobile drawer`);
+  });
+});
+
 console.log("\n==========================================");
 const failed = results.filter((r) => r.status === "FAIL");
 if (failed.length === 0) {
