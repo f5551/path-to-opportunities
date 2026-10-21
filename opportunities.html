@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="دليل الفرص — استكشف وابحث في قاعدة بيانات المنح الدراسية والدورات المجانية وفرص التدريب المهني" />
+    <meta name="theme-color" content="#0F766E" />
+    <title>دليل الفرص | طريق الفرص</title>
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+
+    <!-- Skip Navigation -->
+    <a href="#main-content" class="skip-link" data-i18n="skipToContent">تخطى إلى المحتوى الرئيسي</a>
+
+    <!-- ========== HEADER ========== -->
+    <header class="site-header" role="banner">
+      <div class="header-inner container">
+
+        <!-- Brand -->
+        <a href="index.html" class="brand" aria-label="طريق الفرص — الصفحة الرئيسية">
+          <span class="brand-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="28" height="28" rx="8" fill="#0F766E"/>
+              <path d="M7 21L14 7L21 21" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M9.5 16.5H18.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="brand-name">
+            <span class="brand-ar" data-lang-show="ar">طريق الفرص</span>
+            <span class="brand-en" data-lang-show="en">PATH TO OPP.</span>
+          </span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="desktop-nav" aria-label="التنقل الرئيسي">
+          <a href="index.html" class="nav-link" data-i18n="nav.home">الرئيسية</a>
+          <a href="opportunities.html" class="nav-link active" aria-current="page" data-i18n="nav.opportunities">دليل الفرص</a>
+          <a href="opportunities.html?type=scholarship" class="nav-link" data-i18n="nav.scholarships">المنح الدراسية</a>
+          <a href="opportunities.html?type=course" class="nav-link" data-i18n="nav.courses">الدورات المجانية</a>
+          <a href="opportunities.html?type=internship" class="nav-link" data-i18n="nav.internships">التدريب المهني</a>
+          <a href="guide.html" class="nav-link" data-i18n="nav.guide">دليل التقديم</a>
+          <a href="index.html#about" class="nav-link" data-i18n="nav.about">عن المنصة</a>
+        </nav>
+
+        <!-- Header Actions -->
+        <div class="header-actions">
+          <!-- Auth buttons (Desktop) -->
+          <div class="nav-auth-group">
+            <a href="login.html" class="btn-auth-link" data-i18n="nav.login">تسجيل الدخول</a>
+            <a href="register.html" class="btn-auth-primary" data-i18n="nav.register">إنشاء حساب</a>
+          </div>
+
+          <!-- Language switch -->
+          <button
+            id="lang-toggle"
+            class="btn-lang"
+            aria-label="Switch language / تغيير اللغة"
+            type="button"
+          >
+            <span class="lang-label-ar" data-lang-show="ar">EN</span>
+            <span class="lang-label-en" data-lang-show="en">AR</span>
+          </button>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button
+            id="mobile-menu-toggle"
+            class="btn-menu-toggle"
+            type="button"
+            aria-label="فتح القائمة الرئيسية"
+            aria-expanded="false"
+            aria-controls="mobile-drawer"
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- ========== MOBILE DRAWER ========== -->
+    <div id="mobile-drawer" class="mobile-drawer hidden" role="dialog" aria-modal="true" aria-label="قائمة التنقل">
+      <div id="drawer-backdrop" class="drawer-backdrop"></div>
+      <div class="drawer-panel">
+        <div class="drawer-header">
+          <span class="brand-name">
+            <span class="brand-ar" data-lang-show="ar">طريق الفرص</span>
+            <span class="brand-en" data-lang-show="en">PATH TO OPP.</span>
+          </span>
+          <button id="drawer-close-btn" class="drawer-close-btn" type="button" aria-label="إغلاق القائمة">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/>
+            </svg>
+          </button>
+        </div>
+
+        <ul class="drawer-nav-list">
+          <li><a href="index.html" class="drawer-nav-link" data-i18n="nav.home">الرئيسية</a></li>
+          <li><a href="opportunities.html" class="drawer-nav-link active" data-i18n="nav.opportunities">دليل الفرص</a></li>
+          <li><a href="opportunities.html?type=scholarship" class="drawer-nav-link" data-i18n="nav.scholarships">المنح الدراسية</a></li>
+          <li><a href="opportunities.html?type=course" class="drawer-nav-link" data-i18n="nav.courses">الدورات المجانية</a></li>
+          <li><a href="opportunities.html?type=internship" class="drawer-nav-link" data-i18n="nav.internships">التدريب المهني</a></li>
+          <li><a href="guide.html" class="drawer-nav-link" data-i18n="nav.guide">دليل التقديم</a></li>
+          <li><a href="index.html#about" class="drawer-nav-link" data-i18n="nav.about">عن المنصة</a></li>
+        </ul>
+
+        <div class="drawer-auth-section">
+          <a href="login.html" class="btn-auth-link" style="justify-content: center;" data-i18n="nav.login">تسجيل الدخول</a>
+          <a href="register.html" class="btn-auth-primary" style="justify-content: center;" data-i18n="nav.register">إنشاء حساب جديد</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== MAIN ========== -->
+    <main id="main-content" tabindex="-1">
+
+      <!-- Directory Hero / Search Header -->
+      <section class="hero-section" aria-labelledby="directory-title">
+        <div class="container">
+          <div class="hero-text">
+            <h1 id="directory-title" class="hero-title" data-i18n="opportunities.pageTitle">دليل الفرص التعليمية والمهنية</h1>
+            <p class="hero-subtitle" data-i18n="opportunities.pageSubtitle">
+              ابحث في قاعدة بيانات المنح والدورات والتدريب المهني باستخدام الفلاتر المتقدمة
+            </p>
+          </div>
+
+          <!-- Demo Notice Banner -->
+          <aside class="demo-banner" role="alert" aria-live="polite">
+            <div class="demo-banner-content">
+              <span class="demo-banner-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              </span>
+              <div class="demo-banner-text">
+                <strong class="demo-banner-title" data-i18n="demoBanner.title">تنبيه: البيانات المعروضة تجريبية وليست فرصًا حقيقية</strong>
+                <p class="demo-banner-desc" data-i18n="demoBanner.desc">جميع المنح والدورات والتدريبات الظاهرة أدناه مخصصة لاختبار الواجهة البرمجية والبحث، والروابط والأرقام وهمية تمامًا.</p>
+              </div>
+            </div>
+          </aside>
+
+          <!-- Search Bar -->
+          <div class="search-wrapper" role="search">
+            <label for="search-input" class="sr-only" data-i18n="search.label">ابحث عن فرصة</label>
+            <div class="search-input-wrap">
+              <span class="search-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              </span>
+              <input
+                id="search-input"
+                type="search"
+                class="search-input"
+                autocomplete="off"
+                data-i18n-placeholder="search.placeholder"
+                placeholder="ابحث عن منحة، دورة، أو تدريب..."
+              />
+              <button type="button" class="search-clear hidden" id="search-clear" aria-label="مسح البحث">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Filter Tabs Section -->
+      <section class="filter-section" aria-labelledby="filter-label">
+        <div class="container">
+          <p id="filter-label" class="sr-only" data-i18n="filter.label">تصفية الفرص حسب النوع</p>
+          <div class="filter-tabs" role="tablist" aria-label="أنواع الفرص">
+            <button
+              class="filter-tab active"
+              role="tab"
+              aria-selected="true"
+              data-filter="all"
+              data-i18n="filter.all"
+            >الكل</button>
+            <button
+              class="filter-tab"
+              role="tab"
+              aria-selected="false"
+              data-filter="scholarship"
+              aria-label="منح دراسية"
+            >
+              <span class="tab-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              </span>
+              <span data-i18n="filter.scholarships">منح دراسية</span>
+            </button>
+            <button
+              class="filter-tab"
+              role="tab"
+              aria-selected="false"
+              data-filter="course"
+              aria-label="دورات مجانية"
+            >
+              <span class="tab-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              </span>
+              <span data-i18n="filter.courses">دورات مجانية</span>
+            </button>
+            <button
+              class="filter-tab"
+              role="tab"
+              aria-selected="false"
+              data-filter="internship"
+              aria-label="تدريب مهني"
+            >
+              <span class="tab-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              </span>
+              <span data-i18n="filter.internships">تدريب مهني</span>
+            </button>
+          </div>
+
+          <!-- Advanced Scholarship Filters (shown when scholarships tab is active) -->
+          <div id="scholarship-filters" class="scholarship-filters hidden" aria-labelledby="scholarship-filters-heading">
+            <h3 id="scholarship-filters-heading" class="sr-only" data-i18n="scholarshipFilters.title">فلاتر المنح الدراسية المتقدمة</h3>
+            <div class="filters-grid">
+              
+              <!-- Country Filter -->
+              <div class="filter-group">
+                <label for="filter-country" class="filter-select-label" data-i18n="scholarshipFilters.country">الدولة</label>
+                <div class="select-wrapper">
+                  <select id="filter-country" class="filter-select" aria-label="الدولة">
+                    <option value="" data-i18n="scholarshipFilters.allCountries">جميع الدول</option>
+                  </select>
+                  <span class="select-chevron" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                  </span>
+                </div>
+              </div>
+
+              <!-- Level Filter -->
+              <div class="filter-group">
+                <label for="filter-level" class="filter-select-label" data-i18n="scholarshipFilters.level">المرحلة الدراسية</label>
+                <div class="select-wrapper">
+                  <select id="filter-level" class="filter-select" aria-label="المرحلة الدراسية">
+                    <option value="" data-i18n="scholarshipFilters.allLevels">جميع المراحل</option>
+                  </select>
+                  <span class="select-chevron" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                  </span>
+                </div>
+              </div>
+
+              <!-- Field Filter -->
+              <div class="filter-group">
+                <label for="filter-field" class="filter-select-label" data-i18n="scholarshipFilters.field">التخصص</label>
+                <div class="select-wrapper">
+                  <select id="filter-field" class="filter-select" aria-label="التخصص">
+                    <option value="" data-i18n="scholarshipFilters.allFields">جميع التخصصات</option>
+                  </select>
+                  <span class="select-chevron" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                  </span>
+                </div>
+              </div>
+
+              <!-- Funding Type Filter -->
+              <div class="filter-group">
+                <label for="filter-funding" class="filter-select-label" data-i18n="scholarshipFilters.funding">نوع التمويل</label>
+                <div class="select-wrapper">
+                  <select id="filter-funding" class="filter-select" aria-label="نوع التمويل">
+                    <option value="" data-i18n="scholarshipFilters.allFunding">جميع أنواع التمويل</option>
+                  </select>
+                  <span class="select-chevron" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                  </span>
+                </div>
+              </div>
+
+              <!-- Reset Filters Button -->
+              <div class="filter-group filter-action-group">
+                <button type="button" id="reset-scholarship-filters" class="btn-reset-filters" aria-label="مسح الفلاتر">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                  <span data-i18n="scholarshipFilters.reset">مسح الفلاتر</span>
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Opportunities Grid Section -->
+      <section class="opportunities-section" aria-labelledby="opps-title" aria-live="polite">
+        <div class="container">
+          <div class="section-header">
+            <h2 id="opps-title" class="section-title" data-i18n="opportunities.title">الفرص المتاحة</h2>
+            <p class="results-count" id="results-count" aria-live="polite" aria-atomic="true"></p>
+          </div>
+
+          <!-- Cards grid -->
+          <div class="opps-grid" id="opps-grid" role="list" aria-label="قائمة الفرص">
+            <!-- Dynamically populated by opportunities.js -->
+          </div>
+
+          <!-- Empty State -->
+          <div class="empty-state hidden" id="empty-state" role="status">
+            <div class="empty-icon" aria-hidden="true">
+              <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+            </div>
+            <h3 class="empty-title" data-i18n="empty.title">لا توجد فرص بعد</h3>
+            <p class="empty-desc" data-i18n="empty.description">لم يتم إضافة أي فرصة حتى الآن. سيتم إضافة الفرص قريبًا.</p>
+          </div>
+
+          <!-- No Results State -->
+          <div class="no-results hidden" id="no-results" role="status">
+            <div class="empty-icon" aria-hidden="true">
+              <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v3"/><circle cx="11" cy="15" r=".5" fill="currentColor"/></svg>
+            </div>
+            <h3 class="empty-title" data-i18n="noResults.title">لا توجد نتائج</h3>
+            <p class="empty-desc" data-i18n="noResults.description">لم يتم العثور على فرص مطابقة. جرب كلمات بحث مختلفة.</p>
+            <button type="button" class="btn-secondary" id="clear-filters" data-i18n="noResults.clearFilters">مسح التصفية</button>
+          </div>
+
+          <!-- Error State -->
+          <div class="error-state empty-state hidden" id="error-state" role="alert">
+            <div class="empty-icon" aria-hidden="true" style="color: #ef4444;">
+              <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <h3 class="empty-title" data-i18n="error.title">حدث خطأ أثناء تحميل البيانات</h3>
+            <p class="empty-desc" data-i18n="error.description">تعذر تحميل قائمة الفرص. يرجى المحاولة مرة أخرى لاحقًا.</p>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-grid">
+
+          <!-- Col 1: Brand & Mission -->
+          <div>
+            <div class="brand" style="margin-bottom: 0.5rem;">
+              <span class="brand-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <rect width="28" height="28" rx="8" fill="#0F766E"/>
+                  <path d="M7 21L14 7L21 21" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M9.5 16.5H18.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <span class="brand-name" style="color: #ffffff;">
+                <span class="brand-ar" data-lang-show="ar">طريق الفرص</span>
+                <span class="brand-en" data-lang-show="en">PATH TO OPP.</span>
+              </span>
+            </div>
+            <p class="footer-brand-desc" data-i18n="footer.desc">
+              منصة عربية مستقلة تسعى لتمكين الطلاب والباحثين من اكتشاف المنح الدراسية والدورات المجانية والفرص التدريبية العالمية بكل سهولة وموثوقية.
+            </p>
+          </div>
+
+          <!-- Col 2: Quick Links -->
+          <div>
+            <h3 class="footer-col-title" data-i18n="footer.quickLinks">روابط سريعة</h3>
+            <ul class="footer-links-list">
+              <li><a href="index.html" class="footer-link" data-i18n="nav.home">الرئيسية</a></li>
+              <li><a href="opportunities.html" class="footer-link" data-i18n="nav.opportunities">دليل الفرص</a></li>
+              <li><a href="guide.html" class="footer-link" data-i18n="nav.guide">دليل التقديم</a></li>
+              <li><a href="index.html#about" class="footer-link" data-i18n="nav.about">عن المنصة</a></li>
+              <li><a href="login.html" class="footer-link" data-i18n="nav.login">تسجيل الدخول</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Categories -->
+          <div>
+            <h3 class="footer-col-title" data-i18n="footer.categories">المسارات التعليمية</h3>
+            <ul class="footer-links-list">
+              <li><a href="opportunities.html?type=scholarship" class="footer-link" data-i18n="nav.scholarships">المنح الدراسية</a></li>
+              <li><a href="opportunities.html?type=course" class="footer-link" data-i18n="nav.courses">الدورات المجانية</a></li>
+              <li><a href="opportunities.html?type=internship" class="footer-link" data-i18n="nav.internships">التدريب المهني</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 4: Integrity Note -->
+          <div>
+            <h3 class="footer-col-title" data-i18n="footer.integrityTitle">الشفافية والأمان</h3>
+            <div class="footer-integrity-box">
+              <p data-i18n="footer.integrityDesc">
+                جميع الفرص المعروضة حاليًا في هذه النسخة هي بيانات تجريبية (Demo Data) لأغراض فحص الواجهة، وتخضع الروابط لفحص بروتوكول HTTPS الصارم.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Footer Bottom Bar -->
+        <div class="footer-bottom-bar">
+          <p data-i18n="footer.rights">جميع الحقوق محفوظة لمنصة طريق الفرص © 2026</p>
+          <p data-i18n="footer.builtWith">صُمم ونُفّذ وفق معايير الويب الحديثة وإمكانية الوصول العالمية (WCAG 2.2)</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- App JS Entry -->
+    <script type="module" src="/src/js/pages/opportunities.js"></script>
+  </body>
+</html>

@@ -1,0 +1,314 @@
+{
+  "translation": {
+    "skipToContent": "Skip to main content",
+    "brandName": "PATH TO OPP.",
+    "brandTagline": "Your trusted portal for scholarships, courses, and internships",
+    "nav": {
+      "home": "Home",
+      "opportunities": "Directory",
+      "scholarships": "Scholarships",
+      "courses": "Free Courses",
+      "internships": "Internships",
+      "guide": "Application Guide",
+      "about": "About",
+      "login": "Sign In",
+      "register": "Register",
+      "menu": "Main Menu",
+      "closeMenu": "Close Menu",
+      "favorites": "Favorites",
+      "notifications": "Notifications",
+      "soon": "Soon"
+    },
+    "hero": {
+      "badge": "100% Free Specialized Educational Discovery Platform",
+      "title": "Your Trusted Path to Educational & Career Opportunities",
+      "subtitle": "Discover funded scholarships, accredited free courses, and career internships categorized and verified to help you build your academic and professional future.",
+      "searchPlaceholder": "Search for a scholarship, course, field, or country...",
+      "searchButton": "Search Now",
+      "quickExplore": "Quick Explore:",
+      "exploreAll": "Explore All Opportunities",
+      "guideCta": "Step-by-Step Application Guide"
+    },
+    "categories": {
+      "title": "Explore Opportunities by Pathway",
+      "subtitle": "Select the pathway tailored to your current educational and career milestones",
+      "scholarships": {
+        "title": "Scholarships",
+        "desc": "Bachelor, Master, and Ph.D. scholarships with full or partial funding at leading international universities.",
+        "badge": "Academic"
+      },
+      "courses": {
+        "title": "Free Courses",
+        "desc": "Free skill-development courses and certified training programs offered by leading platforms and institutes.",
+        "badge": "Skill Growth"
+      },
+      "internships": {
+        "title": "Internships",
+        "desc": "Hands-on research and industry internships for students and recent graduates to build real experience.",
+        "badge": "Career Experience"
+      }
+    },
+    "featured": {
+      "badge": "Weekly Highlights",
+      "title": "Featured Opportunities",
+      "subtitle": "A curated preview of opportunities available on the platform to jumpstart your discovery",
+      "viewAll": "View All Opportunities ({{count}})"
+    },
+    "whyUs": {
+      "badge": "Why PATH TO OPPORTUNITIES?",
+      "title": "Built to Streamline Your Educational Journey",
+      "subtitle": "We focus on accuracy and clarity to spare you the frustration of random searches and broken links",
+      "pillar1": {
+        "title": "Verified Data & Official Links",
+        "desc": "We authenticate every opportunity source and link you directly to the official granting institution."
+      },
+      "pillar2": {
+        "title": "Multi-Criteria Smart Filters",
+        "desc": "Filter precisely by country, study level, academic discipline, and funding model without distractions."
+      },
+      "pillar3": {
+        "title": "100% Free & Transparent",
+        "desc": "Our platform is completely free and accessible for all students and researchers with zero hidden fees."
+      }
+    },
+    "howItWorks": {
+      "badge": "Simple Steps",
+      "title": "How Does It Work?",
+      "subtitle": "Three straightforward steps between you and your next successful application",
+      "step1": {
+        "num": "01",
+        "title": "Search & Choose Your Path",
+        "desc": "Use our search engine or multi-tier filters to specify the country, field, and opportunity type that match your profile."
+      },
+      "step2": {
+        "num": "02",
+        "title": "Review Criteria & Prepare Documents",
+        "desc": "Inspect eligibility criteria on the dedicated detail page and consult our guide for CV and motivation letter tips."
+      },
+      "step3": {
+        "num": "03",
+        "title": "Apply Directly via Official Portal",
+        "desc": "Navigate securely to the verified official institution portal and submit your application with confidence."
+      }
+    },
+    "cta": {
+      "title": "Ready to Take Your Next Big Leap?",
+      "desc": "Explore verified scholarships, courses, and internships today and start preparing your application.",
+      "button": "Explore All Opportunities",
+      "guideButton": "Read Application Guide"
+    },
+    "about": {
+      "badge": "About The Platform",
+      "title": "About «PATH TO OPPORTUNITIES»",
+      "p1": "«PATH TO OPPORTUNITIES | طريق الفرص» is a dedicated non-profit educational web discovery initiative aimed at enabling students and researchers across the Arab world to access trusted global educational opportunities.",
+      "p2": "We uphold strict standards of transparency, web accessibility (WCAG 2.2), and student-centered UX. All published records display verified timelines, criteria, and official institutional sources.",
+      "values": {
+        "v1": "Rigorous Verification",
+        "v2": "Intuitive Usability",
+        "v3": "Bilingual Experience",
+        "v4": "Privacy-First Architecture"
+      }
+    },
+    "search": {
+      "label": "Search for an opportunity",
+      "placeholder": "Search for a scholarship, course, or internship..."
+    },
+    "filter": {
+      "label": "Filter opportunities by type",
+      "all": "All",
+      "scholarships": "Scholarships",
+      "courses": "Free Courses",
+      "internships": "Internships"
+    },
+    "opportunities": {
+      "pageTitle": "Educational & Career Opportunities Directory",
+      "pageSubtitle": "Explore our database of scholarships, free courses, and internships with advanced filters",
+      "title": "Available Opportunities",
+      "count_zero": "No opportunities",
+      "count_one": "1 opportunity",
+      "count_other": "{{count}} opportunities"
+    },
+    "badge": {
+      "scholarship": "Scholarship",
+      "course": "Free Course",
+      "internship": "Internship"
+    },
+    "funding": {
+      "full": "Full Funding",
+      "partial": "Partial Funding",
+      "unspecified": "Unspecified"
+    },
+    "scholarshipFilters": {
+      "title": "Advanced Scholarship Filters",
+      "country": "Country",
+      "allCountries": "All Countries",
+      "level": "Study Level",
+      "allLevels": "All Levels",
+      "field": "Field of Study",
+      "allFields": "All Fields",
+      "funding": "Funding Type",
+      "allFunding": "All Funding Types",
+      "reset": "Clear Filters"
+    },
+    "demoBanner": {
+      "title": "Notice: Displayed data is for demo purposes only and not real opportunities",
+      "desc": "All scholarships, courses, and internships shown below are synthetic records for testing the UI, search, and categorization."
+    },
+    "card": {
+      "demoBadge": "Demo",
+      "demoApplyDisabled": "Application Disabled (Demo)",
+      "organization": "Organization",
+      "country": "Country",
+      "field": "Field",
+      "level": "Level",
+      "deadline": "Deadline",
+      "deadlineOpen": "Open enrollment",
+      "deadlineUrgent": "Last day",
+      "apply": "Apply Now",
+      "viewDetails": "View Details",
+      "external": "External link"
+    },
+    "detail": {
+      "breadcrumbHome": "Home",
+      "breadcrumbOpps": "Directory",
+      "backToOpps": "Back to Directory",
+      "overview": "Opportunity Overview",
+      "organization": "Granting Organization",
+      "country": "Host Country",
+      "field": "Field of Study / Domain",
+      "level": "Eligible Level",
+      "fundingType": "Funding Type",
+      "deadline": "Application Deadline",
+      "verifiedAt": "Verification Date",
+      "aboutOpportunity": "Opportunity Details & Criteria",
+      "eligibilityTitle": "Eligibility Criteria & Notes",
+      "officialSource": "Official Application Portal",
+      "officialSourceNote": "Always review all requirements and guidelines directly on the official host institution website.",
+      "applyOfficialBtn": "Visit Official Portal",
+      "demoWarningTitle": "Demo Opportunity Notice",
+      "demoWarningDesc": "This record is a demo entry created to showcase interface layout and details rendering. Application action is disabled and does not represent an active live scholarship.",
+      "notFoundTitle": "Opportunity Not Found",
+      "notFoundDesc": "The opportunity you are looking for does not exist, has been removed, or the link may be incomplete.",
+      "share": "Share Opportunity",
+      "copied": "Link copied to clipboard!"
+    },
+    "guide": {
+      "badge": "Comprehensive & Free Guide",
+      "title": "Application Guide for International Opportunities",
+      "subtitle": "Actionable guidelines and structured roadmaps to prepare standout academic and professional applications",
+      "roadmap": {
+        "badge": "Structured Pathway",
+        "title": "The Standout Application Roadmap",
+        "step1Title": "1. Discovery & Alignment",
+        "step1Desc": "Carefully check eligibility criteria, minimum GPA, and language requirements before investing time in an application.",
+        "step2Title": "2. Deadline Management",
+        "step2Desc": "Establish a timeline marking application closing dates and schedule document preparation at least one month in advance.",
+        "step3Title": "3. Official Document Translation",
+        "step3Desc": "Translate certified transcripts and degree certificates through authorized translators and keep clear high-res PDFs.",
+        "step4Title": "4. Authentic Motivation Letter",
+        "step4Desc": "Draft an original, concise personal statement explaining your academic journey, future goals, and reasons for choosing this specific program.",
+        "step5Title": "5. Early Recommendation Requests",
+        "step5Desc": "Reach out to your professors or mentors 4-6 weeks in advance to allow ample time for personalized reference letters.",
+        "step6Title": "6. Thorough Review & Submission",
+        "step6Desc": "Proofread your application, verify all required attachments are in place, and submit at least two days before the deadline."
+      },
+      "docs": {
+        "badge": "Required Documents",
+        "title": "Core Documents for Most Opportunities",
+        "doc1": "Academic CV (Curriculum Vitae / Europass)",
+        "doc1Desc": "Chronological, focused on academic accomplishments, projects, and skills relevant to the opportunity.",
+        "doc2": "Motivation Letter / Statement of Purpose",
+        "doc2Desc": "Articulates your genuine interest, background, and alignment with the program goals.",
+        "doc3": "Letters of Recommendation",
+        "doc3Desc": "From academic professors or professional managers who have directly supervised your performance.",
+        "doc4": "Translated Academic Transcripts & Degrees",
+        "doc4Desc": "Officially translated and notarized according to the host institution's requirements."
+      },
+      "tips": {
+        "badge": "Expert Advice",
+        "title": "Golden Tips to Boost Acceptance Chances",
+        "tip1Title": "Avoid generic boilerplate copy-pasting",
+        "tip1Desc": "Review committees evaluate thousands of submissions and spot generic templates immediately. Speak with authentic voice.",
+        "tip2Title": "Quality over quantity",
+        "tip2Desc": "Tailoring 3 high-quality applications to specific programs is vastly more effective than blasting 20 generic submissions.",
+        "tip3Title": "Obsessive proofreading",
+        "tip3Desc": "Grammar and typographical errors signal lack of care. Have a peer or academic advisor proofread your letters."
+      },
+      "faq": {
+        "badge": "Common Inquiries",
+        "title": "Frequently Asked Questions",
+        "q1": "Are IELTS / TOEFL test scores mandatory for all opportunities?",
+        "a1": "Not universally. Many universities accept an official English Proficiency Certificate if your prior degree was instructed in English. Check each institution's specific language policy.",
+        "q2": "What is the difference between full and partial funding?",
+        "a2": "Full funding typically covers tuition fees, a living stipend, travel allowances, and health insurance. Partial funding usually waives a portion of tuition only.",
+        "q3": "Can I apply before receiving my final graduation diploma?",
+        "a3": "Yes! Most degree programs allow final-year students to apply by submitting cumulative transcripts up to the latest completed semester alongside an expected graduation letter.",
+        "q4": "How far in advance should I start preparing my application?",
+        "a4": "Starting 2 to 3 months prior to the closing deadline is strongly recommended to gather recommendations, draft personal essays, and legalize documents without stress."
+      }
+    },
+    "auth": {
+      "loginTitle": "Sign In to Your Account",
+      "loginSubtitle": "Welcome back to PATH TO OPPORTUNITIES",
+      "registerTitle": "Create a New Account",
+      "registerSubtitle": "Join PATH TO OPPORTUNITIES to discover the latest scholarships and courses",
+      "name": "Full Name",
+      "namePlaceholder": "Enter your full name",
+      "email": "Email Address",
+      "emailPlaceholder": "example@domain.com",
+      "password": "Password",
+      "passwordPlaceholder": "••••••••",
+      "confirmPassword": "Confirm Password",
+      "confirmPasswordPlaceholder": "••••••••",
+      "showPassword": "Show password",
+      "hidePassword": "Hide password",
+      "rememberMe": "Remember me in this session",
+      "forgotPassword": "Forgot password?",
+      "agreeTerms": "I agree to the platform's Terms of Service and Privacy Policy",
+      "loginBtn": "Sign In",
+      "registerBtn": "Create Account",
+      "noAccount": "Don't have an account yet?",
+      "createOne": "Create a new account",
+      "hasAccount": "Already have an account?",
+      "signIn": "Sign In here",
+      "backToHome": "Return to Homepage",
+      "disclaimerTitle": "Important Account System Notice",
+      "disclaimerDesc": "Live user authentication is currently inactive as this project operates without a backend database. This interface provides client-side validation and interactive UX preview only. No passwords or credentials are stored.",
+      "validation": {
+        "nameRequired": "Please enter your full name",
+        "nameMin": "Name must be at least 3 characters",
+        "emailRequired": "Please enter your email address",
+        "emailInvalid": "Please enter a valid email address (e.g. student@example.com)",
+        "passwordRequired": "Please enter your password",
+        "passwordMin": "Password must be at least 8 characters",
+        "confirmRequired": "Please confirm your password",
+        "passwordMismatch": "Passwords do not match",
+        "termsRequired": "You must agree to the terms to proceed",
+        "successLoginDemo": "Validation successful! Live login authentication will be enabled once the platform backend is deployed.",
+        "successRegisterDemo": "Validation successful! Live registration will be enabled once the platform backend is deployed."
+      }
+    },
+    "footer": {
+      "desc": "An independent educational web discovery platform helping students and researchers access verified global scholarships, free courses, and career internships.",
+      "quickLinks": "Quick Links",
+      "categories": "Educational Pathways",
+      "integrityTitle": "Transparency & Security",
+      "integrityDesc": "All opportunities currently displayed are demo records for UI exploration. All external links strictly enforce the HTTPS protocol.",
+      "rights": "All rights reserved © 2026 PATH TO OPPORTUNITIES",
+      "builtWith": "Engineered according to modern web standards and WCAG 2.2 accessibility guidelines"
+    },
+    "empty": {
+      "title": "No opportunities yet",
+      "description": "No opportunities have been added yet. Check back soon."
+    },
+    "noResults": {
+      "title": "No results found",
+      "description": "No matching opportunities found. Try adjusting your search query or clearing active filters.",
+      "clearFilters": "Clear all filters"
+    },
+    "error": {
+      "title": "Error loading data",
+      "description": "Unable to load opportunities. Please try again later."
+    }
+  }
+}

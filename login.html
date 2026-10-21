@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="تسجيل الدخول — منصة طريق الفرص" />
+    <meta name="theme-color" content="#0F766E" />
+    <title>تسجيل الدخول | طريق الفرص</title>
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+
+    <!-- Skip Navigation -->
+    <a href="#main-content" class="skip-link" data-i18n="skipToContent">تخطى إلى المحتوى الرئيسي</a>
+
+    <!-- ========== HEADER ========== -->
+    <header class="site-header" role="banner">
+      <div class="header-inner container">
+
+        <!-- Brand -->
+        <a href="index.html" class="brand" aria-label="طريق الفرص — الصفحة الرئيسية">
+          <span class="brand-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="28" height="28" rx="8" fill="#0F766E"/>
+              <path d="M7 21L14 7L21 21" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M9.5 16.5H18.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="brand-name">
+            <span class="brand-ar" data-lang-show="ar">طريق الفرص</span>
+            <span class="brand-en" data-lang-show="en">PATH TO OPP.</span>
+          </span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="desktop-nav" aria-label="التنقل الرئيسي">
+          <a href="index.html" class="nav-link" data-i18n="nav.home">الرئيسية</a>
+          <a href="opportunities.html" class="nav-link" data-i18n="nav.opportunities">دليل الفرص</a>
+          <a href="guide.html" class="nav-link" data-i18n="nav.guide">دليل التقديم</a>
+          <a href="index.html#about" class="nav-link" data-i18n="nav.about">عن المنصة</a>
+        </nav>
+
+        <!-- Header Actions -->
+        <div class="header-actions">
+          <div class="nav-auth-group">
+            <a href="register.html" class="btn-auth-primary" data-i18n="nav.register">إنشاء حساب</a>
+          </div>
+
+          <!-- Language switch -->
+          <button
+            id="lang-toggle"
+            class="btn-lang"
+            aria-label="Switch language / تغيير اللغة"
+            type="button"
+          >
+            <span class="lang-label-ar" data-lang-show="ar">EN</span>
+            <span class="lang-label-en" data-lang-show="en">AR</span>
+          </button>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button
+            id="mobile-menu-toggle"
+            class="btn-menu-toggle"
+            type="button"
+            aria-label="فتح القائمة الرئيسية"
+            aria-expanded="false"
+            aria-controls="mobile-drawer"
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- ========== MOBILE DRAWER ========== -->
+    <div id="mobile-drawer" class="mobile-drawer hidden" role="dialog" aria-modal="true" aria-label="قائمة التنقل">
+      <div id="drawer-backdrop" class="drawer-backdrop"></div>
+      <div class="drawer-panel">
+        <div class="drawer-header">
+          <span class="brand-name">
+            <span class="brand-ar" data-lang-show="ar">طريق الفرص</span>
+            <span class="brand-en" data-lang-show="en">PATH TO OPP.</span>
+          </span>
+          <button id="drawer-close-btn" class="drawer-close-btn" type="button" aria-label="إغلاق القائمة">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/>
+            </svg>
+          </button>
+        </div>
+
+        <ul class="drawer-nav-list">
+          <li><a href="index.html" class="drawer-nav-link" data-i18n="nav.home">الرئيسية</a></li>
+          <li><a href="opportunities.html" class="drawer-nav-link" data-i18n="nav.opportunities">دليل الفرص</a></li>
+          <li><a href="guide.html" class="drawer-nav-link" data-i18n="nav.guide">دليل التقديم</a></li>
+          <li><a href="index.html#about" class="drawer-nav-link" data-i18n="nav.about">عن المنصة</a></li>
+        </ul>
+
+        <div class="drawer-auth-section">
+          <a href="register.html" class="btn-auth-primary" style="justify-content: center;" data-i18n="nav.register">إنشاء حساب جديد</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main id="main-content" tabindex="-1">
+      <div class="auth-page-container">
+        <div class="auth-card">
+
+          <!-- Auth Header -->
+          <div class="auth-header">
+            <a href="index.html" class="auth-logo-link" aria-label="العودة للرئيسية">
+              <span class="brand-icon" aria-hidden="true">
+                <svg width="36" height="36" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="28" height="28" rx="8" fill="#0F766E"/>
+                  <path d="M7 21L14 7L21 21" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M9.5 16.5H18.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </span>
+            </a>
+            <h1 class="auth-title" data-i18n="auth.loginTitle">تسجيل الدخول إلى حسابك</h1>
+            <p class="auth-subtitle" data-i18n="auth.loginSubtitle">مرحبًا بك مجددًا في طريق الفرص</p>
+          </div>
+
+          <!-- Alert Feedback Container -->
+          <div id="auth-alert-feedback" class="auth-alert-feedback hidden" role="status" aria-live="polite"></div>
+
+          <!-- Form -->
+          <form id="login-form" class="auth-form" novalidate>
+            <!-- Email -->
+            <div class="form-group">
+              <label for="email" class="form-label" data-i18n="auth.email">البريد الإلكتروني</label>
+              <input
+                id="email"
+                type="email"
+                class="form-input"
+                autocomplete="email"
+                data-i18n-placeholder="auth.emailPlaceholder"
+                placeholder="example@domain.com"
+                aria-describedby="email-error"
+                required
+              />
+              <span id="email-error" class="field-error-msg hidden" role="alert"></span>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+              <div class="form-row-between">
+                <label for="password" class="form-label" data-i18n="auth.password">كلمة المرور</label>
+                <span style="font-size: 0.8125rem; color: var(--color-primary); cursor: pointer;" data-i18n="auth.forgotPassword">هل نسيت كلمة المرور؟</span>
+              </div>
+              <div class="input-with-action">
+                <input
+                  id="password"
+                  type="password"
+                  class="form-input"
+                  autocomplete="current-password"
+                  data-i18n-placeholder="auth.passwordPlaceholder"
+                  placeholder="••••••••"
+                  aria-describedby="password-error"
+                  required
+                />
+                <button
+                  type="button"
+                  class="btn-toggle-password"
+                  data-target="password"
+                  aria-label="إظهار كلمة المرور"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                </button>
+              </div>
+              <span id="password-error" class="field-error-msg hidden" role="alert"></span>
+            </div>
+
+            <!-- Remember Me -->
+            <div class="form-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="remember" style="accent-color: var(--color-primary); width: 16px; height: 16px;" />
+                <span data-i18n="auth.rememberMe">تذكرني في هذه الجلسة</span>
+              </label>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="auth-submit-btn" data-i18n="auth.loginBtn">تسجيل الدخول</button>
+          </form>
+
+          <!-- Honest Disclaimer Box -->
+          <div class="auth-disclaimer-box" role="note">
+            <div class="auth-disclaimer-title">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              <span data-i18n="auth.disclaimerTitle">ملاحظة هامة حول نظام الحسابات</span>
+            </div>
+            <p class="auth-disclaimer-desc" data-i18n="auth.disclaimerDesc">
+              خدمة تسجيل الدخول وإنشاء الحسابات الفعلية غير مفعّلة حاليًا لعدم وجود خادم مصادقة (Backend). هذه الواجهة تفاعلية لأغراض المعاينة واختبار تجربة المستخدم والتحقق من صحة الحقول فقط، ولن يتم حفظ أي بيانات أو كلمات مرور.
+            </p>
+          </div>
+
+          <!-- Auth Footer Links -->
+          <div class="auth-card-footer">
+            <span data-i18n="auth.noAccount">ليس لديك حساب بعد؟</span>
+            <a href="register.html" style="margin-inline-start: 0.25rem;" data-i18n="auth.createOne">أنشئ حسابًا جديدًا</a>
+            <div style="margin-top: 0.75rem;">
+              <a href="index.html" style="color: var(--color-text-3); font-size: 0.8125rem;" data-i18n="auth.backToHome">العودة إلى الصفحة الرئيسية</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-bottom-bar" style="border-top: none; padding-top: 0;">
+          <p data-i18n="footer.rights">جميع الحقوق محفوظة لمنصة طريق الفرص © 2026</p>
+          <p data-i18n="footer.builtWith">صُمم ونُفّذ وفق معايير الويب الحديثة وإمكانية الوصول العالمية (WCAG 2.2)</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- App JS Entry -->
+    <script type="module" src="/src/js/pages/auth.js"></script>
+  </body>
+</html>

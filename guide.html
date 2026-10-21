@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="دليل التقديم الشامل — خطوات منهجية وتوجيهات عملية لإعداد ملف تقديم أكاديمي ومهني متميز" />
+    <meta name="theme-color" content="#0F766E" />
+    <title>دليل التقديم الشامل | طريق الفرص</title>
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+
+    <!-- Skip Navigation -->
+    <a href="#main-content" class="skip-link" data-i18n="skipToContent">تخطى إلى المحتوى الرئيسي</a>
+
+    <!-- ========== HEADER ========== -->
+    <header class="site-header" role="banner">
+      <div class="header-inner container">
+
+        <!-- Brand -->
+        <a href="index.html" class="brand" aria-label="طريق الفرص — الصفحة الرئيسية">
+          <span class="brand-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="28" height="28" rx="8" fill="#0F766E"/>
+              <path d="M7 21L14 7L21 21" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M9.5 16.5H18.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="brand-name">
+            <span class="brand-ar" data-lang-show="ar">طريق الفرص</span>
+            <span class="brand-en" data-lang-show="en">PATH TO OPP.</span>
+          </span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="desktop-nav" aria-label="التنقل الرئيسي">
+          <a href="index.html" class="nav-link" data-i18n="nav.home">الرئيسية</a>
+          <a href="opportunities.html" class="nav-link" data-i18n="nav.opportunities">دليل الفرص</a>
+          <a href="opportunities.html?type=scholarship" class="nav-link" data-i18n="nav.scholarships">المنح الدراسية</a>
+          <a href="opportunities.html?type=course" class="nav-link" data-i18n="nav.courses">الدورات المجانية</a>
+          <a href="opportunities.html?type=internship" class="nav-link" data-i18n="nav.internships">التدريب المهني</a>
+          <a href="guide.html" class="nav-link active" aria-current="page" data-i18n="nav.guide">دليل التقديم</a>
+          <a href="index.html#about" class="nav-link" data-i18n="nav.about">عن المنصة</a>
+        </nav>
+
+        <!-- Header Actions -->
+        <div class="header-actions">
+          <div class="nav-auth-group">
+            <a href="login.html" class="btn-auth-link" data-i18n="nav.login">تسجيل الدخول</a>
+            <a href="register.html" class="btn-auth-primary" data-i18n="nav.register">إنشاء حساب</a>
+          </div>
+
+          <!-- Language switch -->
+          <button
+            id="lang-toggle"
+            class="btn-lang"
+            aria-label="Switch language / تغيير اللغة"
+            type="button"
+          >
+            <span class="lang-label-ar" data-lang-show="ar">EN</span>
+            <span class="lang-label-en" data-lang-show="en">AR</span>
+          </button>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button
+            id="mobile-menu-toggle"
+            class="btn-menu-toggle"
+            type="button"
+            aria-label="فتح القائمة الرئيسية"
+            aria-expanded="false"
+            aria-controls="mobile-drawer"
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- ========== MOBILE DRAWER ========== -->
+    <div id="mobile-drawer" class="mobile-drawer hidden" role="dialog" aria-modal="true" aria-label="قائمة التنقل">
+      <div id="drawer-backdrop" class="drawer-backdrop"></div>
+      <div class="drawer-panel">
+        <div class="drawer-header">
+          <span class="brand-name">
+            <span class="brand-ar" data-lang-show="ar">طريق الفرص</span>
+            <span class="brand-en" data-lang-show="en">PATH TO OPP.</span>
+          </span>
+          <button id="drawer-close-btn" class="drawer-close-btn" type="button" aria-label="إغلاق القائمة">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/>
+            </svg>
+          </button>
+        </div>
+
+        <ul class="drawer-nav-list">
+          <li><a href="index.html" class="drawer-nav-link" data-i18n="nav.home">الرئيسية</a></li>
+          <li><a href="opportunities.html" class="drawer-nav-link" data-i18n="nav.opportunities">دليل الفرص</a></li>
+          <li><a href="opportunities.html?type=scholarship" class="drawer-nav-link" data-i18n="nav.scholarships">المنح الدراسية</a></li>
+          <li><a href="opportunities.html?type=course" class="drawer-nav-link" data-i18n="nav.courses">الدورات المجانية</a></li>
+          <li><a href="opportunities.html?type=internship" class="drawer-nav-link" data-i18n="nav.internships">التدريب المهني</a></li>
+          <li><a href="guide.html" class="drawer-nav-link active" data-i18n="nav.guide">دليل التقديم</a></li>
+          <li><a href="index.html#about" class="drawer-nav-link" data-i18n="nav.about">عن المنصة</a></li>
+        </ul>
+
+        <div class="drawer-auth-section">
+          <a href="login.html" class="btn-auth-link" style="justify-content: center;" data-i18n="nav.login">تسجيل الدخول</a>
+          <a href="register.html" class="btn-auth-primary" style="justify-content: center;" data-i18n="nav.register">إنشاء حساب جديد</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== MAIN ========== -->
+    <main id="main-content" tabindex="-1">
+
+      <!-- Guide Hero -->
+      <section class="guide-hero" aria-labelledby="guide-title">
+        <div class="container guide-hero-content">
+          <div class="section-badge" data-i18n="guide.badge">دليل شامل ومجاني</div>
+          <h1 id="guide-title" class="hero-title" data-i18n="guide.title">دليل التقديم للمنح والفرص العالمية</h1>
+          <p class="hero-subtitle" data-i18n="guide.subtitle">
+            خطوات منهجية وتوجيهات عملية لإعداد ملف تقديم أكاديمي ومهني متميز يعزز فرص قبولك
+          </p>
+        </div>
+      </section>
+
+      <!-- SECTION 1: ROADMAP (6 Steps) -->
+      <section class="guide-section" aria-labelledby="roadmap-title" data-reveal>
+        <div class="container">
+          <div class="section-header-block">
+            <div class="section-badge" data-i18n="guide.roadmap.badge">المسار المنهجي</div>
+            <h2 id="roadmap-title" class="section-title" data-i18n="guide.roadmap.title">خريطة طريق التقديم الناجح</h2>
+          </div>
+
+          <div class="guide-roadmap-grid">
+            <!-- Step 1 -->
+            <div class="roadmap-card">
+              <h3 class="roadmap-title" data-i18n="guide.roadmap.step1Title">1. استكشاف الفرص والملاءمة</h3>
+              <p class="roadmap-desc" data-i18n="guide.roadmap.step1Desc">اقرأ شروط الأهلية بدقة وتأكد من توافق تخصصك ومعدلك الدراسي والمرحلة المطلوبة قبل البدء.</p>
+            </div>
+            <!-- Step 2 -->
+            <div class="roadmap-card">
+              <h3 class="roadmap-title" data-i18n="guide.roadmap.step2Title">2. تنظيم جدول المواعيد</h3>
+              <p class="roadmap-desc" data-i18n="guide.roadmap.step2Desc">أنشئ جدولًا زمنيًا يحدد مواعيد إغلاق التقديم ومواعيد تجهيز الأوراق قبل شهر على الأقل من الموعد النهائي.</p>
+            </div>
+            <!-- Step 3 -->
+            <div class="roadmap-card">
+              <h3 class="roadmap-title" data-i18n="guide.roadmap.step3Title">3. تجهيز الوثائق الرسمية</h3>
+              <p class="roadmap-desc" data-i18n="guide.roadmap.step3Desc">ترجم وثائقك الرسمية (شهادات وكشوف درجات) لدى مكاتب ترجمة معتمدة واحتفظ بنسخ رقمية واضحة بصيغة PDF.</p>
+            </div>
+            <!-- Step 4 -->
+            <div class="roadmap-card">
+              <h3 class="roadmap-title" data-i18n="guide.roadmap.step4Title">4. صياغة خطاب الدافع</h3>
+              <p class="roadmap-desc" data-i18n="guide.roadmap.step4Desc">اكتب خطاب دافع أصيل ومركّز يوضح دوافعك الأكاديمية وخطتك المستقبلية ولماذا اخترت هذا البرنامج بالذات.</p>
+            </div>
+            <!-- Step 5 -->
+            <div class="roadmap-card">
+              <h3 class="roadmap-title" data-i18n="guide.roadmap.step5Title">5. طلب خطابات التوصية مبكرًا</h3>
+              <p class="roadmap-desc" data-i18n="guide.roadmap.step5Desc">تواصل مع أساتذتك أو مشرفيك قبل 4-6 أسابيع على الأقل لتمنحهم وقتًا كافيًا لصياغة توصية قوية وشخصية.</p>
+            </div>
+            <!-- Step 6 -->
+            <div class="roadmap-card">
+              <h3 class="roadmap-title" data-i18n="guide.roadmap.step6Title">6. المراجعة النهائية والتقديم</h3>
+              <p class="roadmap-desc" data-i18n="guide.roadmap.step6Desc">دقق ملفك لغويًا، وتأكد من اكتمال كافة الخانات والمرفقات، وقدّم طلبك قبل يومين على الأقل من إغلاق النظام.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: REQUIRED DOCUMENTS CHECKLIST -->
+      <section class="guide-section" style="background-color: var(--color-bg); border-block: 1px solid var(--color-border);" aria-labelledby="docs-title" data-reveal>
+        <div class="container">
+          <div class="section-header-block">
+            <div class="section-badge" data-i18n="guide.docs.badge">الملف المطلوب</div>
+            <h2 id="docs-title" class="section-title" data-i18n="guide.docs.title">أهم المستندات الشائعة للتقديم</h2>
+          </div>
+
+          <div class="guide-docs-grid">
+            <div class="doc-card">
+              <div class="doc-check-icon" aria-hidden="true">✓</div>
+              <div>
+                <h3 class="doc-title" data-i18n="guide.docs.doc1">السيرة الذاتية الأكاديمية (Academic CV)</h3>
+                <p class="doc-desc" data-i18n="guide.docs.doc1Desc">مرتبة زمنياً، تركز على الإنجازات والأنشطة والمهارات ذات الصلة بالفرصة.</p>
+              </div>
+            </div>
+
+            <div class="doc-card">
+              <div class="doc-check-icon" aria-hidden="true">✓</div>
+              <div>
+                <h3 class="doc-title" data-i18n="guide.docs.doc2">خطاب الدافع (Motivation Letter)</h3>
+                <p class="doc-desc" data-i18n="guide.docs.doc2Desc">وثيقة توضح شغفك، أهدافك، وأثر البرنامج في مسارك العلمي والمهني.</p>
+              </div>
+            </div>
+
+            <div class="doc-card">
+              <div class="doc-check-icon" aria-hidden="true">✓</div>
+              <div>
+                <h3 class="doc-title" data-i18n="guide.docs.doc3">رسائل التوصية (Letters of Recommendation)</h3>
+                <p class="doc-desc" data-i18n="guide.docs.doc3Desc">من أساتذة أو مدراء يعرفون أداءك الأكاديمي أو المهني عن قُرب.</p>
+              </div>
+            </div>
+
+            <div class="doc-card">
+              <div class="doc-check-icon" aria-hidden="true">✓</div>
+              <div>
+                <h3 class="doc-title" data-i18n="guide.docs.doc4">كشوف الدرجات والشهادات المترجمة</h3>
+                <p class="doc-desc" data-i18n="guide.docs.doc4Desc">مترجمة ومصدقة وفق المعايير المطلوبة من الجهة المانحة.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: GOLDEN TIPS -->
+      <section class="guide-section" aria-labelledby="tips-title" data-reveal>
+        <div class="container">
+          <div class="section-header-block">
+            <div class="section-badge" data-i18n="guide.tips.badge">إرشادات الخبراء</div>
+            <h2 id="tips-title" class="section-title" data-i18n="guide.tips.title">نصائح ذهبية لزيادة فرص قبولك</h2>
+          </div>
+
+          <div class="why-grid">
+            <div class="why-card">
+              <h3 class="why-card-title" data-i18n="guide.tips.tip1Title">ابتعد عن القوالب الجاهزة والنسخ الأعمى</h3>
+              <p class="why-card-desc" data-i18n="guide.tips.tip1Desc">
+                لجان الاختيار تقرأ آلاف الطلبات وتكتشف النصوص المستنسخة على الفور. اكتب بصدق وأسلوبك الشخصي.
+              </p>
+            </div>
+
+            <div class="why-card">
+              <h3 class="why-card-title" data-i18n="guide.tips.tip2Title">ركز على جودة التقديم وليس كثرته</h3>
+              <p class="why-card-desc" data-i18n="guide.tips.tip2Desc">
+                التقديم على 3 فرص بملفات قوية ومخصصة أفضل من التقديم على 20 فرصة بنسخ ولصق سريع دون دراسة.
+              </p>
+            </div>
+
+            <div class="why-card">
+              <h3 class="why-card-title" data-i18n="guide.tips.tip3Title">راجع لغة الملف بدقة متناهية</h3>
+              <p class="why-card-desc" data-i18n="guide.tips.tip3Desc">
+                الأخطاء الإملائية والنحوية تعطي انطباعًا بالإهمال. استعن بزميل أو مدقق لغوي لمراجعة خطاباتك.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: FAQ ACCORDION -->
+      <section class="guide-section" style="background-color: var(--color-bg); border-top: 1px solid var(--color-border);" aria-labelledby="faq-title" data-reveal>
+        <div class="container">
+          <div class="section-header-block">
+            <div class="section-badge" data-i18n="guide.faq.badge">استفسارات شائعة</div>
+            <h2 id="faq-title" class="section-title" data-i18n="guide.faq.title">الأسئلة الشائعة حول التقديم</h2>
+          </div>
+
+          <div class="faq-wrap">
+            <!-- FAQ 1 -->
+            <div class="faq-item">
+              <button class="faq-btn" type="button" aria-expanded="false">
+                <span data-i18n="guide.faq.q1">هل أحتاج لاختبارات اللغة (IELTS / TOEFL) للتقديم على جميع المنح؟</span>
+                <span class="faq-icon-chevron" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </span>
+              </button>
+              <div class="faq-content">
+                <p data-i18n="guide.faq.a1">ليس دائمًا. بعض الجامعات تقبل إثباتًا بأن دراستك السابقة كانت باللغة الإنجليزية (English Proficiency Certificate)، بينما تشترط بعض المنح الدولية شهادة معتمدة. راجع شروط كل فرصة بعناية.</p>
+              </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item">
+              <button class="faq-btn" type="button" aria-expanded="false">
+                <span data-i18n="guide.faq.q2">ما الفرق بين التمويل الكامل والتمويل الجزئي؟</span>
+                <span class="faq-icon-chevron" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </span>
+              </button>
+              <div class="faq-content">
+                <p data-i18n="guide.faq.a2">التمويل الكامل يشمل غالبًا الرسوم الدراسية وراتبًا شهريًا وتكاليف السفر والتأمين الصحي، بينما يغطي التمويل الجزئي نسبة من الرسوم الدراسية فقط ويتحمل الطالب باقي النفقات.</p>
+              </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item">
+              <button class="faq-btn" type="button" aria-expanded="false">
+                <span data-i18n="guide.faq.q3">هل يمكن التقديم قبل الحصول على شهادة التخرج الرسمية؟</span>
+                <span class="faq-icon-chevron" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </span>
+              </button>
+              <div class="faq-content">
+                <p data-i18n="guide.faq.a3">نعم، معظم البرامج تسمح للطلاب في سنتهم الدراسية الأخيرة بالتقديم شريطة تقديم كشف درجات حتى آخر فصل دراسي وإفادة متوقع تخرجهم.</p>
+              </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item">
+              <button class="faq-btn" type="button" aria-expanded="false">
+                <span data-i18n="guide.faq.q4">كم من الوقت يستغرق تجهيز ملف التقديم المتكامل؟</span>
+                <span class="faq-icon-chevron" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </span>
+              </button>
+              <div class="faq-content">
+                <p data-i18n="guide.faq.a4">يُنصح بالبدء في التجهيز قبل شهرين إلى ثلاثة أشهر من الموعد النهائي لتوفير الوقت الكافي للحصول على خطابات التوصية وتدقيق خطابات الدافع وترجمة الوثائق.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta-section" data-reveal>
+        <div class="container">
+          <div class="cta-banner-box">
+            <h2 class="cta-title" data-i18n="cta.title">هل أنت مستعد لبدء خطوتك القادمة؟</h2>
+            <p class="cta-desc" data-i18n="cta.desc">
+              تصفح أحدث المنح والدورات والتدريبات المتاحة الآن وابدأ في تجهيز طلبك.
+            </p>
+            <div class="cta-buttons-row">
+              <a href="opportunities.html" class="btn-cta-light" data-i18n="cta.button">استكشف الفرص الآن</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-grid">
+
+          <!-- Col 1: Brand & Mission -->
+          <div>
+            <div class="brand" style="margin-bottom: 0.5rem;">
+              <span class="brand-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <rect width="28" height="28" rx="8" fill="#0F766E"/>
+                  <path d="M7 21L14 7L21 21" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M9.5 16.5H18.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <span class="brand-name" style="color: #ffffff;">
+                <span class="brand-ar" data-lang-show="ar">طريق الفرص</span>
+                <span class="brand-en" data-lang-show="en">PATH TO OPP.</span>
+              </span>
+            </div>
+            <p class="footer-brand-desc" data-i18n="footer.desc">
+              منصة عربية مستقلة تسعى لتمكين الطلاب والباحثين من اكتشاف المنح الدراسية والدورات المجانية والفرص التدريبية العالمية بكل سهولة وموثوقية.
+            </p>
+          </div>
+
+          <!-- Col 2: Quick Links -->
+          <div>
+            <h3 class="footer-col-title" data-i18n="footer.quickLinks">روابط سريعة</h3>
+            <ul class="footer-links-list">
+              <li><a href="index.html" class="footer-link" data-i18n="nav.home">الرئيسية</a></li>
+              <li><a href="opportunities.html" class="footer-link" data-i18n="nav.opportunities">دليل الفرص</a></li>
+              <li><a href="guide.html" class="footer-link" data-i18n="nav.guide">دليل التقديم</a></li>
+              <li><a href="index.html#about" class="footer-link" data-i18n="nav.about">عن المنصة</a></li>
+              <li><a href="login.html" class="footer-link" data-i18n="nav.login">تسجيل الدخول</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Categories -->
+          <div>
+            <h3 class="footer-col-title" data-i18n="footer.categories">المسارات التعليمية</h3>
+            <ul class="footer-links-list">
+              <li><a href="opportunities.html?type=scholarship" class="footer-link" data-i18n="nav.scholarships">المنح الدراسية</a></li>
+              <li><a href="opportunities.html?type=course" class="footer-link" data-i18n="nav.courses">الدورات المجانية</a></li>
+              <li><a href="opportunities.html?type=internship" class="footer-link" data-i18n="nav.internships">التدريب المهني</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 4: Integrity Note -->
+          <div>
+            <h3 class="footer-col-title" data-i18n="footer.integrityTitle">الشفافية والأمان</h3>
+            <div class="footer-integrity-box">
+              <p data-i18n="footer.integrityDesc">
+                جميع الفرص المعروضة حاليًا في هذه النسخة هي بيانات تجريبية (Demo Data) لأغراض فحص الواجهة، وتخضع الروابط لفحص بروتوكول HTTPS الصارم.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Footer Bottom Bar -->
+        <div class="footer-bottom-bar">
+          <p data-i18n="footer.rights">جميع الحقوق محفوظة لمنصة طريق الفرص © 2026</p>
+          <p data-i18n="footer.builtWith">صُمم ونُفّذ وفق معايير الويب الحديثة وإمكانية الوصول العالمية (WCAG 2.2)</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- App JS Entry -->
+    <script type="module" src="/src/js/pages/guide.js"></script>
+  </body>
+</html>

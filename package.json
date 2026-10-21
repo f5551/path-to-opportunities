@@ -1,0 +1,30 @@
+{
+  "name": "path-to-opportunities",
+  "version": "1.0.0",
+  "description": "طريق الفرص — منصة عربية لاكتشاف المنح الدراسية والدورات المجانية وفرص التدريب",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node tests/qa.test.js && node tests/pages.test.js"
+  },
+  "keywords": [
+    "scholarships",
+    "opportunities",
+    "arabic",
+    "education"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.3.4"
+  },
+  "dependencies": {
+    "daisyui": "^5.7.50",
+    "i18next": "^26.5.2",
+    "motion": "^14.4.0"
+  }
+}

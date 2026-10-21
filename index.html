@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="طريق الفرص — منصة تعليمية متكاملة لاكتشاف المنح الدراسية والدورات المجانية وفرص التدريب المهني" />
+    <meta name="theme-color" content="#0F766E" />
+    <title>طريق الفرص | PATH TO OPPORTUNITIES</title>
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+
+    <!-- Skip Navigation -->
+    <a href="#main-content" class="skip-link" data-i18n="skipToContent">تخطى إلى المحتوى الرئيسي</a>
+
+    <!-- ========== HEADER ========== -->
+    <header class="site-header" role="banner">
+      <div class="header-inner container">
+
+        <!-- Brand -->
+        <a href="index.html" class="brand" aria-label="طريق الفرص — الصفحة الرئيسية">
+          <span class="brand-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="28" height="28" rx="8" fill="#0F766E"/>
+              <path d="M7 21L14 7L21 21" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M9.5 16.5H18.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="brand-name">
+            <span class="brand-ar" data-lang-show="ar">طريق الفرص</span>
+            <span class="brand-en" data-lang-show="en">PATH TO OPP.</span>
+          </span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="desktop-nav" aria-label="التنقل الرئيسي">
+          <a href="index.html" class="nav-link active" aria-current="page" data-i18n="nav.home">الرئيسية</a>
+          <a href="opportunities.html" class="nav-link" data-i18n="nav.opportunities">دليل الفرص</a>
+          <a href="opportunities.html?type=scholarship" class="nav-link" data-i18n="nav.scholarships">المنح الدراسية</a>
+          <a href="opportunities.html?type=course" class="nav-link" data-i18n="nav.courses">الدورات المجانية</a>
+          <a href="opportunities.html?type=internship" class="nav-link" data-i18n="nav.internships">التدريب المهني</a>
+          <a href="guide.html" class="nav-link" data-i18n="nav.guide">دليل التقديم</a>
+          <a href="#about" class="nav-link" data-i18n="nav.about">عن المنصة</a>
+        </nav>
+
+        <!-- Header Actions -->
+        <div class="header-actions">
+          <!-- Auth buttons (Desktop) -->
+          <div class="nav-auth-group">
+            <a href="login.html" class="btn-auth-link" data-i18n="nav.login">تسجيل الدخول</a>
+            <a href="register.html" class="btn-auth-primary" data-i18n="nav.register">إنشاء حساب</a>
+          </div>
+
+          <!-- Language switch -->
+          <button
+            id="lang-toggle"
+            class="btn-lang"
+            aria-label="Switch language / تغيير اللغة"
+            type="button"
+          >
+            <span class="lang-label-ar" data-lang-show="ar">EN</span>
+            <span class="lang-label-en" data-lang-show="en">AR</span>
+          </button>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button
+            id="mobile-menu-toggle"
+            class="btn-menu-toggle"
+            type="button"
+            aria-label="فتح القائمة الرئيسية"
+            aria-expanded="false"
+            aria-controls="mobile-drawer"
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- ========== MOBILE DRAWER ========== -->
+    <div id="mobile-drawer" class="mobile-drawer hidden" role="dialog" aria-modal="true" aria-label="قائمة التنقل">
+      <div id="drawer-backdrop" class="drawer-backdrop"></div>
+      <div class="drawer-panel">
+        <div class="drawer-header">
+          <span class="brand-name">
+            <span class="brand-ar" data-lang-show="ar">طريق الفرص</span>
+            <span class="brand-en" data-lang-show="en">PATH TO OPP.</span>
+          </span>
+          <button id="drawer-close-btn" class="drawer-close-btn" type="button" aria-label="إغلاق القائمة">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/>
+            </svg>
+          </button>
+        </div>
+
+        <ul class="drawer-nav-list">
+          <li><a href="index.html" class="drawer-nav-link active" data-i18n="nav.home">الرئيسية</a></li>
+          <li><a href="opportunities.html" class="drawer-nav-link" data-i18n="nav.opportunities">دليل الفرص</a></li>
+          <li><a href="opportunities.html?type=scholarship" class="drawer-nav-link" data-i18n="nav.scholarships">المنح الدراسية</a></li>
+          <li><a href="opportunities.html?type=course" class="drawer-nav-link" data-i18n="nav.courses">الدورات المجانية</a></li>
+          <li><a href="opportunities.html?type=internship" class="drawer-nav-link" data-i18n="nav.internships">التدريب المهني</a></li>
+          <li><a href="guide.html" class="drawer-nav-link" data-i18n="nav.guide">دليل التقديم</a></li>
+          <li><a href="#about" class="drawer-nav-link" data-i18n="nav.about">عن المنصة</a></li>
+        </ul>
+
+        <div class="drawer-auth-section">
+          <a href="login.html" class="btn-auth-link" style="justify-content: center;" data-i18n="nav.login">تسجيل الدخول</a>
+          <a href="register.html" class="btn-auth-primary" style="justify-content: center;" data-i18n="nav.register">إنشاء حساب جديد</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== MAIN ========== -->
+    <main id="main-content" tabindex="-1">
+
+      <!-- HERO SECTION (Split Layout) -->
+      <section class="landing-hero" aria-labelledby="hero-title">
+        <div class="container">
+          <div class="hero-split-grid">
+
+            <!-- Hero Left Content -->
+            <div class="hero-content">
+              <div class="section-badge" data-i18n="hero.badge">منصة تعليمية متخصصة ومجانية 100%</div>
+              <h1 id="hero-title" class="hero-headline" data-i18n="hero.title">طريقك الموثوق نحو الفرص التعليمية والمهنية</h1>
+              <p class="hero-description" data-i18n="hero.subtitle">
+                استكشف منحًا دراسية ممولة، ودورات تدريبية معتمدة، وفرص تدريب مهني مصنفة ومُدققة لمساعدتك في بناء مستقبلك الأكاديمي والعملي.
+              </p>
+
+              <!-- Hero Search Box (Submits to opportunities.html?q=...) -->
+              <form id="hero-search-form" class="hero-search-box" role="search" aria-label="محرك البحث الرئيسي">
+                <span class="hero-search-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+                  </svg>
+                </span>
+                <input
+                  id="hero-search-input"
+                  type="search"
+                  class="hero-search-input"
+                  autocomplete="off"
+                  data-i18n-placeholder="hero.searchPlaceholder"
+                  placeholder="ابحث عن منحة، دورة، تخصص، أو دولة..."
+                  aria-label="ابحث عن فرصة"
+                />
+                <button type="submit" class="hero-search-btn" data-i18n="hero.searchButton">
+                  <span>ابحث الآن</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                  </svg>
+                </button>
+              </form>
+
+              <!-- Quick Exploration Tags -->
+              <div class="hero-quick-tags">
+                <span class="hero-quick-label" data-i18n="hero.quickExplore">استكشاف سريع:</span>
+                <a href="opportunities.html?type=scholarship" class="quick-tag-chip" data-i18n="filter.scholarships">🎓 منح دراسية</a>
+                <a href="opportunities.html?type=course" class="quick-tag-chip" data-i18n="filter.courses">📚 دورات مجانية</a>
+                <a href="opportunities.html?type=internship" class="quick-tag-chip" data-i18n="filter.internships">💼 تدريب مهني</a>
+              </div>
+            </div>
+
+            <!-- Hero Right Visual (Original Educational Discovery Composition) -->
+            <div class="hero-visual-wrap" aria-hidden="true">
+              <div class="hero-visual-card">
+                <!-- Floating Badges -->
+                <div class="hero-floating-badge floating-top-right">
+                  <span style="color: #0F766E;">✓</span>
+                  <span>بيانات مُحققة 100%</span>
+                </div>
+                <div class="hero-floating-badge floating-bottom-left">
+                  <span>🎯</span>
+                  <span>تصفية ذكية ومباشرة</span>
+                </div>
+
+                <!-- Custom Bespoke Educational SVG Artwork -->
+                <svg viewBox="0 0 400 320" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto; display: block;">
+                  <!-- Background Glow & Shapes -->
+                  <rect x="20" y="20" width="360" height="280" rx="16" fill="#F8FAFC"/>
+                  <circle cx="310" cy="70" r="45" fill="#CCFBF1" fill-opacity="0.6"/>
+                  <circle cx="80" cy="240" r="55" fill="#DBEAFE" fill-opacity="0.5"/>
+
+                  <!-- Stylized Path Motif -->
+                  <path d="M60 220 C 120 180, 180 240, 240 130 C 270 75, 330 90, 350 70" stroke="#0F766E" stroke-width="3" stroke-dasharray="6 6" stroke-linecap="round"/>
+
+                  <!-- Graduation Cap (Center Upper) -->
+                  <g transform="translate(145, 60)">
+                    <polygon points="55,10 105,35 55,60 5,35" fill="#0F766E"/>
+                    <polygon points="55,60 100,38 100,50 55,72 10,50 10,38" fill="#115E59"/>
+                    <path d="M25 45 L 25 75 C 25 85, 35 92, 55 92 C 75 92, 85 85, 85 75 L 85 45" fill="#0F766E" fill-opacity="0.9"/>
+                    <!-- Tassel -->
+                    <path d="M100 35 L 108 55 L 105 78" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"/>
+                    <circle cx="105" cy="80" r="3" fill="#F59E0B"/>
+                  </g>
+
+                  <!-- Certificate / Document (Left Lower) -->
+                  <g transform="translate(60, 130)">
+                    <rect width="110" height="135" rx="8" fill="white" stroke="#E2E8F0" stroke-width="2"/>
+                    <rect x="15" y="18" width="80" height="10" rx="3" fill="#0F766E" fill-opacity="0.2"/>
+                    <rect x="15" y="38" width="60" height="6" rx="2" fill="#E2E8F0"/>
+                    <rect x="15" y="52" width="75" height="6" rx="2" fill="#E2E8F0"/>
+                    <rect x="15" y="66" width="50" height="6" rx="2" fill="#E2E8F0"/>
+                    <circle cx="78" cy="102" r="14" fill="#0F766E"/>
+                    <path d="M72 102 L 76 106 L 84 98" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </g>
+
+                  <!-- Opportunity Card Preview (Right Lower) -->
+                  <g transform="translate(195, 150)">
+                    <rect width="150" height="115" rx="10" fill="white" stroke="#0F766E" stroke-width="1.5"/>
+                    <rect x="12" y="14" width="60" height="16" rx="8" fill="#CCFBF1"/>
+                    <rect x="12" y="40" width="115" height="12" rx="3" fill="#1E293B"/>
+                    <rect x="12" y="60" width="85" height="8" rx="2" fill="#64748B"/>
+                    <rect x="12" y="74" width="70" height="8" rx="2" fill="#94A3B8"/>
+                    <rect x="12" y="92" width="126" height="12" rx="4" fill="#F1F5F9"/>
+                  </g>
+                </svg>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: EXPLORE BY CATEGORY -->
+      <section class="categories-section" aria-labelledby="cat-title" data-reveal>
+        <div class="container">
+          <div class="section-header-block">
+            <div class="section-badge" data-i18n="categories.title">استكشف الفرص حسب المسار</div>
+            <h2 id="cat-title" class="section-title" data-i18n="categories.subtitle">اختر المسار المناسب لأهدافك الحالية</h2>
+          </div>
+
+          <div class="category-cards-grid">
+            <!-- Scholarships Card -->
+            <a href="opportunities.html?type=scholarship" class="category-card cat-scholarship">
+              <div class="category-icon-box" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                </svg>
+              </div>
+              <h3 class="category-title" data-i18n="categories.scholarships.title">منح دراسية</h3>
+              <p class="category-desc" data-i18n="categories.scholarships.desc">
+                منح بكالوريوس وماجستير ودكتوراه بتمويل كامل وجزئي في أفضل الجامعات الدولية.
+              </p>
+              <span class="category-action">
+                <span data-i18n="hero.exploreAll">استكشف المنح</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                </svg>
+              </span>
+            </a>
+
+            <!-- Courses Card -->
+            <a href="opportunities.html?type=course" class="category-card cat-course">
+              <div class="category-icon-box" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                </svg>
+              </div>
+              <h3 class="category-title" data-i18n="categories.courses.title">دورات مجانية</h3>
+              <p class="category-desc" data-i18n="categories.courses.desc">
+                برامج تدريبية وتطوير مهارات مجانية مقدمة من منصات ومؤسسات تعليمية رائدة.
+              </p>
+              <span class="category-action">
+                <span data-i18n="hero.exploreAll">استكشف الدورات</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                </svg>
+              </span>
+            </a>
+
+            <!-- Internships Card -->
+            <a href="opportunities.html?type=internship" class="category-card cat-internship">
+              <div class="category-icon-box" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                </svg>
+              </div>
+              <h3 class="category-title" data-i18n="categories.internships.title">تدريب مهني</h3>
+              <p class="category-desc" data-i18n="categories.internships.desc">
+                فرص تدريب عملي وبحثي للطلاب وحديثي التخرج لاكتساب الخبرة الميدانية الحقيقية.
+              </p>
+              <span class="category-action">
+                <span data-i18n="hero.exploreAll">استكشف التدريب</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: FEATURED OPPORTUNITIES -->
+      <section class="featured-section" aria-labelledby="featured-title" data-reveal>
+        <div class="container">
+          <div class="featured-header-row">
+            <div>
+              <div class="section-badge" data-i18n="featured.badge">مختارات الأسبوع</div>
+              <h2 id="featured-title" class="section-title" data-i18n="featured.title">أبرز الفرص المتاحة حاليًا</h2>
+              <p class="section-subtitle" style="margin-top: 0.35rem; color: var(--color-text-2);" data-i18n="featured.subtitle">
+                عينة مختارة من الفرص المتاحة على المنصة لمساعدتك على بدء الاستكشاف
+              </p>
+            </div>
+            <a href="opportunities.html" class="btn-secondary-link" data-i18n="hero.exploreAll">
+              <span>تصفح جميع الفرص</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Featured Cards Grid (Populated dynamically) -->
+          <div class="opps-grid" id="featured-grid" role="list" aria-label="أبرز الفرص">
+            <!-- Populated by landing.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: WHY CHOOSE US -->
+      <section class="why-section" aria-labelledby="why-title" data-reveal>
+        <div class="container">
+          <div class="section-header-block">
+            <div class="section-badge" data-i18n="whyUs.badge">لماذا طريق الفرص؟</div>
+            <h2 id="why-title" class="section-title" data-i18n="whyUs.title">منصة صُممت لتسهيل رحلتك التعليمية</h2>
+            <p class="section-subtitle" data-i18n="whyUs.subtitle">
+              نركز على الدقة والوضوح لنوفر عليك عناء البحث العشوائي والروابط المضللة
+            </p>
+          </div>
+
+          <div class="why-grid">
+            <!-- Pillar 1 -->
+            <div class="why-card">
+              <div class="why-icon-box" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/>
+                </svg>
+              </div>
+              <h3 class="why-card-title" data-i18n="whyUs.pillar1.title">بيانات مُدققة وروابط مباشرة</h3>
+              <p class="why-card-desc" data-i18n="whyUs.pillar1.desc">
+                نتأكد من صحة مصدر كل فرصة ونربطك مباشرة بالجهة الرسمية المانحة دون وسائط أو استمارات وسيطة.
+              </p>
+            </div>
+
+            <!-- Pillar 2 -->
+            <div class="why-card">
+              <div class="why-icon-box" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+                </svg>
+              </div>
+              <h3 class="why-card-title" data-i18n="whyUs.pillar2.title">فلاتر ذكية متعددة المعايير</h3>
+              <p class="why-card-desc" data-i18n="whyUs.pillar2.desc">
+                ابحث بدقة حسب الدولة، والمرحلة الدراسية، والتخصص، ونوع التمويل دون تشتت أو إعلانات مزعجة.
+              </p>
+            </div>
+
+            <!-- Pillar 3 -->
+            <div class="why-card">
+              <div class="why-icon-box" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/><circle cx="12" cy="12" r="4"/>
+                </svg>
+              </div>
+              <h3 class="why-card-title" data-i18n="whyUs.pillar3.title">مجانية وشفافية كاملة</h3>
+              <p class="why-card-desc" data-i18n="whyUs.pillar3.desc">
+                المنصة مفتوحة ومجانية 100% لجميع الطلاب والباحثين، مع التزام تام بالخصوصية وعدم حفظ كلمات المرور.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5: HOW IT WORKS -->
+      <section class="how-section" aria-labelledby="how-title" data-reveal>
+        <div class="container">
+          <div class="section-header-block">
+            <div class="section-badge" data-i18n="howItWorks.badge">خطوات بسيطة</div>
+            <h2 id="how-title" class="section-title" data-i18n="howItWorks.title">كيف تستفيد من المنصة؟</h2>
+            <p class="section-subtitle" data-i18n="howItWorks.subtitle">
+              ثلاث خطوات تفصلك عن التقديم على فرصتك القادمة بنجاح
+            </p>
+          </div>
+
+          <div class="how-grid">
+            <!-- Step 1 -->
+            <div class="how-step-card">
+              <div class="how-step-num" data-i18n="howItWorks.step1.num">01</div>
+              <h3 class="how-step-title" data-i18n="howItWorks.step1.title">ابحث وحدد مسارك</h3>
+              <p class="how-step-desc" data-i18n="howItWorks.step1.desc">
+                استخدم محرك البحث أو الفلاتر لتحديد الدولة والتخصص ونوع الفرصة التي تناسب مؤهلاتك الحالية.
+              </p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="how-step-card">
+              <div class="how-step-num" data-i18n="howItWorks.step2.num">02</div>
+              <h3 class="how-step-title" data-i18n="howItWorks.step2.title">اطّلع على الشروط وجهّز ملفك</h3>
+              <p class="how-step-desc" data-i18n="howItWorks.step2.desc">
+                راجع تفاصيل الفرصة في صفحتها المخصصة واستفد من دليل التقديم لصياغة السيرة الذاتية وخطاب الدافع.
+              </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="how-step-card">
+              <div class="how-step-num" data-i18n="howItWorks.step3.num">03</div>
+              <h3 class="how-step-title" data-i18n="howItWorks.step3.title">قدّم مباشرة عبر الجهة الرسمية</h3>
+              <p class="how-step-desc" data-i18n="howItWorks.step3.desc">
+                انتقل إلى رابط المصدر المعتمد وقدم طلبك قبل الموعد النهائي المحدد بكل أمان وثقة.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 6: CTA BANNER -->
+      <section class="cta-section" data-reveal>
+        <div class="container">
+          <div class="cta-banner-box">
+            <h2 class="cta-title" data-i18n="cta.title">هل أنت مستعد لبدء خطوتك القادمة؟</h2>
+            <p class="cta-desc" data-i18n="cta.desc">
+              تصفح أحدث المنح والدورات والتدريبات المتاحة الآن وابدأ في تجهيز ملف تقديمك الأكاديمي والمهني.
+            </p>
+            <div class="cta-buttons-row">
+              <a href="opportunities.html" class="btn-cta-light" data-i18n="cta.button">استكشف الفرص الآن</a>
+              <a href="guide.html" class="btn-cta-ghost" data-i18n="cta.guideButton">اقرأ دليل التقديم</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 7: ABOUT THE PLATFORM (#about) -->
+      <section id="about" class="about-section" aria-labelledby="about-title" data-reveal>
+        <div class="container">
+          <div class="about-card">
+            <div class="section-badge" data-i18n="about.badge">عن المنصة</div>
+            <h2 id="about-title" class="section-title" style="margin-bottom: 1.25rem;" data-i18n="about.title">منصة «طريق الفرص»</h2>
+            <p class="about-p" data-i18n="about.p1">
+              «طريق الفرص | PATH TO OPPORTUNITIES» هي مبادرة ويب تعليمية غير ربحية تهدف إلى مساعدة الطلاب والباحثين في العالم العربي على الوصول السهل والموثوق إلى المنح الدراسية والبرامج التدريبية العالمية.
+            </p>
+            <p class="about-p" data-i18n="about.p2">
+              نلتزم بأعلى معايير الشفافية، وسهولة الوصول (Accessibility)، والتصميم المحايد الذي يضع مصلحة الطالب في المقام الأول. جميع البيانات المنشورة تخضع للمراجعة، وتوضح بدقة المواعيد والشروط وروابط الجهات الرسمية.
+            </p>
+
+            <div class="about-values-grid">
+              <div class="about-value-item">
+                <span class="about-value-icon">✓</span>
+                <span data-i18n="about.values.v1">التحقق الموثوق</span>
+              </div>
+              <div class="about-value-item">
+                <span class="about-value-icon">✓</span>
+                <span data-i18n="about.values.v2">سهولة الاستخدام</span>
+              </div>
+              <div class="about-value-item">
+                <span class="about-value-icon">✓</span>
+                <span data-i18n="about.values.v3">التجربة ثنائية اللغة</span>
+              </div>
+              <div class="about-value-item">
+                <span class="about-value-icon">✓</span>
+                <span data-i18n="about.values.v4">احترام الخصوصية</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-grid">
+
+          <!-- Col 1: Brand & Mission -->
+          <div>
+            <div class="brand" style="margin-bottom: 0.5rem;">
+              <span class="brand-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <rect width="28" height="28" rx="8" fill="#0F766E"/>
+                  <path d="M7 21L14 7L21 21" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M9.5 16.5H18.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <span class="brand-name" style="color: #ffffff;">
+                <span class="brand-ar" data-lang-show="ar">طريق الفرص</span>
+                <span class="brand-en" data-lang-show="en">PATH TO OPP.</span>
+              </span>
+            </div>
+            <p class="footer-brand-desc" data-i18n="footer.desc">
+              منصة عربية مستقلة تسعى لتمكين الطلاب والباحثين من اكتشاف المنح الدراسية والدورات المجانية والفرص التدريبية العالمية بكل سهولة وموثوقية.
+            </p>
+          </div>
+
+          <!-- Col 2: Quick Links -->
+          <div>
+            <h3 class="footer-col-title" data-i18n="footer.quickLinks">روابط سريعة</h3>
+            <ul class="footer-links-list">
+              <li><a href="index.html" class="footer-link" data-i18n="nav.home">الرئيسية</a></li>
+              <li><a href="opportunities.html" class="footer-link" data-i18n="nav.opportunities">دليل الفرص</a></li>
+              <li><a href="guide.html" class="footer-link" data-i18n="nav.guide">دليل التقديم</a></li>
+              <li><a href="#about" class="footer-link" data-i18n="nav.about">عن المنصة</a></li>
+              <li><a href="login.html" class="footer-link" data-i18n="nav.login">تسجيل الدخول</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Categories -->
+          <div>
+            <h3 class="footer-col-title" data-i18n="footer.categories">المسارات التعليمية</h3>
+            <ul class="footer-links-list">
+              <li><a href="opportunities.html?type=scholarship" class="footer-link" data-i18n="nav.scholarships">المنح الدراسية</a></li>
+              <li><a href="opportunities.html?type=course" class="footer-link" data-i18n="nav.courses">الدورات المجانية</a></li>
+              <li><a href="opportunities.html?type=internship" class="footer-link" data-i18n="nav.internships">التدريب المهني</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 4: Integrity Note -->
+          <div>
+            <h3 class="footer-col-title" data-i18n="footer.integrityTitle">الشفافية والأمان</h3>
+            <div class="footer-integrity-box">
+              <p data-i18n="footer.integrityDesc">
+                جميع الفرص المعروضة حاليًا في هذه النسخة هي بيانات تجريبية (Demo Data) لأغراض فحص الواجهة، وتخضع الروابط لفحص بروتوكول HTTPS الصارم.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Footer Bottom Bar -->
+        <div class="footer-bottom-bar">
+          <p data-i18n="footer.rights">جميع الحقوق محفوظة لمنصة طريق الفرص © 2026</p>
+          <p data-i18n="footer.builtWith">صُمم ونُفّذ وفق معايير الويب الحديثة وإمكانية الوصول العالمية (WCAG 2.2)</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- App JS Entry -->
+    <script type="module" src="/src/js/pages/landing.js"></script>
+  </body>
+</html>

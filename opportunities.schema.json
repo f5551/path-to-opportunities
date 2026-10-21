@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Opportunities Portal Schema",
+  "description": "Schema for validating opportunities in opportunities.json",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "type",
+      "title_ar",
+      "title_en",
+      "organization",
+      "country",
+      "field",
+      "level",
+      "deadline",
+      "source_url",
+      "verified_at"
+    ],
+    "properties": {
+      "id": {
+        "type": "string",
+        "description": "معرف فريد للفرصة بدون تكرار",
+        "pattern": "^opp-[a-zA-Z0-9_-]+$"
+      },
+      "type": {
+        "type": "string",
+        "description": "نوع الفرصة للتصنيف والفرز",
+        "enum": ["scholarship", "course", "internship"]
+      },
+      "title_ar": {
+        "type": "string",
+        "minLength": 3,
+        "description": "اسم الفرصة باللغة العربية"
+      },
+      "title_en": {
+        "type": "string",
+        "minLength": 3,
+        "description": "اسم الفرصة باللغة الإنجليزية"
+      },
+      "organization": {
+        "type": "string",
+        "minLength": 2,
+        "description": "الجهة المعلنة أو المانحة"
+      },
+      "country": {
+        "type": "string",
+        "minLength": 2,
+        "description": "دولة الفرصة أو Online"
+      },
+      "field": {
+        "type": "string",
+        "minLength": 2,
+        "description": "المجال أو التخصص الأكاديمي/المهني"
+      },
+      "level": {
+        "oneOf": [
+          {
+            "type": "string",
+            "minLength": 2
+          },
+          {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 2
+            },
+            "minItems": 1
+          }
+        ],
+        "description": "المستوى المستهدف (سلسلة نصية أو قائمة مستويات)"
+      },
+      "funding_type": {
+        "type": "string",
+        "enum": ["full", "partial", "unspecified"],
+        "description": "نوع التمويل للمنحة (كامل، جزئي، غير محدد)"
+      },
+      "deadline": {
+        "type": ["string", "null"],
+        "description": "تاريخ انتهاء التقديم بصيغة YYYY-MM-DD أو null إذا كان التقديم مستمراً",
+        "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+      },
+      "source_url": {
+        "type": "string",
+        "format": "uri",
+        "pattern": "^https://",
+        "description": "رابط المصدر الرسمي ويبدأ بـ https"
+      },
+      "verified_at": {
+        "type": "string",
+        "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+        "description": "تاريخ التحقق بصيغة YYYY-MM-DD"
+      }
+    },
+    "additionalProperties": false
+  }
+}
