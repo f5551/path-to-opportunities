@@ -8,20 +8,6 @@ export default defineConfig({
     tailwindcss(),
     {
       name: "opportunities-json-sync",
-      configureServer(server) {
-        server.middlewares.use((req, res, next) => {
-          const reqPath = req.url ? req.url.split("?")[0] : "";
-          if (reqPath.endsWith("/opportunities.json")) {
-            const filePath = resolve(import.meta.dirname, "opportunities.json");
-            if (fs.existsSync(filePath)) {
-              res.setHeader("Content-Type", "application/json");
-              res.end(fs.readFileSync(filePath, "utf8"));
-              return;
-            }
-          }
-          next();
-        });
-      },
       generateBundle() {
         const filePath = resolve(import.meta.dirname, "opportunities.json");
         if (fs.existsSync(filePath)) {
