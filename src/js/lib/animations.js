@@ -33,57 +33,60 @@ function prefersReducedMotion() {
 
 /**
  * Animate a list of elements entering the DOM
- * Staggered fade-up — ease-out-cubic, 220ms
+ * Fast, non-blocking staggered fade-up — ease-out-cubic
+ * Safe: Never leaves elements hidden if animation is interrupted.
  * @param {HTMLElement[]} elements
  */
 export async function animateCardsEnter(elements) {
-  if (prefersReducedMotion() || !elements.length) return;
+  if (prefersReducedMotion() || !elements || !elements.length) return;
 
-  const motion = await getMotion();
-  if (!motion) return;
+  try {
+    const motion = await getMotion();
+    if (!motion) return;
 
-  const { animate, stagger } = motion;
+    const { animate, stagger } = motion;
 
-  // Start from invisible/shifted state
-  elements.forEach((el) => {
-    el.style.opacity = "0";
-    el.style.transform = "translateY(12px)";
-  });
+    // Use a fast micro-stagger that settles in <250ms
+    const animationPromise = animate(
+      elements,
+      { opacity: [0.35, 1], transform: ["translateY(8px)", "translateY(0px)"] },
+      {
+        duration: 0.18,
+        easing: [0.215, 0.61, 0.355, 1],
+        delay: stagger(0.02, { start: 0.01 }),
+      }
+    );
 
-  await animate(
-    elements,
-    { opacity: [0, 1], transform: ["translateY(12px)", "translateY(0px)"] },
-    {
-      duration: 0.22,
-      easing: [0.215, 0.61, 0.355, 1], // ease-out-cubic
-      delay: stagger(0.04, { start: 0.02 }),
-    }
-  );
-
-  // Clean up inline styles after animation
-  elements.forEach((el) => {
-    el.style.opacity = "";
-    el.style.transform = "";
-  });
+    await animationPromise;
+  } catch (err) {
+    // Graceful fallback: ensure all elements are visible
+  } finally {
+    elements.forEach((el) => {
+      if (el) {
+        el.style.opacity = "";
+        el.style.transform = "";
+      }
+    });
+  }
 }
 
 /**
- * Animate the search results refresh — subtle fade
+ * Animate the search results refresh — subtle fast fade
  * @param {HTMLElement} container
  */
 export async function animateGridRefresh(container) {
-  if (prefersReducedMotion()) return;
+  if (prefersReducedMotion() || !container) return;
 
-  const motion = await getMotion();
-  if (!motion) return;
-
-  const { animate } = motion;
-
-  await animate(
-    container,
-    { opacity: [0.4, 1] },
-    { duration: 0.15, easing: "ease-out" }
-  );
+  try {
+    const motion = await getMotion();
+    if (!motion) return;
+    const { animate } = motion;
+    await animate(
+      container,
+      { opacity: [0.65, 1] },
+      { duration: 0.1, easing: "ease-out" }
+    );
+  } catch {}
 }
 
 /**
@@ -146,6 +149,8 @@ export async function animateHeroEnter(heroSection) {
   });
 }
 
+let _scrollObserver = null;
+
 /**
  * Initialize subtle scroll reveal on elements with [data-reveal]
  * Uses native IntersectionObserver for high performance, zero layout shift
@@ -169,7 +174,13 @@ export function initScrollReveal() {
     }
   });
 
-  const observer = new IntersectionObserver(
+  // Disconnect previous observer to prevent duplicate memory leaks on re-runs
+  if (_scrollObserver) {
+    _scrollObserver.disconnect();
+    _scrollObserver = null;
+  }
+
+  _scrollObserver = new IntersectionObserver(
     (entries, obs) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -179,14 +190,14 @@ export function initScrollReveal() {
       });
     },
     {
-      threshold: 0.05,
-      rootMargin: "0px 0px 200px 0px",
+      threshold: 0.01,
+      rootMargin: "0px 0px 600px 0px",
     }
   );
 
   elements.forEach((el) => {
     if (!el.classList.contains("revealed")) {
-      observer.observe(el);
+      _scrollObserver.observe(el);
     }
   });
 }

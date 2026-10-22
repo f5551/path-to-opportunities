@@ -1,0 +1,78 @@
+[
+  {
+    "id": "ptof-course-47d5c1ad9185",
+    "type": "course",
+    "title_ar": "أساسيات تقييم العقارات",
+    "title_en": null,
+    "organization": "Stockworth Institute",
+    "country": "عبر الإنترنت",
+    "level": "دورة مجانية | عن بُعد",
+    "field": [],
+    "funding_type": null,
+    "deadline": null,
+    "source_url": "https://www.stockworthinstitute.com/stockworth-institute-free-real-estate-valuation-course",
+    "verified_at": null,
+    "description": "",
+    "application_status_code": "self_paced_reported",
+    "deadline_text_ar": "لا يذكر الإعلان موعد إغلاق محددًا",
+    "eligibility_yemen_code": "public_course_conditional",
+    "source_reviewed_at": "2026-10-22",
+    "translation_status": "arabic_source_only",
+    "opportunity_kind": "free_learning",
+    "study_cost": "free_learning_certificate_may_cost",
+    "countries_ar": [
+      "عبر الإنترنت"
+    ],
+    "details": {
+      "ar": {
+        "summary": "",
+        "application_status": "تعلم ذاتي؛ يتبع التسجيل إتاحة الدورة في المنصة",
+        "deadline_information": "لا يذكر الإعلان موعد إغلاق محددًا",
+        "funding_and_benefits": [
+          "التعلّم مجاني وفق الإعلان. الشهادة غير موضحة الرسوم في المصدر"
+        ],
+        "fields_and_programs": [
+          "تعلّم تقدير قيمة العقار بالجمع بين المفاهيم النظرية والخبرة العملية"
+        ],
+        "eligibility": [
+          "برنامج للمبتدئين والمهتمين بالعمل العقاري"
+        ],
+        "required_documents": [],
+        "application_steps": [
+          "افتح صفحة الدورة الرسمية وراجع تفاصيل الالتحاق",
+          "اتبع نموذج التسجيل وخيار التعلم المجاني الذي توفره الجهة"
+        ],
+        "important_notes": []
+      },
+      "en": null
+    },
+    "application": {
+      "status": "self_paced_reported",
+      "deadline_precision": "varies_or_unknown",
+      "multiple_deadlines": false,
+      "rounds": []
+    },
+    "official_links": [
+      {
+        "label": "التسجيل في الدورة من الجهة الرسمية",
+        "url": "https://www.stockworthinstitute.com/stockworth-institute-free-real-estate-valuation-course"
+      }
+    ],
+    "eligibility_yemen_text_ar": "الأهلية: لا يذكر الإعلان قيدًا على الجنسية؛ مناسبة لليمنيين وغيرهم بحسب إتاحة المنصة",
+    "verification": {
+      "document_date": "2026-10-22",
+      "official_check_by_this_review": false,
+      "verification_note_ar": "مستخرج من الملفات المرفقة؛ لا يُفترض أن كل رابط أو موعد قد تحقق منه فحص خارجي مستقل.",
+      "sources": [
+        {
+          "file": "guide_2026",
+          "entry": 73
+        }
+      ]
+    },
+    "editorial_notes_ar": [],
+    "quarantine_status": "on_hold_unverified_url",
+    "quarantine_reason": "Domain www.stockworthinstitute.com has DNS ENOTFOUND; preserved for restoration once a live official enrollment URL is indexed and confirmed",
+    "quarantined_at": "2026-10-22"
+  }
+]

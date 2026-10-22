@@ -3,7 +3,7 @@
  *
  * Handles live search, tab switching, multi-criteria scholarship filters,
  * status filtering, multi-strategy sorting, URL query parameters,
- * skeleton loading, and micro-interaction animations.
+ * and high-performance, non-blocking rendering.
  */
 
 import { initI18n, t } from "../lib/i18n.js";
@@ -12,7 +12,6 @@ import { loadOpportunities, filter, getFilterOptions } from "../lib/opportunitie
 import { createCard, createSkeletonCard } from "../components/OpportunityCard.js";
 import {
   animateCardsEnter,
-  animateGridRefresh,
   animateTabPress,
 } from "../lib/animations.js";
 
@@ -29,6 +28,9 @@ const state = {
     sort: "default",
   },
 };
+
+let _currentRenderToken = 0;
+let _urlSyncTimer = null;
 
 // ─── DOM Elements ─────────────────────────────────────────
 const grid = document.getElementById("opps-grid");
@@ -61,7 +63,7 @@ function showSkeletons(count = 6) {
   }
 }
 
-async function renderOpportunities(opportunities) {
+function renderOpportunities(opportunities) {
   if (!grid) return;
   grid.innerHTML = "";
   emptyState?.classList.add("hidden");
@@ -94,7 +96,9 @@ async function renderOpportunities(opportunities) {
   grid.appendChild(fragment);
 
   updateResultsCount(opportunities.length);
-  await animateCardsEnter(cardEls);
+
+  // Trigger smooth micro-animation non-blockingly without delaying the main thread
+  animateCardsEnter(cardEls).catch(() => {});
 }
 
 function updateResultsCount(count) {
@@ -227,51 +231,54 @@ function resetScholarshipFilterState() {
 
 // ─── URL Parameters Sync ──────────────────────────────────
 function syncUrlParams() {
-  try {
-    const url = new URL(window.location.href);
+  clearTimeout(_urlSyncTimer);
+  _urlSyncTimer = setTimeout(() => {
+    try {
+      const url = new URL(window.location.href);
 
-    if (state.activeFilter && state.activeFilter !== "all") {
-      url.searchParams.set("type", state.activeFilter);
-    } else {
-      url.searchParams.delete("type");
-    }
+      if (state.activeFilter && state.activeFilter !== "all") {
+        url.searchParams.set("type", state.activeFilter);
+      } else {
+        url.searchParams.delete("type");
+      }
 
-    if (state.searchQuery && state.searchQuery.trim()) {
-      url.searchParams.set("q", state.searchQuery.trim());
-    } else {
-      url.searchParams.delete("q");
-    }
+      if (state.searchQuery && state.searchQuery.trim()) {
+        url.searchParams.set("q", state.searchQuery.trim());
+      } else {
+        url.searchParams.delete("q");
+      }
 
-    if (state.activeFilter === "scholarship") {
-      const sf = state.scholarshipFilters;
-      if (sf.country) url.searchParams.set("country", sf.country);
-      else url.searchParams.delete("country");
+      if (state.activeFilter === "scholarship") {
+        const sf = state.scholarshipFilters;
+        if (sf.country) url.searchParams.set("country", sf.country);
+        else url.searchParams.delete("country");
 
-      if (sf.level) url.searchParams.set("level", sf.level);
-      else url.searchParams.delete("level");
+        if (sf.level) url.searchParams.set("level", sf.level);
+        else url.searchParams.delete("level");
 
-      if (sf.field) url.searchParams.set("field", sf.field);
-      else url.searchParams.delete("field");
+        if (sf.field) url.searchParams.set("field", sf.field);
+        else url.searchParams.delete("field");
 
-      if (sf.fundingType) url.searchParams.set("funding", sf.fundingType);
-      else url.searchParams.delete("funding");
+        if (sf.fundingType) url.searchParams.set("funding", sf.fundingType);
+        else url.searchParams.delete("funding");
 
-      if (sf.status && sf.status !== "all") url.searchParams.set("status", sf.status);
-      else url.searchParams.delete("status");
+        if (sf.status && sf.status !== "all") url.searchParams.set("status", sf.status);
+        else url.searchParams.delete("status");
 
-      if (sf.sort && sf.sort !== "default") url.searchParams.set("sort", sf.sort);
-      else url.searchParams.delete("sort");
-    } else {
-      url.searchParams.delete("country");
-      url.searchParams.delete("level");
-      url.searchParams.delete("field");
-      url.searchParams.delete("funding");
-      url.searchParams.delete("status");
-      url.searchParams.delete("sort");
-    }
+        if (sf.sort && sf.sort !== "default") url.searchParams.set("sort", sf.sort);
+        else url.searchParams.delete("sort");
+      } else {
+        url.searchParams.delete("country");
+        url.searchParams.delete("level");
+        url.searchParams.delete("field");
+        url.searchParams.delete("funding");
+        url.searchParams.delete("status");
+        url.searchParams.delete("sort");
+      }
 
-    window.history.replaceState({}, "", url.toString());
-  } catch {}
+      window.history.replaceState({}, "", url.toString());
+    } catch {}
+  }, 100);
 }
 
 function initFromUrlParams() {
@@ -313,8 +320,10 @@ function initFromUrlParams() {
   }
 }
 
-async function applyFilters() {
+function applyFilters() {
+  const thisToken = ++_currentRenderToken;
   const lang = document.documentElement.lang || "ar";
+
   const results = filter({
     type: state.activeFilter,
     query: state.searchQuery,
@@ -327,16 +336,17 @@ async function applyFilters() {
     lang,
   });
 
+  if (thisToken !== _currentRenderToken) return;
+
   syncUrlParams();
-  await animateGridRefresh(grid);
-  await renderOpportunities(results);
+  renderOpportunities(results);
 }
 
 // ─── Wire Event Listeners ─────────────────────────────────
 function wireEvents() {
   // Tab clicks
   filterTabs.forEach((tab) => {
-    tab.addEventListener("click", async () => {
+    tab.addEventListener("click", () => {
       const newFilter = tab.dataset.filter;
       if (newFilter === state.activeFilter) return;
 
@@ -357,12 +367,12 @@ function wireEvents() {
         resetScholarshipFilterState();
       }
 
-      await animateTabPress(tab);
-      await applyFilters();
+      animateTabPress(tab).catch(() => {});
+      applyFilters();
     });
   });
 
-  // Scholarship Selects
+  // Scholarship Selects — Instant zero-lag updates
   filterCountry?.addEventListener("change", (e) => {
     state.scholarshipFilters.country = e.target.value;
     applyFilters();
@@ -394,7 +404,7 @@ function wireEvents() {
     applyFilters();
   });
 
-  // Search input with debounce
+  // Search input with quick 180ms debounce
   let debounceTimer = null;
   searchInput?.addEventListener("input", () => {
     const val = searchInput.value;
@@ -404,7 +414,7 @@ function wireEvents() {
     clearTimeout(debounceTimer);
     debounceTimer = setTimeout(() => {
       applyFilters();
-    }, 280);
+    }, 180);
   });
 
   // Search clear
@@ -460,15 +470,14 @@ async function boot() {
       if (state.activeFilter === "scholarship") {
         populateScholarshipFilters();
       }
-      await applyFilters();
+      applyFilters();
     },
   });
 
-  showSkeletons(6);
   wireEvents();
   loadOpportunities();
   initFromUrlParams();
-  await applyFilters();
+  applyFilters();
 }
 
 boot().catch(console.error);

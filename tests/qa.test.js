@@ -390,15 +390,16 @@ test("3.5 Scholarship status engine correctly identifies states (automatic, roll
 
 // ─── 5. AUDIT, INDEXING & SMART RANKING ─────────────────
 
-test("5.1 Exactly 13 verified real scholarships and 4 demo scholarships", () => {
+test("5.1 Exactly 13 verified real scholarships and 0 demo items in dataset", () => {
   const scholarships = data.filter((d) => d.type === "scholarship");
   const demoScholarships = scholarships.filter(
-    (s) => s.id.includes("demo") || s.title_ar.includes("تجريبي") || s.source_url.includes("example.org")
+    (s) => s.id.includes("demo") || (s.title_ar && s.title_ar.includes("تجريبي")) || (s.source_url && s.source_url.includes("example.org"))
   );
   const realScholarships = scholarships.filter((s) => !demoScholarships.includes(s));
 
+  assert.strictEqual(data.length, 13, "Dataset must contain exactly 13 total opportunities");
   assert.strictEqual(realScholarships.length, 13, "Must contain exactly 13 real scholarships");
-  assert.strictEqual(demoScholarships.length, 4, "Must contain exactly 4 demo scholarships");
+  assert.strictEqual(demoScholarships.length, 0, "Must contain 0 demo scholarships");
 
   // Every real scholarship must have https source_url not pointing to example.org
   realScholarships.forEach((s) => {

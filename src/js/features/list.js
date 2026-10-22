@@ -238,13 +238,17 @@ export function filterOpportunities(
 export function sortOpportunities(items = [], sortMode = "default", lang = "ar") {
   if (!Array.isArray(items) || items.length <= 1) return items;
 
-  const copy = [...items];
+  // Precompute status once per item (Schwartzian transform) to eliminate O(N log N) regex & date parsing in comparator
+  const decorated = items.map((item) => ({
+    item,
+    status: getOpportunityStatus(item, lang),
+  }));
 
   if (sortMode === "deadline") {
     // Earliest deadline first
-    return copy.sort((a, b) => {
-      const stA = getOpportunityStatus(a, lang);
-      const stB = getOpportunityStatus(b, lang);
+    decorated.sort((a, b) => {
+      const stA = a.status;
+      const stB = b.status;
 
       // 1. Items with active upcoming deadline
       const diffA = stA.daysRemaining !== null && !stA.isClosed ? stA.daysRemaining : 99999;
@@ -258,26 +262,29 @@ export function sortOpportunities(items = [], sortMode = "default", lang = "ar")
 
       return 0;
     });
+    return decorated.map((d) => d.item);
   }
 
   if (sortMode === "newest") {
     // Most recently verified / added first
-    return copy.sort((a, b) => {
-      const dateA = a.verified_at || "";
-      const dateB = b.verified_at || "";
+    decorated.sort((a, b) => {
+      const dateA = a.item.verified_at || "";
+      const dateB = b.item.verified_at || "";
       if (dateA !== dateB) return dateB.localeCompare(dateA);
-      return (a.id || "").localeCompare(b.id || "");
+      return (a.item.id || "").localeCompare(b.item.id || "");
     });
+    return decorated.map((d) => d.item);
   }
 
   if (sortMode === "name") {
     // Alphabetical by title according to current locale
     const isAr = lang === "ar";
-    return copy.sort((a, b) => {
-      const titleA = isAr ? a.title_ar || a.title_en : a.title_en || a.title_ar;
-      const titleB = isAr ? b.title_ar || b.title_en : b.title_en || b.title_ar;
+    decorated.sort((a, b) => {
+      const titleA = isAr ? a.item.title_ar || a.item.title_en : a.item.title_en || a.item.title_ar;
+      const titleB = isAr ? b.item.title_ar || b.item.title_en : b.item.title_en || b.item.title_ar;
       return (titleA || "").localeCompare(titleB || "", isAr ? "ar" : "en");
     });
+    return decorated.map((d) => d.item);
   }
 
   // Default: Smart Ranking Strategy
@@ -285,19 +292,18 @@ export function sortOpportunities(items = [], sortMode = "default", lang = "ar")
   // 2. Open scholarships with rolling review or confirmed automatic evaluation
   // 3. Open scholarships with multiple rounds or status needing review
   // 4. Closed scholarships at the end of results
-  return copy.sort((a, b) => {
-    const stA = getOpportunityStatus(a, lang);
-    const stB = getOpportunityStatus(b, lang);
+  function getRank(st) {
+    if (st.isClosed) return 4;
+    if (st.daysRemaining !== null && st.daysRemaining >= 0 && !st.hasMultipleRounds) return 1;
+    if (st.code === "rolling" || st.code === "automatic") return 2;
+    return 3; // multiple rounds or needs review
+  }
 
-    function getRank(st, opp) {
-      if (st.isClosed) return 4;
-      if (st.daysRemaining !== null && st.daysRemaining >= 0 && !st.hasMultipleRounds) return 1;
-      if (st.code === "rolling" || st.code === "automatic") return 2;
-      return 3; // multiple rounds or needs review
-    }
-
-    const rankA = getRank(stA, a);
-    const rankB = getRank(stB, b);
+  decorated.sort((a, b) => {
+    const stA = a.status;
+    const stB = b.status;
+    const rankA = getRank(stA);
+    const rankB = getRank(stB);
 
     if (rankA !== rankB) return rankA - rankB;
 
@@ -308,7 +314,7 @@ export function sortOpportunities(items = [], sortMode = "default", lang = "ar")
 
     // Within Rank 2: Most recently verified, then name
     if (rankA === 2) {
-      const vComp = (b.verified_at || "").localeCompare(a.verified_at || "");
+      const vComp = (b.item.verified_at || "").localeCompare(a.item.verified_at || "");
       if (vComp !== 0) return vComp;
     }
 
@@ -321,13 +327,15 @@ export function sortOpportunities(items = [], sortMode = "default", lang = "ar")
 
     // Within Rank 4: Most recently closed first
     if (rankA === 4) {
-      const dA = a.deadline || "";
-      const dB = b.deadline || "";
+      const dA = a.item.deadline || "";
+      const dB = b.item.deadline || "";
       if (dA !== dB) return dB.localeCompare(dA);
     }
 
-    return (a.id || "").localeCompare(b.id || "");
+    return (a.item.id || "").localeCompare(b.item.id || "");
   });
+
+  return decorated.map((d) => d.item);
 }
 
 /**
