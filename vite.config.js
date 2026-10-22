@@ -4,6 +4,8 @@ import { defineConfig } from "vite";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
+  // Use relative base so assets load correctly on GitHub Pages project subpaths
+  base: "./",
   plugins: [
     tailwindcss(),
     {

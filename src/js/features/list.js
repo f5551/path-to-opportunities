@@ -164,6 +164,8 @@ export function filterOpportunities(
     status = "",
     sort = "default",
     lang = "ar",
+    favoritesOnly = false,
+    favoriteIds = [],
   } = {}
 ) {
   if (!Array.isArray(items)) return [];
@@ -174,6 +176,12 @@ export function filterOpportunities(
   }
 
   let results = items;
+
+  // Filter by Favorites (if requested)
+  if (favoritesOnly && Array.isArray(favoriteIds)) {
+    const favSet = new Set(favoriteIds);
+    results = results.filter((item) => item && favSet.has(item.id));
+  }
 
   // 1. Filter by Type Category
   if (type && type !== "all" && VALID_TYPES.includes(type)) {

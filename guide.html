@@ -6,6 +6,10 @@
     <meta name="description" content="دليل التقديم الشامل — خطوات منهجية وتوجيهات عملية لإعداد ملف تقديم أكاديمي ومهني متميز" />
     <meta name="theme-color" content="#0F766E" />
     <title>دليل التقديم الشامل | طريق الفرص</title>
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/brand-icon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/brand-icon-192.png" />
+    <link rel="apple-touch-icon" href="/assets/images/brand-icon-192.png" />
     <link rel="stylesheet" href="/src/styles/main.css" />
   </head>
   <body>
@@ -20,15 +24,11 @@
         <!-- Brand -->
         <a href="index.html" class="brand" aria-label="طريق الفرص — الصفحة الرئيسية">
           <span class="brand-icon" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect width="28" height="28" rx="8" fill="#0F766E"/>
-              <path d="M7 21L14 7L21 21" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M9.5 16.5H18.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
-            </svg>
+            <img src="/assets/images/brand-icon.png" alt="" width="36" height="36" class="brand-emblem-img" />
           </span>
           <span class="brand-name">
             <span class="brand-ar" data-lang-show="ar">طريق الفرص</span>
-            <span class="brand-en" data-lang-show="en">PATH TO OPP.</span>
+            <span class="brand-en" data-lang-show="en">Path to Opportunities</span>
           </span>
         </a>
 
@@ -130,10 +130,15 @@
       <div id="drawer-backdrop" class="drawer-backdrop"></div>
       <div class="drawer-panel">
         <div class="drawer-header">
-          <span class="brand-name">
-            <span class="brand-ar" data-lang-show="ar">طريق الفرص</span>
-            <span class="brand-en" data-lang-show="en">PATH TO OPP.</span>
-          </span>
+          <div class="drawer-brand">
+            <span class="brand-icon">
+              <img src="/assets/images/brand-icon.png" alt="" width="32" height="32" class="brand-emblem-img drawer-emblem-img" />
+            </span>
+            <span class="brand-name">
+              <span class="brand-ar" data-lang-show="ar">طريق الفرص</span>
+              <span class="brand-en" data-lang-show="en">Path to Opportunities</span>
+            </span>
+          </div>
           <button id="drawer-close-btn" class="drawer-close-btn" type="button" aria-label="إغلاق القائمة">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/>
@@ -195,102 +200,415 @@
       <!-- Guide Hero -->
       <section class="guide-hero" aria-labelledby="guide-title">
         <div class="container guide-hero-content">
-          <div class="section-badge" data-i18n="guide.badge">دليل شامل ومجاني</div>
-          <h1 id="guide-title" class="hero-title" data-i18n="guide.title">دليل التقديم للمنح والفرص العالمية</h1>
+          <div class="section-badge" data-i18n="guide.badge">دليل شامل وعملي</div>
+          <h1 id="guide-title" class="hero-title" data-i18n="guide.title">دليلك لتجهيز ملف التقديم للمنح الدراسية الخارجية</h1>
           <p class="hero-subtitle" data-i18n="guide.subtitle">
-            خطوات منهجية وتوجيهات عملية لإعداد ملف تقديم أكاديمي ومهني متميز يعزز فرص قبولك
+            خريطة طريق عملية ومفصلة خطوة بخطوة لمساعدتك في إعداد وتجهيز كافة المستندات والوثائق المطلوبة للمنح الدراسية الدولية بأعلى معايير القبول.
           </p>
         </div>
       </section>
 
-      <!-- SECTION 1: ROADMAP (6 Steps) -->
-      <section class="guide-section" aria-labelledby="roadmap-title" data-reveal>
+      <!-- Stage Quick Navigation Tabs -->
+      <section class="guide-nav-tabs-section">
         <div class="container">
-          <div class="section-header-block">
-            <div class="section-badge" data-i18n="guide.roadmap.badge">المسار المنهجي</div>
-            <h2 id="roadmap-title" class="section-title" data-i18n="guide.roadmap.title">خريطة طريق التقديم الناجح</h2>
-          </div>
-
-          <div class="guide-roadmap-grid">
-            <!-- Step 1 -->
-            <div class="roadmap-card">
-              <h3 class="roadmap-title" data-i18n="guide.roadmap.step1Title">1. استكشاف الفرص والملاءمة</h3>
-              <p class="roadmap-desc" data-i18n="guide.roadmap.step1Desc">اقرأ شروط الأهلية بدقة وتأكد من توافق تخصصك ومعدلك الدراسي والمرحلة المطلوبة قبل البدء.</p>
-            </div>
-            <!-- Step 2 -->
-            <div class="roadmap-card">
-              <h3 class="roadmap-title" data-i18n="guide.roadmap.step2Title">2. تنظيم جدول المواعيد</h3>
-              <p class="roadmap-desc" data-i18n="guide.roadmap.step2Desc">أنشئ جدولًا زمنيًا يحدد مواعيد إغلاق التقديم ومواعيد تجهيز الأوراق قبل شهر على الأقل من الموعد النهائي.</p>
-            </div>
-            <!-- Step 3 -->
-            <div class="roadmap-card">
-              <h3 class="roadmap-title" data-i18n="guide.roadmap.step3Title">3. تجهيز الوثائق الرسمية</h3>
-              <p class="roadmap-desc" data-i18n="guide.roadmap.step3Desc">ترجم وثائقك الرسمية (شهادات وكشوف درجات) لدى مكاتب ترجمة معتمدة واحتفظ بنسخ رقمية واضحة بصيغة PDF.</p>
-            </div>
-            <!-- Step 4 -->
-            <div class="roadmap-card">
-              <h3 class="roadmap-title" data-i18n="guide.roadmap.step4Title">4. صياغة خطاب الدافع</h3>
-              <p class="roadmap-desc" data-i18n="guide.roadmap.step4Desc">اكتب خطاب دافع أصيل ومركّز يوضح دوافعك الأكاديمية وخطتك المستقبلية ولماذا اخترت هذا البرنامج بالذات.</p>
-            </div>
-            <!-- Step 5 -->
-            <div class="roadmap-card">
-              <h3 class="roadmap-title" data-i18n="guide.roadmap.step5Title">5. طلب خطابات التوصية مبكرًا</h3>
-              <p class="roadmap-desc" data-i18n="guide.roadmap.step5Desc">تواصل مع أساتذتك أو مشرفيك قبل 4-6 أسابيع على الأقل لتمنحهم وقتًا كافيًا لصياغة توصية قوية وشخصية.</p>
-            </div>
-            <!-- Step 6 -->
-            <div class="roadmap-card">
-              <h3 class="roadmap-title" data-i18n="guide.roadmap.step6Title">6. المراجعة النهائية والتقديم</h3>
-              <p class="roadmap-desc" data-i18n="guide.roadmap.step6Desc">دقق ملفك لغويًا، وتأكد من اكتمال كافة الخانات والمرفقات، وقدّم طلبك قبل يومين على الأقل من إغلاق النظام.</p>
-            </div>
-          </div>
+          <nav class="guide-stage-tabs" aria-label="التنقل السريع بين مراحل تجهيز الملف">
+            <a href="#stage-1" class="stage-tab-link active"><span class="tab-num">1</span> <span data-i18n="guide.stages.s1Nav">الوثائق الشخصية</span></a>
+            <a href="#stage-2" class="stage-tab-link"><span class="tab-num">2</span> <span data-i18n="guide.stages.s2Nav">المستندات الأكاديمية</span></a>
+            <a href="#stage-3" class="stage-tab-link"><span class="tab-num">3</span> <span data-i18n="guide.stages.s3Nav">المستندات الداعمة</span></a>
+            <a href="#stage-4" class="stage-tab-link"><span class="tab-num">4</span> <span data-i18n="guide.stages.s4Nav">متطلبات خاصة بالمنح</span></a>
+            <a href="#stage-5" class="stage-tab-link"><span class="tab-num">5</span> <span data-i18n="guide.stages.s5Nav">تقوية الملف والمراجعة</span></a>
+          </nav>
         </div>
       </section>
 
-      <!-- SECTION 2: REQUIRED DOCUMENTS CHECKLIST -->
-      <section class="guide-section" style="background-color: var(--color-bg); border-block: 1px solid var(--color-border);" aria-labelledby="docs-title" data-reveal>
-        <div class="container">
-          <div class="section-header-block">
-            <div class="section-badge" data-i18n="guide.docs.badge">الملف المطلوب</div>
-            <h2 id="docs-title" class="section-title" data-i18n="guide.docs.title">أهم المستندات الشائعة للتقديم</h2>
+      <!-- THE 5 STAGES CONTAINER -->
+      <div class="container guide-stages-wrap">
+
+        <!-- STAGE 1: PERSONAL DOCUMENTS -->
+        <section class="guide-stage-block" id="stage-1" aria-labelledby="stage-1-title" data-reveal>
+          <div class="stage-header">
+            <div class="stage-badge-row">
+              <span class="tab-num">1</span>
+              <span data-i18n="guide.stages.s1Nav">الوثائق الشخصية</span>
+            </div>
+            <h2 id="stage-1-title" class="stage-title" data-i18n="guide.stages.s1Title">المرحلة الأولى: الوثائق الشخصية والهوية</h2>
+            <p class="stage-subtitle" data-i18n="guide.stages.s1Subtitle">المستندات الأساسية لإثبات الهوية الشخصية وتسهيل إجراءات القبول والتأشيرة.</p>
           </div>
 
-          <div class="guide-docs-grid">
-            <div class="doc-card">
-              <div class="doc-check-icon" aria-hidden="true">✓</div>
-              <div>
-                <h3 class="doc-title" data-i18n="guide.docs.doc1">السيرة الذاتية الأكاديمية (Academic CV)</h3>
-                <p class="doc-desc" data-i18n="guide.docs.doc1Desc">مرتبة زمنياً، تركز على الإنجازات والأنشطة والمهارات ذات الصلة بالفرصة.</p>
+          <!-- General Guidance Disclaimer -->
+          <div class="guide-source-notice-box" role="note">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; color:var(--color-accent);" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/>
+            </svg>
+            <p class="guide-source-notice-text" data-i18n="guide.sourceNotice">
+              تنويه: المتطلبات تختلف من منحة لأخرى ومن بلد لآخر؛ هذا الدليل يوضح الشروط العامة والمشتركة ولا يمثل شروطاً إلزامية لكل منحة.
+            </p>
+          </div>
+
+          <div class="stage-docs-grid">
+            <!-- Doc 1: Passport -->
+            <div class="doc-prep-card">
+              <div class="doc-prep-header">
+                <div class="doc-meta-wrap">
+                  <div class="doc-badges-row">
+                    <span class="doc-badge doc-badge-mandatory" data-i18n="guide.badges.mandatory">إلزامي أساسي</span>
+                    <span class="doc-badge doc-badge-validity18" data-i18n="guide.badges.validity18">يوصى بصلاحية 18 شهراً</span>
+                  </div>
+                  <h3 class="doc-prep-title" data-i18n="guide.docs.passportTitle">1. جواز سفر ساري المفعول (Valid Passport)</h3>
+                </div>
+              </div>
+              <p class="doc-prep-body" data-i18n="guide.docs.passportDesc">
+                الوثيقة الرسمية الأولى لإثبات هويتك وجنسيتك. يوصى بألا تقل مدة صلاحيته عن 18 شهراً على الأقل عند التقديم لتغطية فترة دراسة الطلب واستخراج التأشيرة وتصريح الإقامة.
+              </p>
+              <div class="doc-tip-box" data-i18n="guide.docs.passportTip">
+                نصيحة عملية: امسح صفحة البيانات والتوقيع ضوئياً بجودة عالية وملونة بصيغة PDF وتأكد من مطابقة التهجئة الإنجليزية للاسم تماماً لبقية الوثائق.
               </div>
             </div>
 
-            <div class="doc-card">
-              <div class="doc-check-icon" aria-hidden="true">✓</div>
-              <div>
-                <h3 class="doc-title" data-i18n="guide.docs.doc2">خطاب الدافع (Motivation Letter)</h3>
-                <p class="doc-desc" data-i18n="guide.docs.doc2Desc">وثيقة توضح شغفك، أهدافك، وأثر البرنامج في مسارك العلمي والمهني.</p>
+            <!-- Doc 2: Photo -->
+            <div class="doc-prep-card">
+              <div class="doc-prep-header">
+                <div class="doc-meta-wrap">
+                  <div class="doc-badges-row">
+                    <span class="doc-badge doc-badge-mandatory" data-i18n="guide.badges.mandatory">إلزامي أساسي</span>
+                  </div>
+                  <h3 class="doc-prep-title" data-i18n="guide.docs.photoTitle">2. صورة شخصية بخلفية بيضاء (Passport-Size Photo)</h3>
+                </div>
+              </div>
+              <p class="doc-prep-body" data-i18n="guide.docs.photoDesc">
+                صورة رسمية حديثة بخلفية بيضاء نقية. المواصفات القياسية الواردة بالمصدر: مقاس 35×45 مم، ويشغل الرأس 31-36 مم من الارتفاع، مع مسافة علوية 3-5 مم بين الرأس وحافة الصورة.
+              </p>
+              <div class="doc-tip-box" data-i18n="guide.docs.photoTip">
+                نصيحة عملية: إضاءة متوازنة دون ظلال على الوجه أو الخلفية، تعابير وجه محايدة، وتجنب النظارات ذات الانعكاس.
               </div>
             </div>
 
-            <div class="doc-card">
-              <div class="doc-check-icon" aria-hidden="true">✓</div>
-              <div>
-                <h3 class="doc-title" data-i18n="guide.docs.doc3">رسائل التوصية (Letters of Recommendation)</h3>
-                <p class="doc-desc" data-i18n="guide.docs.doc3Desc">من أساتذة أو مدراء يعرفون أداءك الأكاديمي أو المهني عن قُرب.</p>
+            <!-- Doc 3: Birth Certificate -->
+            <div class="doc-prep-card">
+              <div class="doc-prep-header">
+                <div class="doc-meta-wrap">
+                  <div class="doc-badges-row">
+                    <span class="doc-badge doc-badge-conditional" data-i18n="guide.badges.conditional">مشروط ببعض المنح</span>
+                    <span class="doc-badge doc-badge-attestation" data-i18n="guide.badges.attestation">يتطلب تعميد الخارجية</span>
+                  </div>
+                  <h3 class="doc-prep-title" data-i18n="guide.docs.birthCertTitle">3. شهادة الميلاد المترجمة (Certified Birth Certificate)</h3>
+                </div>
               </div>
-            </div>
-
-            <div class="doc-card">
-              <div class="doc-check-icon" aria-hidden="true">✓</div>
-              <div>
-                <h3 class="doc-title" data-i18n="guide.docs.doc4">كشوف الدرجات والشهادات المترجمة</h3>
-                <p class="doc-desc" data-i18n="guide.docs.doc4Desc">مترجمة ومصدقة وفق المعايير المطلوبة من الجهة المانحة.</p>
+              <p class="doc-prep-body" data-i18n="guide.docs.birthCertDesc">
+                مطلوبة في بعض المنح لتأكيد تاريخ ومكان الميلاد والسن والجنسية (خصوصاً في منح البكالوريوس وبعض الدول التي تشترط إثبات القيد العائلي أو الفئة العمرية).
+              </p>
+              <div class="doc-tip-box" data-i18n="guide.docs.birthCertTip">
+                نصيحة عملية: ترجمة قانونية معتمدة وتعميد من وزارة الخارجية وسفارة بلد المنحة عند اشتراط ذلك.
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- SECTION 3: GOLDEN TIPS -->
+        <!-- STAGE 2: ACADEMIC RECORDS -->
+        <section class="guide-stage-block" id="stage-2" aria-labelledby="stage-2-title" data-reveal>
+          <div class="stage-header">
+            <div class="stage-badge-row">
+              <span class="tab-num">2</span>
+              <span data-i18n="guide.stages.s2Nav">المستندات الأكاديمية</span>
+            </div>
+            <h2 id="stage-2-title" class="stage-title" data-i18n="guide.stages.s2Title">المرحلة الثانية: المستندات والشهادات الأكاديمية</h2>
+            <p class="stage-subtitle" data-i18n="guide.stages.s2Subtitle">السجلات التعليمية المترجمة والمعمدة التي تعكس مؤهلاتك وتفوقك الدراسي.</p>
+          </div>
+
+          <div class="stage-docs-grid">
+            <!-- Doc 4: Graduation Certificate -->
+            <div class="doc-prep-card">
+              <div class="doc-prep-header">
+                <div class="doc-meta-wrap">
+                  <div class="doc-badges-row">
+                    <span class="doc-badge doc-badge-mandatory" data-i18n="guide.badges.mandatory">إلزامي أساسي</span>
+                    <span class="doc-badge doc-badge-attestation" data-i18n="guide.badges.attestation">يتطلب تعميد الخارجية</span>
+                  </div>
+                  <h3 class="doc-prep-title" data-i18n="guide.docs.gradCertTitle">4. شهادة التخرج المترجمة (Graduation Certificate / Diploma)</h3>
+                </div>
+              </div>
+              <p class="doc-prep-body" data-i18n="guide.docs.gradCertDesc">
+                شهادة الثانوية العامة لبرامج البكالوريوس، أو وثيقة البكالوريوس للماجستير، أو الماجستير للدكتوراه. يتم تعميدها وتصديقها من وزارة الخارجية والجهات التعليمية الرسمية.
+              </p>
+              <div class="doc-tip-box" data-i18n="guide.docs.gradCertTip">
+                نصيحة للطلاب المتوقع تخرجهم: تسمح معظم المنح بالتقديم المؤقت بإفادة قيد مع كشف درجات الفصول المكتملة حتى التخرج.
+              </div>
+            </div>
+
+            <!-- Doc 5: Academic Transcript -->
+            <div class="doc-prep-card">
+              <div class="doc-prep-header">
+                <div class="doc-meta-wrap">
+                  <div class="doc-badges-row">
+                    <span class="doc-badge doc-badge-mandatory" data-i18n="guide.badges.mandatory">إلزامي أساسي</span>
+                    <span class="doc-badge doc-badge-attestation" data-i18n="guide.badges.attestation">يتطلب تعميد الخارجية</span>
+                  </div>
+                  <h3 class="doc-prep-title" data-i18n="guide.docs.transcriptTitle">5. كشف الدرجات المترجم (Academic Transcript)</h3>
+                </div>
+              </div>
+              <p class="doc-prep-body" data-i18n="guide.docs.transcriptDesc">
+                بيان تفصيلي بجميع المواد والدرجات والساعات المعتمدة والمعدل التراكمي (GPA) لجميع سنوات الدراسة. يتم تعميده وتصديقه من وزارة الخارجية والوزارة المعنية.
+              </p>
+              <div class="doc-tip-box" data-i18n="guide.docs.transcriptTip">
+                نصيحة عملية: أرفق سلم الدرجات الرسمي (Grading Scale) الموضح للنسب المئوية والتقديرات للمقارنة الأكاديمية الدولية.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- STAGE 3: SUPPORTING DOCUMENTS -->
+        <section class="guide-stage-block" id="stage-3" aria-labelledby="stage-3-title" data-reveal>
+          <div class="stage-header">
+            <div class="stage-badge-row">
+              <span class="tab-num">3</span>
+              <span data-i18n="guide.stages.s3Nav">المستندات الداعمة</span>
+            </div>
+            <h2 id="stage-3-title" class="stage-title" data-i18n="guide.stages.s3Title">المرحلة الثالثة: المستندات الداعمة والمقالات</h2>
+            <p class="stage-subtitle" data-i18n="guide.stages.s3Subtitle">العناصر الحاسمة في إبراز شخصيتك ودوافعك وقدراتك اللغوية والأكاديمية.</p>
+          </div>
+
+          <div class="stage-docs-grid">
+            <!-- Doc 6: Recommendations -->
+            <div class="doc-prep-card">
+              <div class="doc-prep-header">
+                <div class="doc-meta-wrap">
+                  <div class="doc-badges-row">
+                    <span class="doc-badge doc-badge-mandatory" data-i18n="guide.badges.mandatory">إلزامي أساسي</span>
+                  </div>
+                  <h3 class="doc-prep-title" data-i18n="guide.docs.recommendationsTitle">6. من 2 إلى 3 توصيات أكاديمية (Recommendation Letters)</h3>
+                </div>
+              </div>
+              <p class="doc-prep-body" data-i18n="guide.docs.recommendationsDesc">
+                خطابات رسمية من أساتذة أو مشرفين جامعيين درسوك مباشرة. تشترط أغلب المنح تقديم 2 أو 3 توصيات تقيم أداءك الأكاديمي، شغفك البحثي، وانضباطك.
+              </p>
+              <div class="doc-tip-box" data-i18n="guide.docs.recommendationsTip">
+                نصيحة عملية: يجب كتابتها على الورق الرسمي للكلية (Letterhead) وتتضمن توقيع الأستاذ، ختمه، وبريده الجامعي الرسمي.
+              </div>
+            </div>
+
+            <!-- Doc 7: CV -->
+            <div class="doc-prep-card">
+              <div class="doc-prep-header">
+                <div class="doc-meta-wrap">
+                  <div class="doc-badges-row">
+                    <span class="doc-badge doc-badge-mandatory" data-i18n="guide.badges.mandatory">إلزامي أساسي</span>
+                  </div>
+                  <h3 class="doc-prep-title" data-i18n="guide.docs.cvTitle">7. سيرة ذاتية باللغة الإنجليزية (Academic CV)</h3>
+                </div>
+              </div>
+              <p class="doc-prep-body" data-i18n="guide.docs.cvDesc">
+                سيرة ذاتية بصيغة أكاديمية موحدة ومحدثة (مثل Europass أو التنسيق الأكاديمي القياسي)، توضح مسارك التعليمي، خبراتك، مهاراتك، مشاريعك، وجوائزك بوضوح وإيجاز.
+              </p>
+              <div class="doc-tip-box" data-i18n="guide.docs.cvTip">
+                نصيحة عملية: نسّق السيرة بدون أخطاء إملائية، وركز على الإنجازات والأنشطة ذات الصلة بالتخصص المستهدف.
+              </div>
+            </div>
+
+            <!-- Doc 8: Motivation Letter -->
+            <div class="doc-prep-card">
+              <div class="doc-prep-header">
+                <div class="doc-meta-wrap">
+                  <div class="doc-badges-row">
+                    <span class="doc-badge doc-badge-mandatory" data-i18n="guide.badges.mandatory">إلزامي أساسي</span>
+                    <span class="doc-badge doc-badge-attestation" data-i18n="guide.badges.booster">حاسم في المفاضلة</span>
+                  </div>
+                  <h3 class="doc-prep-title" data-i18n="guide.docs.motivationTitle">8. خطاب الدافع أو الحافز (Motivation Letter / SOP)</h3>
+                </div>
+              </div>
+              <p class="doc-prep-body" data-i18n="guide.docs.motivationDesc">
+                الوثيقة الأكثر حسماً في قرار لجنة الاختيار. تشرح فيها خلفيتك الأكاديمية، أسباب اختيارك للمنحة والجامعة والبلد، خطتك المستقبلية، وأثر المنحة على مجتمعك.
+              </p>
+              <div class="doc-tip-box" data-i18n="guide.docs.motivationTip">
+                نصيحة عملية: ابتعد تماماً عن النسخ من الإنترنت أو القوالب الجاهزة؛ الصدق والتخصيص والقصة الملهمة هي سر التميز.
+              </div>
+            </div>
+
+            <!-- Doc 9: Language Certificate -->
+            <div class="doc-prep-card">
+              <div class="doc-prep-header">
+                <div class="doc-meta-wrap">
+                  <div class="doc-badges-row">
+                    <span class="doc-badge doc-badge-conditional" data-i18n="guide.badges.conditional">مشروط ببعض المنح</span>
+                  </div>
+                  <h3 class="doc-prep-title" data-i18n="guide.docs.languageTitle">9. شهادة إتقان اللغة الإنجليزية (English Proficiency)</h3>
+                </div>
+              </div>
+              <p class="doc-prep-body" data-i18n="guide.docs.languageDesc">
+                تختلف متطلبات إجادة اللغة الإنجليزية من منحة لأخرى (مثل IELTS أو TOEFL iBT أو Duolingo). بعض المنح تعفي الطلاب إذا كانت لغة دراستهم السابقة الإنجليزية، وبعض المنح تقدم سنة تحضيرية للغة.
+              </p>
+              <div class="doc-tip-box" data-i18n="guide.docs.languageTip">
+                نصيحة عملية: راجع شروط كل فرصة بعينها؛ وجود شهادة معتمدة يفتح أمامك خيارات أوسع ويمنحك أولوية تنافسية عالية.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- STAGE 4: SPECIAL & CONDITIONAL REQUIREMENTS -->
+        <section class="guide-stage-block" id="stage-4" aria-labelledby="stage-4-title" data-reveal>
+          <div class="stage-header">
+            <div class="stage-badge-row">
+              <span class="tab-num">4</span>
+              <span data-i18n="guide.stages.s4Nav">متطلبات خاصة بالمنح</span>
+            </div>
+            <h2 id="stage-4-title" class="stage-title" data-i18n="guide.stages.s4Title">المرحلة الرابعة: متطلبات خاصة ومشروطة ببعض المنح</h2>
+            <p class="stage-subtitle" data-i18n="guide.stages.s4Subtitle">مستندات تطلبها دول أو جامعات معينة، مع مراعاة فترات صلاحيتها المحدودة.</p>
+          </div>
+
+          <div class="stage-docs-grid">
+            <!-- Doc 10: Medical Examination -->
+            <div class="doc-prep-card">
+              <div class="doc-prep-header">
+                <div class="doc-meta-wrap">
+                  <div class="doc-badges-row">
+                    <span class="doc-badge doc-badge-conditional" data-i18n="guide.badges.conditional">مشروط ببعض المنح</span>
+                    <span class="doc-badge doc-badge-validity6" data-i18n="guide.badges.validity6">صلاحية قصيرة (نحو 6 أشهر)</span>
+                  </div>
+                  <h3 class="doc-prep-title" data-i18n="guide.docs.medicalTitle">10. الفحص الطبي (Medical Examination Form)</h3>
+                </div>
+              </div>
+              <div class="doc-validity-alert">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/>
+                </svg>
+                <span data-i18n="guide.docs.medicalValidityNote">تنبيه الصلاحية: صلاحية الفحص الطبي في الغالب لا تتجاوز 6 أشهر فقط؛ لذا يفضل استخراجه أثناء فترة التقديم لتكون سارية عند دراسة الطلب.</span>
+              </div>
+              <p class="doc-prep-body" data-i18n="guide.docs.medicalDesc">
+                تقرير طبي رسمي صادر من مستشفى معتمد يثبت خلو المتقدم من الأمراض المعدية والسارية مع تخطيط قلب وأشعة صدر وفحوص مخبرية (كالنموذج الخاص بالمنحة الصينية CSC).
+              </p>
+              <div class="doc-tip-box" data-i18n="guide.docs.medicalTip">
+                نصيحة عملية: تأكد من ختم المستشفى الرسمي وتوقيع الطبيب وصورتك المختومة على التقرير الطبي.
+              </div>
+            </div>
+
+            <!-- Doc 11: Police Clearance -->
+            <div class="doc-prep-card">
+              <div class="doc-prep-header">
+                <div class="doc-meta-wrap">
+                  <div class="doc-badges-row">
+                    <span class="doc-badge doc-badge-conditional" data-i18n="guide.badges.conditional">مشروط ببعض المنح</span>
+                    <span class="doc-badge doc-badge-validity6" data-i18n="guide.badges.validity6">صلاحية قصيرة (نحو 6 أشهر)</span>
+                    <span class="doc-badge doc-badge-attestation" data-i18n="guide.badges.attestation">يتطلب تعميد الخارجية</span>
+                  </div>
+                  <h3 class="doc-prep-title" data-i18n="guide.docs.policeTitle">11. شهادة خلو السوابق / الفيش والتشبيه (Police Clearance)</h3>
+                </div>
+              </div>
+              <div class="doc-validity-alert">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/>
+                </svg>
+                <span data-i18n="guide.docs.policeValidityNote">تنبيه الصلاحية: صلاحية شهادة الفيش والتشبيه غالباً 3 إلى 6 أشهر فقط؛ يُفضل استخراجها تزامناً مع نافذة التقديم.</span>
+              </div>
+              <p class="doc-prep-body" data-i18n="guide.docs.policeDesc">
+                شهادة حسن سيرة وسلوك جنائي صادرة من إدارة الأدلة الجنائية أو وزارة الداخلية تثبت خلو صحيفتك من السوابق، وتطلبها بعض الدول كشرط أساسي للتأشيرة والمنحة.
+              </p>
+              <div class="doc-tip-box" data-i18n="guide.docs.policeTip">
+                نصيحة عملية: يتم ترجمتها واعتمادها من وزارة الخارجية إذا كانت مطلوبة بلغة بلد المنحة.
+              </div>
+            </div>
+
+            <!-- Doc 12: Research Proposal -->
+            <div class="doc-prep-card">
+              <div class="doc-prep-header">
+                <div class="doc-meta-wrap">
+                  <div class="doc-badges-row">
+                    <span class="doc-badge doc-badge-conditional" data-i18n="guide.badges.conditional">مشروط ببعض المنح</span>
+                  </div>
+                  <h3 class="doc-prep-title" data-i18n="guide.docs.researchPlanTitle">12. خطة بحثية للدراسات العليا (Research Proposal)</h3>
+                </div>
+              </div>
+              <p class="doc-prep-body" data-i18n="guide.docs.researchPlanDesc">
+                مقترح بحثي متكامل مطلوب غالباً لدرجتي الماجستير البحثي والدكتوراه، يوضح عنوان البحث، المشكلة، الأهداف، المنهجية، والمراجع المقترحة.
+              </p>
+              <div class="doc-tip-box" data-i18n="guide.docs.researchPlanTip">
+                نصيحة عملية: ناقش المقترح مع أساتذتك قبل التقديم وتأكد من توافقه مع الاهتمامات البحثية للقسم أو المشرف المستهدف.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- STAGE 5: PROFILE BOOSTING & FINAL CHECK -->
+        <section class="guide-stage-block" id="stage-5" aria-labelledby="stage-5-title" data-reveal>
+          <div class="stage-header">
+            <div class="stage-badge-row">
+              <span class="tab-num">5</span>
+              <span data-i18n="guide.stages.s5Nav">تقوية الملف والمراجعة</span>
+            </div>
+            <h2 id="stage-5-title" class="stage-title" data-i18n="guide.stages.s5Title">المرحلة الخامسة: تعزيز التنافسية والمراجعة النهائية</h2>
+            <p class="stage-subtitle" data-i18n="guide.stages.s5Subtitle">إضافات نوعية تميز ملفك عن آلاف المتقدمين وخطوات التدقيق قبل الإرسال.</p>
+          </div>
+
+          <div class="guide-boosters-grid">
+            <!-- Booster 1: SAT & Standardized Tests -->
+            <div class="booster-card">
+              <div class="booster-icon-box" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="booster-title" data-i18n="guide.boosters.satTitle">شهادات الاختبارات الدولية (SAT / ACT / GRE / GMAT)</h3>
+                <p class="booster-desc" data-i18n="guide.boosters.satDesc">
+                  وجود شهادات اختبارات دولية متميزة مثل SAT للبكالوريوس أو GRE/GMAT للدراسات العليا يرفع فرصة قبولك ومفاضلتك بشكل كبير حتى لو كانت اختيارية.
+                </p>
+              </div>
+            </div>
+
+            <!-- Booster 2: Volunteering -->
+            <div class="booster-card">
+              <div class="booster-icon-box" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="booster-title" data-i18n="guide.boosters.volunteeringTitle">الأنشطة التطوعية والمبادرات المجتمعية</h3>
+                <p class="booster-desc" data-i18n="guide.boosters.volunteeringDesc">
+                  شهادات العمل التطوعي والمشاركة المدنية تلعب دوراً كبيراً في إبراز مهاراتك القيادية والتزامك المجتمعي، وهي ركيزة أساسية لدى لجان التقييم.
+                </p>
+              </div>
+            </div>
+
+            <!-- Booster 3: Courses & Micro-credentials -->
+            <div class="booster-card">
+              <div class="booster-icon-box" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="18" height="14" x="3" y="3" rx="2"/>
+                  <path d="M7 21h10"/><path d="M12 17v4"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="booster-title" data-i18n="guide.boosters.coursesTitle">الدورات والكورسات والشهادات التدريبية</h3>
+                <p class="booster-desc" data-i18n="guide.boosters.coursesDesc">
+                  الكورسات الإضافية والشهادات المهنية التي يمتلكها الطالب تعكس الشغف بالتعلم الذاتي وتطوير المهارات التخصصية بشكل مستمر.
+                </p>
+              </div>
+            </div>
+
+            <!-- Booster 4: Review & Official Portal -->
+            <div class="booster-card">
+              <div class="booster-icon-box" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                  <line x1="16" x2="8" y1="13" y2="13"/>
+                  <line x1="16" x2="8" y1="17" y2="17"/>
+                  <polyline points="10 9 9 9 8 9"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="booster-title" data-i18n="guide.boosters.reviewTitle">مراجعة المستندات والصلاحيات قبل الإرسال</h3>
+                <p class="booster-desc" data-i18n="guide.boosters.reviewDesc">
+                  تحقق من مطابقة الأسماء الإنجليزية تماماً في جميع الشهادات وجواز السفر، وتأكد من سريان الصلاحيات، ثم توجه إلى رابط التقديم الرسمي لإكمال طلبك بثقة.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- SECTION: GOLDEN EXPERT TIPS (Preserved & Enhanced) -->
       <section class="guide-section" aria-labelledby="tips-title" data-reveal>
         <div class="container">
           <div class="section-header-block">
@@ -323,7 +641,7 @@
         </div>
       </section>
 
-      <!-- SECTION 4: FAQ ACCORDION -->
+      <!-- SECTION: FAQ ACCORDION (Preserved & Enhanced) -->
       <section class="guide-section" style="background-color: var(--color-bg); border-top: 1px solid var(--color-border);" aria-labelledby="faq-title" data-reveal>
         <div class="container">
           <div class="section-header-block">
@@ -387,20 +705,110 @@
         </div>
       </section>
 
-      <!-- CTA Section -->
-      <section class="cta-section" data-reveal>
+      <!-- SECTION: ASSISTANCE & CONTACT TEAM CTA (Requested Section) -->
+      <section class="guide-assistance-section" id="assistance-section" aria-labelledby="assistance-title" data-reveal>
         <div class="container">
-          <div class="cta-banner-box">
-            <h2 class="cta-title" data-i18n="cta.title">هل أنت مستعد لبدء خطوتك القادمة؟</h2>
-            <p class="cta-desc" data-i18n="cta.desc">
-              تصفح أحدث المنح والدورات والتدريبات المتاحة الآن وابدأ في تجهيز طلبك.
+          <div class="assistance-box">
+            <div class="assistance-badge" data-i18n="guide.contactHelp.sectionBadge">دعم مخصص للمتقدمين</div>
+            <h2 id="assistance-title" class="assistance-title" data-i18n="guide.contactHelp.title">تحتاج مساعدة في التقديم على المنح؟</h2>
+            <p class="assistance-desc" data-i18n="guide.contactHelp.desc">
+              يمكنك التواصل مع فريق طريق الفرص للحصول على المساعدة في تجهيز طلبك والتقديم على المنح الدراسية.
             </p>
-            <div class="cta-buttons-row">
-              <a href="opportunities.html" class="btn-cta-light" data-i18n="cta.button">استكشف الفرص الآن</a>
-            </div>
+
+            <button
+              type="button"
+              id="btn-open-contact-modal"
+              class="btn-assistance-contact"
+              aria-haspopup="dialog"
+              aria-controls="contact-team-modal"
+            >
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/>
+              </svg>
+              <span data-i18n="guide.contactHelp.buttonText">للتقديم عن طريق فريق طريق الفرص تواصل معنا</span>
+            </button>
+
+            <p class="assistance-disclaimer" data-i18n="guide.contactHelp.noOfficialNotice">
+              تنويه: طريق الفرص منصة إرشادية وتدقيقية مستقلة تهدف لمساعدة الطلاب في تجهيز ملفاتهم الرسمية بأعلى معايير الجودة، ولا تضمن القبول الأكاديمي الذي يرجع حصراً للجامعات والجهات المانحة.
+            </p>
           </div>
         </div>
       </section>
+
+      <!-- MODAL: CONTACT TEAM ACCESSIBLE DIALOG -->
+      <div id="contact-team-modal" class="contact-modal hidden" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+        <div id="modal-backdrop" class="modal-backdrop" tabindex="-1"></div>
+        <div class="modal-panel" role="document">
+          <div class="modal-header">
+            <div>
+              <h3 id="contact-modal-title" class="modal-title" data-i18n="guide.contactHelp.modalTitle">طلب مساعدة في التقديم — فريق طريق الفرص</h3>
+              <p class="modal-subtitle" data-i18n="guide.contactHelp.modalSubtitle">أدخل بياناتك ونوع المنحة أو المساعدة التي تحتاجها، وسيتواصل معك أحد مستشاري الفريق في أقرب وقت.</p>
+            </div>
+            <button type="button" id="modal-close-btn" class="modal-close-btn" aria-label="إغلاق نافذة التواصل">
+              &times;
+            </button>
+          </div>
+
+          <!-- Form View -->
+          <div id="modal-form-wrap">
+            <form id="contact-assistance-form" class="auth-form" novalidate>
+              <div class="form-group">
+                <label for="contact-fullname" class="form-label" data-i18n="guide.contactHelp.fullName">الاسم الكامل</label>
+                <input type="text" id="contact-fullname" name="fullName" class="form-input" required />
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email" class="form-label" data-i18n="guide.contactHelp.email">البريد الإلكتروني</label>
+                <input type="email" id="contact-email" name="email" class="form-input" required />
+              </div>
+
+              <div class="form-group">
+                <label for="contact-phone" class="form-label" data-i18n="guide.contactHelp.phone">رقم الهاتف / الواتساب (اختياري)</label>
+                <input type="tel" id="contact-phone" name="phone" class="form-input" />
+              </div>
+
+              <div class="form-group">
+                <label for="contact-opp" class="form-label" data-i18n="guide.contactHelp.targetOpp">المنحة أو التخصص المستهدف</label>
+                <input type="text" id="contact-opp" name="targetOpp" class="form-input" />
+              </div>
+
+              <div class="form-group">
+                <label for="contact-type" class="form-label" data-i18n="guide.contactHelp.helpType">نوع المساعدة المطلوبة</label>
+                <select id="contact-type" name="helpType" class="form-input">
+                  <option value="review" data-i18n="guide.contactHelp.helpReview">مراجعة وتدقيق المستندات والخطابات</option>
+                  <option value="sop" data-i18n="guide.contactHelp.helpSop">صياغة وتطوير خطاب الدافع والسيرة الذاتية</option>
+                  <option value="full" data-i18n="guide.contactHelp.helpFull">متابعة تجهيز الملف والتقديم الكامل</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-notes" class="form-label" data-i18n="guide.contactHelp.notes">ملاحظات أو استفسارات إضافية</label>
+                <textarea id="contact-notes" name="notes" class="form-input" rows="3"></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary" style="margin-top: 0.5rem; justify-content: center;" data-i18n="guide.contactHelp.submitBtn">
+                إرسال طلب المساعدة
+              </button>
+            </form>
+          </div>
+
+          <!-- Success State View (Hidden by default) -->
+          <div id="modal-success-state" class="modal-success-box hidden" role="status" aria-live="polite">
+            <div class="modal-success-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <h3 class="modal-title" style="margin-bottom:0.5rem;" data-i18n="guide.contactHelp.successTitle">تم استلام طلبك بنجاح!</h3>
+            <p class="modal-subtitle" style="margin-bottom:1.5rem;" data-i18n="guide.contactHelp.successDesc">
+              شكراً لتواصلك مع فريق طريق الفرص. تم تسجيل طلبك وسيقوم الفريق بمراجعته والرد عليك عبر بريدك الإلكتروني قريباً.
+            </p>
+            <button type="button" id="btn-new-request" class="btn-secondary" style="margin: 0 auto; display: block;">
+              إرسال طلب آخر
+            </button>
+          </div>
+        </div>
+      </div>
 
     </main>
 
@@ -413,15 +821,11 @@
           <div>
             <div class="brand" style="margin-bottom: 0.5rem;">
               <span class="brand-icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <rect width="28" height="28" rx="8" fill="#0F766E"/>
-                  <path d="M7 21L14 7L21 21" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M9.5 16.5H18.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-              </span>
+            <img src="/assets/images/brand-icon.png" alt="" width="36" height="36" class="brand-emblem-img" />
+          </span>
               <span class="brand-name" style="color: #ffffff;">
                 <span class="brand-ar" data-lang-show="ar">طريق الفرص</span>
-                <span class="brand-en" data-lang-show="en">PATH TO OPP.</span>
+                <span class="brand-en" data-lang-show="en">Path to Opportunities</span>
               </span>
             </div>
             <p class="footer-brand-desc" data-i18n="footer.desc">

@@ -13,6 +13,7 @@
 import { t, formatDate } from "../lib/i18n.js";
 import { escHtml, escAttr, sanitizeUrl } from "../lib/searchUtils.js";
 import { getOpportunityStatus } from "../lib/scholarshipStatus.js";
+import { isFavorite, toggleFavorite } from "../lib/favoritesStore.js";
 
 export { sanitizeUrl };
 
@@ -28,6 +29,7 @@ const ICONS = {
   funding: `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>`,
   calendar: `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>`,
   arrow: `<svg class="cta-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>`,
+  heart: `<svg class="heart-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>`,
 };
 
 /**
@@ -90,6 +92,9 @@ export function createCard(opp) {
 
   const footerText = status.subtitle || (opp.deadline ? formatDate(opp.deadline) : t("card.deadlineOpen"));
 
+  const favorited = isFavorite(opp.id);
+  const favLabel = favorited ? t("card.removeFavorite") : t("card.addFavorite");
+
   const article = document.createElement("article");
   article.className = `opp-card group ${status.isClosed ? "card-closed" : ""}`;
   article.setAttribute("role", "listitem");
@@ -114,14 +119,28 @@ export function createCard(opp) {
             : ""
         }
       </div>
-      ${
-        opp.type !== "scholarship"
-          ? `<span class="type-badge ${opp.type}" aria-label="${badgeLabel}">
-              ${ICONS[opp.type] || ""}
-              <span>${badgeLabel}</span>
-            </span>`
-          : ""
-      }
+      <div class="card-header-actions">
+        ${
+          opp.type !== "scholarship"
+            ? `<span class="type-badge ${opp.type}" aria-label="${badgeLabel}">
+                ${ICONS[opp.type] || ""}
+                <span>${badgeLabel}</span>
+              </span>`
+            : ""
+        }
+        <button
+          type="button"
+          class="btn-card-favorite ${favorited ? "active" : ""}"
+          data-id="${escAttr(opp.id)}"
+          aria-label="${escHtml(favLabel)}"
+          aria-pressed="${favorited ? "true" : "false"}"
+          title="${escHtml(favLabel)}"
+        >
+          <svg class="heart-icon" width="18" height="18" viewBox="0 0 24 24" fill="${favorited ? "currentColor" : "none"}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+          </svg>
+        </button>
+      </div>
     </div>
 
     <div class="card-institution" title="${escHtml(opp.organization)}">
@@ -181,16 +200,33 @@ export function createCard(opp) {
     </div>
   `;
 
-  // Clicking anywhere on card navigates to detail, unless clicked on another anchor
+  // Handle favorite button click without navigating
+  const favBtn = article.querySelector(".btn-card-favorite");
+  favBtn?.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const nowFavorited = toggleFavorite(opp.id);
+    favBtn.classList.toggle("active", nowFavorited);
+    favBtn.setAttribute("aria-pressed", String(nowFavorited));
+    const label = nowFavorited ? t("card.removeFavorite") : t("card.addFavorite");
+    favBtn.setAttribute("aria-label", label);
+    favBtn.setAttribute("title", label);
+    const icon = favBtn.querySelector(".heart-icon");
+    if (icon) {
+      icon.setAttribute("fill", nowFavorited ? "currentColor" : "none");
+    }
+  });
+
+  // Clicking anywhere on card navigates to detail, unless clicked on another anchor or favorite button
   article.addEventListener("click", (e) => {
-    if (e.target.closest("a")) return;
+    if (e.target.closest("a") || e.target.closest(".btn-card-favorite")) return;
     window.location.href = `detail.html?id=${encodeURIComponent(opp.id)}`;
   });
 
   // Keyboard: Enter/Space activates the detail link
   article.addEventListener("keydown", (e) => {
     if (e.key === "Enter" || e.key === " ") {
-      if (!e.target.closest("a")) {
+      if (!e.target.closest("a") && !e.target.closest(".btn-card-favorite")) {
         e.preventDefault();
         window.location.href = `detail.html?id=${encodeURIComponent(opp.id)}`;
       }

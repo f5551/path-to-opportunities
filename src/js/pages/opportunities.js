@@ -10,6 +10,7 @@ import { initI18n, t } from "../lib/i18n.js";
 import { initNav } from "../lib/nav.js";
 import { loadOpportunities, filter, getFilterOptions } from "../lib/opportunitiesStore.js";
 import { createCard, createSkeletonCard } from "../components/OpportunityCard.js";
+import { getFavorites, getFavoritesCount } from "../lib/favoritesStore.js";
 import {
   animateCardsEnter,
   animateTabPress,
@@ -19,6 +20,7 @@ import {
 const state = {
   activeFilter: "all",
   searchQuery: "",
+  onlyFavorites: false,
   scholarshipFilters: {
     country: "",
     level: "",
@@ -36,12 +38,16 @@ let _urlSyncTimer = null;
 const grid = document.getElementById("opps-grid");
 const emptyState = document.getElementById("empty-state");
 const noResults = document.getElementById("no-results");
+const favoritesEmptyState = document.getElementById("favorites-empty-state");
+const btnResetFavorites = document.getElementById("btn-reset-favorites");
 const errorState = document.getElementById("error-state");
 const resultsCount = document.getElementById("results-count");
 const searchInput = document.getElementById("search-input");
 const searchClear = document.getElementById("search-clear");
 const clearFiltersBtn = document.getElementById("clear-filters");
 const filterTabs = document.querySelectorAll(".filter-tab");
+const filterFavoritesBtn = document.getElementById("filter-favorites-btn");
+const favCountBadge = document.getElementById("fav-count-badge");
 const scholarshipFiltersWrap = document.getElementById("scholarship-filters");
 const filterCountry = document.getElementById("filter-country");
 const filterLevel = document.getElementById("filter-level");
@@ -52,11 +58,19 @@ const filterSort = document.getElementById("filter-sort");
 const resetScholarshipFiltersBtn = document.getElementById("reset-scholarship-filters");
 
 // ─── Render Functions ─────────────────────────────────────
+function updateFavoritesBadge() {
+  const count = getFavoritesCount();
+  if (!favCountBadge) return;
+  favCountBadge.textContent = String(count);
+  favCountBadge.classList.toggle("hidden", count === 0);
+}
+
 function showSkeletons(count = 6) {
   if (!grid) return;
   grid.innerHTML = "";
   emptyState?.classList.add("hidden");
   noResults?.classList.add("hidden");
+  favoritesEmptyState?.classList.add("hidden");
   errorState?.classList.add("hidden");
   for (let i = 0; i < count; i++) {
     grid.appendChild(createSkeletonCard());
@@ -68,6 +82,7 @@ function renderOpportunities(opportunities) {
   grid.innerHTML = "";
   emptyState?.classList.add("hidden");
   noResults?.classList.add("hidden");
+  favoritesEmptyState?.classList.add("hidden");
   errorState?.classList.add("hidden");
 
   const allItems = loadOpportunities();
@@ -85,7 +100,11 @@ function renderOpportunities(opportunities) {
   }
 
   if (opportunities.length === 0) {
-    noResults?.classList.remove("hidden");
+    if (state.onlyFavorites) {
+      favoritesEmptyState?.classList.remove("hidden");
+    } else {
+      noResults?.classList.remove("hidden");
+    }
     updateResultsCount(0);
     return;
   }
@@ -248,6 +267,12 @@ function syncUrlParams() {
         url.searchParams.delete("q");
       }
 
+      if (state.onlyFavorites) {
+        url.searchParams.set("favorites", "1");
+      } else {
+        url.searchParams.delete("favorites");
+      }
+
       if (state.activeFilter === "scholarship") {
         const sf = state.scholarshipFilters;
         if (sf.country) url.searchParams.set("country", sf.country);
@@ -291,6 +316,15 @@ function initFromUrlParams() {
   const funding = params.get("funding");
   const status = params.get("status");
   const sort = params.get("sort");
+  const favorites = params.get("favorites");
+
+  if (favorites === "1" || favorites === "true") {
+    state.onlyFavorites = true;
+    if (filterFavoritesBtn) {
+      filterFavoritesBtn.classList.add("active");
+      filterFavoritesBtn.setAttribute("aria-pressed", "true");
+    }
+  }
 
   if (q) {
     state.searchQuery = q;
@@ -333,6 +367,8 @@ function applyFilters() {
     fundingType: state.scholarshipFilters.fundingType,
     status: state.scholarshipFilters.status,
     sort: state.scholarshipFilters.sort,
+    favoritesOnly: state.onlyFavorites,
+    favoriteIds: getFavorites(),
     lang,
   });
 
@@ -430,6 +466,9 @@ function wireEvents() {
   clearFiltersBtn?.addEventListener("click", () => {
     state.activeFilter = "all";
     state.searchQuery = "";
+    state.onlyFavorites = false;
+    filterFavoritesBtn?.classList.remove("active");
+    filterFavoritesBtn?.setAttribute("aria-pressed", "false");
     resetScholarshipFilterState();
     scholarshipFiltersWrap?.classList.add("hidden");
 
@@ -449,6 +488,45 @@ function wireEvents() {
     } catch {}
 
     applyFilters();
+  });
+
+  // Favorites toggle button
+  filterFavoritesBtn?.addEventListener("click", () => {
+    state.onlyFavorites = !state.onlyFavorites;
+    filterFavoritesBtn.classList.toggle("active", state.onlyFavorites);
+    filterFavoritesBtn.setAttribute("aria-pressed", state.onlyFavorites ? "true" : "false");
+    applyFilters();
+  });
+
+  // Reset favorites filter button in empty state
+  btnResetFavorites?.addEventListener("click", () => {
+    state.onlyFavorites = false;
+    filterFavoritesBtn?.classList.remove("active");
+    filterFavoritesBtn?.setAttribute("aria-pressed", "false");
+    applyFilters();
+  });
+
+  // Custom event fired when any favorite is toggled
+  window.addEventListener("pto:favorites-updated", (e) => {
+    updateFavoritesBadge();
+    if (state.onlyFavorites) {
+      applyFilters();
+    } else {
+      const toggledId = e.detail?.id;
+      if (toggledId) {
+        const matchingCard = grid?.querySelector(`.opp-card[data-id="${toggledId}"]`);
+        if (matchingCard) {
+          const btn = matchingCard.querySelector(".btn-card-favorite");
+          const isFav = e.detail?.isFavorite;
+          if (btn) {
+            btn.classList.toggle("active", isFav);
+            btn.setAttribute("aria-pressed", String(isFav));
+            const icon = btn.querySelector(".heart-icon");
+            if (icon) icon.setAttribute("fill", isFav ? "currentColor" : "none");
+          }
+        }
+      }
+    }
   });
 
   // Keyboard: ESC
@@ -474,6 +552,7 @@ async function boot() {
     },
   });
 
+  updateFavoritesBadge();
   wireEvents();
   loadOpportunities();
   initFromUrlParams();

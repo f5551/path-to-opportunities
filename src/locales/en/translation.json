@@ -130,7 +130,8 @@
       "all": "All",
       "scholarships": "Scholarships",
       "courses": "Free Courses",
-      "internships": "Internships"
+      "internships": "Internships",
+      "myFavorites": "My Favorites"
     },
     "opportunities": {
       "pageTitle": "Educational & Career Opportunities Directory",
@@ -227,7 +228,9 @@
       "deadlineUrgent": "Last day",
       "apply": "Apply Now",
       "viewDetails": "View Details",
-      "external": "External link"
+      "external": "External link",
+      "addFavorite": "Add to favorites",
+      "removeFavorite": "Remove from favorites"
     },
     "detail": {
       "breadcrumbHome": "Home",
@@ -278,9 +281,9 @@
       "rollingAlertDesc": "Applications are accepted throughout the year. Early submission is recommended prior to term intake."
     },
     "guide": {
-      "badge": "Comprehensive & Free Guide",
-      "title": "Application Guide for International Opportunities",
-      "subtitle": "Actionable guidelines and structured roadmaps to prepare standout academic and professional applications",
+      "badge": "Comprehensive Practical Guide",
+      "title": "Your Guide to Preparing a Scholarship Application Package",
+      "subtitle": "A detailed, step-by-step practical roadmap to help you prepare and organize all required documents for international scholarships with the highest acceptance standards.",
       "roadmap": {
         "badge": "Structured Pathway",
         "title": "The Standout Application Roadmap",
@@ -307,7 +310,45 @@
         "doc3": "Letters of Recommendation",
         "doc3Desc": "From academic professors or professional managers who have directly supervised your performance.",
         "doc4": "Translated Academic Transcripts & Degrees",
-        "doc4Desc": "Officially translated and notarized according to the host institution's requirements."
+        "doc4Desc": "Officially translated and notarized according to the host institution's requirements.",
+        "passportTitle": "1. Valid International Passport",
+        "passportDesc": "Primary proof of identity and nationality. The source recommends at least 18 months of remaining validity at time of application to cover admissions review, visa issuance, and student residency.",
+        "passportTip": "Practical tip: Color scan data and signature pages in high resolution PDF format, verifying full English name spelling matches all other academic credentials.",
+        "photoTitle": "2. White-Background Passport Photo",
+        "photoDesc": "Recent official color photograph with pure white background. Standard specifications from source: 35x45 mm size, head height 31-36 mm, with 3-5 mm top margin above head.",
+        "photoTip": "Practical tip: Balanced lighting without shadows, neutral expression, and avoidance of reflective eyewear.",
+        "birthCertTitle": "3. Certified Translated Birth Certificate",
+        "birthCertDesc": "Required by specific scholarships to confirm birth date, birthplace, age, and nationality (especially in undergraduate tracks and certain regional requirements).",
+        "birthCertTip": "Practical tip: Certified sworn translation with authentication from Ministry of Foreign Affairs and target embassy if specified.",
+        "gradCertTitle": "4. Translated Graduation Certificate / Diploma",
+        "gradCertDesc": "High school diploma for Bachelors, Bachelor degree for Masters, or Master degree for PhD. Requires authentication from the Ministry of Foreign Affairs and education ministries.",
+        "gradCertTip": "For graduating students: Most scholarships permit provisional application with an expected graduation certificate and completed semester transcripts.",
+        "transcriptTitle": "5. Translated Academic Transcript",
+        "transcriptDesc": "Comprehensive breakdown of all subjects, credit hours, grades, and cumulative GPA across all academic semesters. Attested by the Ministry of Foreign Affairs and relevant authority.",
+        "transcriptTip": "Practical tip: Include an official grading scale legend showing percentage conversion brackets for fair international academic assessment.",
+        "recommendationsTitle": "6. 2 to 3 Academic Letters of Recommendation",
+        "recommendationsDesc": "Formal letters from university professors or supervisors who taught you directly. Most international programs require 2-3 letters evaluating academic performance and research potential.",
+        "recommendationsTip": "Practical tip: Must be printed on official university letterhead, signed, stamped, and include the referee institutional email address.",
+        "cvTitle": "7. Academic Curriculum Vitae (CV) in English",
+        "cvDesc": "Structured academic CV (such as Europass format or standard academic layout) detailing educational background, research, technical skills, projects, and honors concisely.",
+        "cvTip": "Practical tip: Zero typos, clean formatting, highlighting achievements directly aligned with your target program.",
+        "motivationTitle": "8. Motivation Letter / Statement of Purpose (SOP)",
+        "motivationDesc": "The single most decisive application document. Articulates your academic background, rationale for program and university selection, future career goals, and intended community impact.",
+        "motivationTip": "Practical tip: Never copy online templates. Authenticity, tailored reasoning, and a compelling personal narrative drive selection success.",
+        "languageTitle": "9. English Language Proficiency Certificate",
+        "languageDesc": "Requirements vary significantly across programs (e.g., IELTS, TOEFL iBT, Duolingo). Some awards waive test scores if previous study was English-taught (MOI certificate) or include preparatory language years.",
+        "languageTip": "Practical tip: Review individual criteria; possessing a verified test score broadens eligibility and strengthens competitiveness.",
+        "medicalTitle": "10. Foreigner Physical Examination Form",
+        "medicalDesc": "Official medical fitness certificate from an accredited hospital verifying absence of contagious illnesses, complete with ECG, chest X-ray, and laboratory reports (e.g., CSC China format).",
+        "medicalValidityNote": "Validity Alert: Medical examination certificates typically remain valid for only 6 months. It is strongly advised to schedule this within the active application window.",
+        "medicalTip": "Practical tip: Ensure official hospital stamps, physician signature, and stamped applicant photograph on the final report.",
+        "policeTitle": "11. Certificate of Good Conduct / Police Clearance",
+        "policeDesc": "Official criminal record clearance certificate issued by forensic evidence or interior department, required by certain countries for student visa clearance and scholarship enrollment.",
+        "policeValidityNote": "Validity Alert: Police clearance validity is typically 3 to 6 months only; obtain within or close to the active application window.",
+        "policeTip": "Practical tip: Translate and attest through the Ministry of Foreign Affairs if required in the host nation language.",
+        "researchPlanTitle": "12. Postgraduate Research Proposal",
+        "researchPlanDesc": "Rigorous research plan required for research Masters and PhD degrees, defining study title, problem statement, research questions, methodology, and key literature citations.",
+        "researchPlanTip": "Practical tip: Discuss with academic advisors prior to submission, aligning scope with departmental faculty research interests."
       },
       "tips": {
         "badge": "Expert Advice",
@@ -330,6 +371,67 @@
         "a3": "Yes! Most degree programs allow final-year students to apply by submitting cumulative transcripts up to the latest completed semester alongside an expected graduation letter.",
         "q4": "How far in advance should I start preparing my application?",
         "a4": "Starting 2 to 3 months prior to the closing deadline is strongly recommended to gather recommendations, draft personal essays, and legalize documents without stress."
+      },
+      "sourceNotice": "Note: Requirements vary between scholarships and countries; this guide covers standard common criteria and does not represent universal mandatory requirements for every award.",
+      "badges": {
+        "mandatory": "Core Mandatory",
+        "conditional": "Conditional / Varies",
+        "validity18": "18-Month Validity Recommended",
+        "validity6": "Short Validity (~6 Months)",
+        "attestation": "Foreign Ministry Attestation Required",
+        "booster": "Boosts Admission Chances"
+      },
+      "stages": {
+        "s1Nav": "Personal Documents",
+        "s1Title": "Stage 1: Personal Identification Documents",
+        "s1Subtitle": "Essential identity documents facilitating admission and student visa processing.",
+        "s2Nav": "Academic Records",
+        "s2Title": "Stage 2: Academic Transcripts & Degrees",
+        "s2Subtitle": "Translated and authenticated educational credentials reflecting your academic standing.",
+        "s3Nav": "Supporting Documents",
+        "s3Title": "Stage 3: Supporting Statements & Letters",
+        "s3Subtitle": "Decisive materials demonstrating your motivation, character, and language capabilities.",
+        "s4Nav": "Special Requirements",
+        "s4Title": "Stage 4: Program-Specific & Conditional Requirements",
+        "s4Subtitle": "Documents requested by specific nations or universities, subject to limited validity periods.",
+        "s5Nav": "Profile Boosters & Review",
+        "s5Title": "Stage 5: Competitive Edge & Final Quality Review",
+        "s5Subtitle": "High-impact profile enhancements and pre-submission verification steps."
+      },
+      "boosters": {
+        "badge": "Excellence Pillars",
+        "title": "Profile Boosters & Final Quality Checklist",
+        "subtitle": "High-impact value additions that distinguish your application from thousands of global applicants:",
+        "satTitle": "Standardized International Test Scores (SAT / ACT / GRE / GMAT)",
+        "satDesc": "Strong standardized test scores (SAT for undergraduates, GRE/GMAT for postgraduates) substantially boost admission priority and merit ranking even when optional.",
+        "volunteeringTitle": "Volunteering & Community Impact Initiatives",
+        "volunteeringDesc": "Documented volunteer leadership and social service play a pivotal role in illustrating proactive character and leadership commitment to selection committees.",
+        "coursesTitle": "Certified Professional Courses & Specializations",
+        "coursesDesc": "Completing verified online courses and micro-credentials (Coursera, edX, etc.) demonstrates active self-directed learning and continuous skill development.",
+        "reviewTitle": "Comprehensive Document Verification & Official Link Access",
+        "reviewDesc": "Confirm exact English name concordance across all certificates, verify valid remaining timeframes, and proceed directly to the verified official portal for confident submission."
+      },
+      "contactHelp": {
+        "sectionBadge": "Dedicated Applicant Support",
+        "title": "Need Assistance with Scholarship Applications?",
+        "desc": "You can connect with the Path to Opportunities team for personalized guidance in preparing your application package and submitting to scholarships.",
+        "buttonText": "للتقديم عن طريق فريق طريق الفرص تواصل معنا",
+        "modalTitle": "Application Support Request — Path to Opportunities Team",
+        "modalSubtitle": "Submit your contact information and target program, and an advisor from our team will get in touch with you promptly.",
+        "fullName": "Full Name",
+        "email": "Email Address",
+        "phone": "Phone / WhatsApp (Optional)",
+        "targetOpp": "Target Scholarship / Study Field",
+        "helpType": "Type of Support Needed",
+        "helpReview": "Document & Statement Review & Proofreading",
+        "helpSop": "Motivation Letter & Academic CV Development",
+        "helpFull": "Comprehensive Package Guidance & Submission",
+        "notes": "Additional Notes or Inquiries",
+        "submitBtn": "Submit Support Request",
+        "closeBtn": "Close",
+        "successTitle": "Request Received Successfully!",
+        "successDesc": "Thank you for reaching out to Path to Opportunities. Your request has been logged and our team will follow up with you via email shortly.",
+        "noOfficialNotice": "Notice: Path to Opportunities is an independent educational guidance platform dedicated to helping students prepare high-quality official dossiers. We do not guarantee admission, which remains the sole prerogative of awarding institutions."
       }
     },
     "auth": {
@@ -394,6 +496,11 @@
     "error": {
       "title": "Error loading data",
       "description": "Unable to load opportunities. Please try again later."
+    },
+    "favorites": {
+      "emptyTitle": "You haven't added any opportunities to favorites yet",
+      "emptyDesc": "Click the heart icon on any opportunity to save it to your favorites and access it anytime.",
+      "browseAll": "Browse all opportunities"
     }
   }
 }
