@@ -3,3 +3,13 @@ dist/
 scratch/
 .DS_Store
 *.local
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+# Antigravity temporary files
+.agents/teamwork/
+# Temporary test results
+tests/responsive-stress-results.json
+verify.js

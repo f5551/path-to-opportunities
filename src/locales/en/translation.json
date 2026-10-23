@@ -482,7 +482,11 @@
       "integrityTitle": "Transparency & Security",
       "integrityDesc": "Scholarships and opportunities listed undergo rigorous verification from official sources, with strict HTTPS protocol validation and data protection.",
       "rights": "All rights reserved © 2026 PATH TO OPPORTUNITIES",
-      "builtWith": "Engineered according to modern web standards and WCAG 2.2 accessibility guidelines"
+      "builtWith": "Engineered according to modern web standards and WCAG 2.2 accessibility guidelines",
+      "contactTitle": "Contact Us",
+      "contactDesc": "We welcome your inquiries and feedback to assist you in your educational and career journey.",
+      "whatsapp": "WhatsApp",
+      "email": "Email"
     },
     "empty": {
       "title": "No opportunities yet",
@@ -501,6 +505,39 @@
       "emptyTitle": "You haven't added any opportunities to favorites yet",
       "emptyDesc": "Click the heart icon on any opportunity to save it to your favorites and access it anytime.",
       "browseAll": "Browse all opportunities"
+    },
+    "shareModal": {
+      "triggerBtn": "Share an Opportunity",
+      "modalTitle": "Found a great opportunity? Share it with us! 🎓",
+      "modalDesc": "Help your peers discover new opportunities! If you found a scholarship, training course, or special opportunity, share it with us to spread the benefit together.",
+      "reviewNotice": "All submissions undergo human review and verification before publishing to ensure authenticity and quality.",
+      "expandBtn": "Add Opportunity Details",
+      "collapseBtn": "Collapse Details",
+      "close": "Close modal",
+      "typeLabel": "Opportunity Type",
+      "typePlaceholder": "Select opportunity type (optional)",
+      "typeScholarship": "Scholarship",
+      "typeCourse": "Training Course",
+      "typeInternship": "Internship / Practical Training",
+      "typeOther": "Other Opportunity",
+      "titleLabel": "Opportunity Title",
+      "titlePlaceholder": "e.g., Global Excellence Scholarship, Python Course...",
+      "orgLabel": "Offering Organization / University",
+      "orgPlaceholder": "e.g., Harvard University, Misk Foundation, Coursera...",
+      "urlLabel": "Official Link",
+      "urlPlaceholder": "https://example.com/apply",
+      "deadlineLabel": "Application Deadline",
+      "notesLabel": "Description or Additional Notes",
+      "notesPlaceholder": "Any details, eligibility criteria, or helpful notes you know about the opportunity...",
+      "submitBtn": "Submit Opportunity for Review",
+      "submitting": "Submitting...",
+      "errorEmpty": "Please provide at least one useful piece of information (such as title, link, or organization) so we can review it.",
+      "errorUrl": "Please make sure to enter a valid link starting with https:// or http://",
+      "errorNotConfigured": "Formspree submission service is currently not configured. Please connect the service to enable submissions.",
+      "errorGeneral": "An error occurred while submitting the opportunity. Please try again later.",
+      "successTitle": "Opportunity Received Successfully! 🎉",
+      "successDesc": "Thank you for your valuable contribution! Our team will review and verify the details before publishing it to benefit everyone.",
+      "shareAnother": "Share Another Opportunity"
     }
   }
 }

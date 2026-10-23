@@ -11,6 +11,7 @@ import { initNav } from "../lib/nav.js";
 import { loadOpportunities, filter, getFilterOptions } from "../lib/opportunitiesStore.js";
 import { createCard, createSkeletonCard } from "../components/OpportunityCard.js";
 import { getFavorites, getFavoritesCount } from "../lib/favoritesStore.js";
+import { initShareModal } from "../features/shareModal.js";
 import {
   animateCardsEnter,
   animateTabPress,
@@ -554,6 +555,7 @@ async function boot() {
 
   updateFavoritesBadge();
   wireEvents();
+  initShareModal();
   loadOpportunities();
   initFromUrlParams();
   applyFilters();

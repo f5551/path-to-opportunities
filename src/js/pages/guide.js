@@ -131,7 +131,14 @@ function initStageTabs() {
         const targetEl = document.querySelector(targetId);
         if (targetEl) {
           e.preventDefault();
-          targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+          const header = document.querySelector(".site-header");
+          const navTabs = document.querySelector(".guide-nav-tabs-section");
+          const totalOffset = (header ? header.offsetHeight : 70) + (navTabs ? navTabs.offsetHeight : 52) + 24;
+          const elementTop = targetEl.getBoundingClientRect().top + window.scrollY;
+          window.scrollTo({
+            top: elementTop - totalOffset,
+            behavior: "smooth"
+          });
           tabs.forEach((t) => t.classList.remove("active"));
           tab.classList.add("active");
         }
@@ -150,6 +157,16 @@ function initStageTabs() {
             tabs.forEach((tab) => {
               const matches = tab.getAttribute("href") === `#${id}`;
               tab.classList.toggle("active", matches);
+              if (matches) {
+                const container = tab.closest(".guide-stage-tabs");
+                if (container) {
+                  const tabRect = tab.getBoundingClientRect();
+                  const contRect = container.getBoundingClientRect();
+                  if (tabRect.left < contRect.left || tabRect.right > contRect.right) {
+                    tab.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+                  }
+                }
+              }
             });
           }
         });
