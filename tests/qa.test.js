@@ -9,7 +9,11 @@ import {
   getFeatured,
   getFilterOptions,
 } from "../src/js/lib/opportunitiesStore.js";
-import { getScholarshipFilterOptions } from "../src/js/features/list.js";
+import {
+  getScholarshipFilterOptions,
+  CANONICAL_FIELDS,
+  matchOpportunityField,
+} from "../src/js/features/list.js";
 import {
   normalizeText,
   matchQuery,
@@ -540,6 +544,89 @@ test("5.6 Dynamic temporal thresholds for scholarship statuses", () => {
   const pastStatus = getOpportunityStatus(dummyOpp("2025-01-01"), "ar");
   assert.strictEqual(pastStatus.code, "closed");
   assert.strictEqual(pastStatus.isClosed, true);
+});
+
+test("5.7 Canonical field taxonomy matches all 80 scholarships cleanly with zero orphaned items", () => {
+  const scholarships = data.filter((d) => d.type === "scholarship");
+  assert.strictEqual(scholarships.length, 80);
+
+  const opts = getFilterOptions();
+  assert.deepStrictEqual(opts.fields, CANONICAL_FIELDS);
+
+  // Every canonical field has at least one scholarship match
+  CANONICAL_FIELDS.forEach((f) => {
+    const matched = filter({ type: "scholarship", field: f });
+    assert.ok(
+      matched.length > 0,
+      `Canonical field "${f}" unexpectedly has 0 matching scholarships`
+    );
+  });
+
+  // Every scholarship matches at least one canonical field
+  scholarships.forEach((s) => {
+    const hasField = CANONICAL_FIELDS.some((f) => matchOpportunityField(s, f));
+    assert.ok(hasField, `Scholarship ${s.id} does not match any canonical field`);
+  });
+});
+
+test("5.8 Funding type distribution matches audit requirements (40 full, 25 partial, 15 unspecified)", () => {
+  const scholarships = data.filter((d) => d.type === "scholarship");
+  const fullCount = scholarships.filter((s) => s.funding_type === "full").length;
+  const partialCount = scholarships.filter((s) => s.funding_type === "partial").length;
+  const unspecifiedCount = scholarships.filter((s) => s.funding_type === "unspecified").length;
+
+  assert.strictEqual(fullCount, 40, `Expected 40 full scholarships, got ${fullCount}`);
+  assert.strictEqual(partialCount, 25, `Expected 25 partial scholarships, got ${partialCount}`);
+  assert.strictEqual(unspecifiedCount, 15, `Expected 15 unspecified scholarships, got ${unspecifiedCount}`);
+  assert.strictEqual(fullCount + partialCount + unspecifiedCount, 80);
+});
+
+test("5.9 Academic discipline classification integrity without incidental keyword contamination", () => {
+  // 1. Environmental Law at Melbourne must NOT be tagged with health_medicine
+  const envLaw = data.find((d) => d.id === "opp-ptof-sch-e0ef785a1d3e");
+  assert.ok(envLaw);
+  assert.strictEqual(matchOpportunityField(envLaw, "health_medicine"), false);
+  assert.strictEqual(matchOpportunityField(envLaw, "environment_agriculture"), true);
+  assert.strictEqual(matchOpportunityField(envLaw, "social_humanities_law"), true);
+
+  // 2. UBC International Scholars must be multidisciplinary and NOT business_economics
+  const ubc = data.find((d) => d.id === "opp-ptof-sch-bbf4322eb0d0");
+  assert.ok(ubc);
+  assert.strictEqual(matchOpportunityField(ubc, "business_economics"), false);
+  assert.strictEqual(matchOpportunityField(ubc, "multidisciplinary"), true);
+
+  // 3. Waterloo Computer Science MMath must NOT be tagged with social_humanities_law
+  const csMath = data.find((d) => d.id === "opp-ptof-sch-52fe2b0d8b55");
+  assert.ok(csMath);
+  assert.strictEqual(matchOpportunityField(csMath, "social_humanities_law"), false);
+  assert.strictEqual(matchOpportunityField(csMath, "computer_science"), true);
+
+  // 4. Sciences Po Émile Boutmy must NOT be natural_sciences
+  const boutmy = data.find((d) => d.id === "opp-ptof-sch-a0b4f15b89a8");
+  assert.ok(boutmy);
+  assert.strictEqual(matchOpportunityField(boutmy, "natural_sciences"), false);
+});
+
+test("5.10 Zero Arabic characters and zero Waterloo mismatches in English titles", () => {
+  data.forEach((item) => {
+    assert.strictEqual(
+      /[\u0600-\u06FF]/.test(item.title_en),
+      false,
+      `Item ${item.id} has Arabic characters in title_en: "${item.title_en}"`
+    );
+  });
+
+  const waterlooMismatches = data.filter(
+    (d) =>
+      d.title_en.toLowerCase().includes("waterloo") &&
+      !d.source_url.toLowerCase().includes("waterloo") &&
+      !d.organization.toLowerCase().includes("waterloo")
+  );
+  assert.strictEqual(
+    waterlooMismatches.length,
+    0,
+    `Found unexpected Waterloo title mismatches: ${waterlooMismatches.map((m) => m.id).join(", ")}`
+  );
 });
 
 console.log("\n==========================================");

@@ -11,6 +11,355 @@ import { getOpportunityStatus } from "../lib/scholarshipStatus.js";
 /** Valid opportunity types supported by schema */
 export const VALID_TYPES = ["all", "scholarship", "course", "internship"];
 
+/** Canonical scholarship level taxonomy */
+export const CANONICAL_LEVELS = [
+  "Bachelor's",
+  "Master's",
+  "PhD",
+  "Postgraduate",
+  "Foundation",
+  "Language",
+];
+
+/**
+ * Normalizes any scholarship level (string, array, composite text, Arabic/English)
+ * into a set of canonical level identifiers.
+ * @param {string|string[]} rawLevel
+ * @returns {Set<string>}
+ */
+export function getOpportunityLevelTags(rawLevel) {
+  const tags = new Set();
+  if (!rawLevel) return tags;
+
+  const list = Array.isArray(rawLevel) ? rawLevel : [rawLevel];
+  const combined = list.join(" ").toLowerCase();
+
+  // 1. Bachelor's / بكالوريوس
+  if (
+    list.includes("Bachelor's") ||
+    list.includes("بكالوريوس") ||
+    combined.includes("bachelor") ||
+    combined.includes("بكالوريوس") ||
+    combined.includes("جامعي") ||
+    combined.includes("دراسة جامعية")
+  ) {
+    tags.add("Bachelor's");
+    tags.add("bachelor");
+    tags.add("بكالوريوس");
+  }
+
+  // 2. Master's / ماجستير
+  if (
+    list.includes("Master's") ||
+    list.includes("Master's by Research") ||
+    list.includes("ماجستير") ||
+    combined.includes("master") ||
+    combined.includes("ماجستير")
+  ) {
+    tags.add("Master's");
+    tags.add("master");
+    tags.add("ماجستير");
+  }
+
+  // 3. PhD / دكتوراه
+  if (
+    list.includes("PhD") ||
+    list.includes("Professional Doctorate") ||
+    list.includes("دكتوراه") ||
+    combined.includes("phd") ||
+    combined.includes("doctorate") ||
+    combined.includes("doctoral") ||
+    combined.includes("دكتوراه") ||
+    combined.includes("دكتوراة")
+  ) {
+    tags.add("PhD");
+    tags.add("phd");
+    tags.add("دكتوراه");
+  }
+
+  // 4. Postgraduate & Professional / دراسات عليا مهنية وتخصصية
+  if (
+    list.includes("Postgraduate coursework") ||
+    list.includes("Professional postgraduate degree") ||
+    combined.includes("postgraduate") ||
+    combined.includes("دراسات عليا") ||
+    combined.includes("جامعية عليا")
+  ) {
+    tags.add("Postgraduate");
+    tags.add("postgraduate");
+    tags.add("دراسات عليا");
+  }
+
+  // 5. Foundation Program / برنامج تأسيسي
+  if (combined.includes("تأسيسي") || combined.includes("foundation")) {
+    tags.add("Foundation");
+    tags.add("foundation");
+    tags.add("برنامج تأسيسي");
+  }
+
+  // 6. Language Program / برنامج لغة
+  if (combined.includes("لغة") || combined.includes("language")) {
+    tags.add("Language");
+    tags.add("language");
+    tags.add("برنامج لغة");
+  }
+
+  return tags;
+}
+
+/**
+ * Checks whether an opportunity level matches the requested filter level
+ * @param {string|string[]} itemLevel
+ * @param {string} filterLevel
+ * @returns {boolean}
+ */
+export function matchOpportunityLevel(itemLevel, filterLevel) {
+  if (!filterLevel) return true;
+  if (!itemLevel) return false;
+
+  // 1. Direct equality / exact match fallback
+  if (Array.isArray(itemLevel)) {
+    if (itemLevel.includes(filterLevel)) return true;
+  } else if (itemLevel === filterLevel) {
+    return true;
+  }
+
+  // 2. Canonical level matching
+  const itemTags = getOpportunityLevelTags(itemLevel);
+  const filterTags = getOpportunityLevelTags(filterLevel);
+
+  if (itemTags.has(filterLevel)) return true;
+
+  for (const tag of filterTags) {
+    if (itemTags.has(tag)) return true;
+  }
+
+  return false;
+}
+
+/** Canonical scholarship field taxonomy */
+export const CANONICAL_FIELDS = [
+  "computer_science",
+  "engineering",
+  "health_medicine",
+  "natural_sciences",
+  "business_economics",
+  "social_humanities_law",
+  "environment_agriculture",
+  "education_development",
+  "multidisciplinary",
+];
+
+export const FIELD_KEYWORDS_MAP = {
+  computer_science: [
+    "حاسوب",
+    "ذكاء اصطناعي",
+    "برمج",
+    "computer",
+    "artificial intelligence",
+    "ai",
+    "genai",
+    "software",
+    "data science",
+    "علم البيانات",
+    "information technology",
+    "تقنية المعلومات",
+    "نظم المعلومات",
+    "معلوماتية",
+    "cyber",
+    "أمن سيبراني",
+  ],
+  engineering: [
+    "هندسة",
+    "engineering",
+    "stem",
+    "chemical engineering",
+    "هندسة كيميائية",
+    "هندسة ميكانيكية",
+    "هندسة مدنية",
+    "هندسة كهربائية",
+  ],
+  health_medicine: [
+    "طب",
+    "علوم صحية",
+    "رعاية صحية",
+    "صحة عامة",
+    "صحة عالمية",
+    "سرطان",
+    "medicine",
+    "health sciences",
+    "public health",
+    "global health",
+    "cancer",
+    "toxicology",
+    "biomedical",
+    "clinical",
+    "تمريض",
+    "nursing",
+    "pharmacy",
+    "صيدلة",
+    "medical",
+  ],
+  natural_sciences: [
+    "رياضيات",
+    "mathematics",
+    "applied mathematics",
+    "فيزياء",
+    "physics",
+    "كيمياء",
+    "chemistry",
+    "علوم طبيعية",
+    "natural sciences",
+    "chemical sciences",
+    "أحياء",
+    "biology",
+    "علوم الحياة",
+    "life sciences",
+  ],
+  business_economics: [
+    "أعمال",
+    "اقتصاد",
+    "إدارة",
+    "علوم مالية",
+    "تمويل",
+    "business",
+    "economics",
+    "management",
+    "finance",
+    "تسويق",
+    "marketing",
+    "accounting",
+    "محاسبة",
+    "تجارة",
+    "mba",
+  ],
+  social_humanities_law: [
+    "قانون",
+    "حقوق",
+    "علوم إنسانية",
+    "علوم اجتماعية",
+    "دراسات عربية",
+    "هجرة",
+    "ترجمة",
+    "أدب",
+    "law",
+    "humanities",
+    "social sciences",
+    "arab studies",
+    "migration",
+    "translation",
+    "literature",
+    "سلام",
+    "دراسات أمنية",
+    "أمن دولي",
+    "فلسفة",
+    "تاريخ",
+    "علوم سياسية",
+    "political science",
+    "علاقات دولية",
+    "international relations",
+  ],
+  environment_agriculture: [
+    "بيئة",
+    "زراعة",
+    "استدامة",
+    "غذاء",
+    "قانون بيئي",
+    "environmental law",
+    "environment",
+    "sustainability",
+    "agriculture",
+    "food",
+    "مياه",
+    "مناخ",
+    "climate",
+    "غابات",
+  ],
+  education_development: [
+    "تربية",
+    "تنمية دولية",
+    "تنمية بشرية",
+    "عمل إنساني",
+    "تدريس",
+    "development",
+    "education",
+    "humanitarian",
+    "human development",
+    "international development",
+    "pedagogy",
+    "مناهج",
+  ],
+};
+
+/**
+ * Normalizes an opportunity's academic field, programs, and program title into canonical field keys.
+ * Excludes non-academic text (summary, benefits) to prevent false positives from incidental terms.
+ * @param {object} item
+ * @returns {Set<string>}
+ */
+export function getOpportunityFieldTags(item) {
+  const tags = new Set();
+  if (!item) return tags;
+
+  // Use ONLY academic field and explicit academic program lists
+  const rawField = (item.field || "").toLowerCase();
+  const rawPrograms = (item.details?.ar?.fields_and_programs || [])
+    .concat(item.details?.en?.fields_and_programs || [])
+    .join(" ")
+    .toLowerCase();
+  const title = `${item.title_ar || ""} ${item.title_en || ""}`.toLowerCase();
+  const academicText = `${rawField} ${rawPrograms} ${title}`;
+
+  for (const [key, keywords] of Object.entries(FIELD_KEYWORDS_MAP)) {
+    if (keywords.some((kw) => academicText.includes(kw))) {
+      tags.add(key);
+    }
+  }
+
+  // Broad multidisciplinary or general eligibility
+  if (
+    tags.size === 0 ||
+    rawField.includes("eligible graduate") ||
+    rawField.includes("eligible hdr") ||
+    rawField.includes("eligible doctoral") ||
+    rawField.includes("higher degree by research") ||
+    rawField.includes("research doctoral") ||
+    rawField.includes("eligible undergraduate") ||
+    rawField.includes("all fields") ||
+    rawField.includes("جميع التخصصات") ||
+    rawField.includes("كافة التخصصات") ||
+    rawField.includes("مختلف التخصصات") ||
+    rawField.includes("تخصصات متعددة") ||
+    rawField.includes("بدوام كامل في الجامعة") ||
+    rawField.includes("برامج البكالوريوس المؤهلة") ||
+    rawPrograms.includes("معظم التخصصات") ||
+    rawPrograms.includes("كافة البرامج") ||
+    rawPrograms.includes("جميع البرامج")
+  ) {
+    tags.add("multidisciplinary");
+  }
+
+  return tags;
+}
+
+/**
+ * Checks whether an opportunity matches the requested field filter
+ * Supports canonical keys as well as raw exact string fallback.
+ * @param {object} item
+ * @param {string} filterField
+ * @returns {boolean}
+ */
+export function matchOpportunityField(item, filterField) {
+  if (!filterField) return true;
+  if (!item) return false;
+
+  // Direct equality / exact match fallback (preserves unit test compatibility)
+  if (item.field === filterField) return true;
+
+  const tags = getOpportunityFieldTags(item);
+  return tags.has(filterField);
+}
+
 // In-Memory Search Index Store
 let _cachedItems = null;
 const _searchIndexMap = new WeakMap();
@@ -194,17 +543,11 @@ export function filterOpportunities(
   }
 
   if (level) {
-    results = results.filter((item) => {
-      if (!item || !item.level) return false;
-      if (Array.isArray(item.level)) {
-        return item.level.includes(level);
-      }
-      return item.level === level;
-    });
+    results = results.filter((item) => item && matchOpportunityLevel(item.level, level));
   }
 
   if (field) {
-    results = results.filter((item) => item && item.field === field);
+    results = results.filter((item) => item && matchOpportunityField(item, field));
   }
 
   if (fundingType) {
@@ -390,21 +733,15 @@ export function getScholarshipFilterOptions(items = []) {
     new Set(scholarships.map((s) => s.country).filter((c) => typeof c === "string" && c.trim()))
   ).sort();
 
-  // Distinct levels (flatten arrays if any)
-  const levelsSet = new Set();
-  scholarships.forEach((s) => {
-    if (Array.isArray(s.level)) {
-      s.level.forEach((l) => l && typeof l === "string" && levelsSet.add(l.trim()));
-    } else if (typeof s.level === "string" && s.level.trim()) {
-      levelsSet.add(s.level.trim());
-    }
-  });
-  const levels = Array.from(levelsSet).sort();
+  // Unified canonical levels present in loaded scholarship data
+  const levels = CANONICAL_LEVELS.filter((lvl) =>
+    scholarships.some((s) => matchOpportunityLevel(s.level, lvl))
+  );
 
-  // Distinct fields
-  const fields = Array.from(
-    new Set(scholarships.map((s) => s.field).filter((f) => typeof f === "string" && f.trim()))
-  ).sort();
+  // Distinct fields matching canonical taxonomy
+  const fields = CANONICAL_FIELDS.filter((fld) =>
+    scholarships.some((s) => matchOpportunityField(s, fld))
+  );
 
   // Distinct funding types
   const fundingTypes = Array.from(

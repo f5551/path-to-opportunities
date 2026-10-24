@@ -58,3 +58,28 @@ All transitions and animations use **Motion for JavaScript** (`import { animate,
 - **Easing:** Natural cubic curves (`cubic-bezier(0.16, 1, 0.3, 1)` or `--ease-out-cubic`).
 - **Duration:** Fast micro-interactions (150ms - 280ms); stagger increments of 40ms for card entrances.
 - **Accessibility:** Always check and respect `@media (prefers-reduced-motion: reduce)` by disabling CSS transitions and JavaScript entrance animations.
+
+---
+
+## 6. Arabic UI Review Checklist
+Use this checklist to review and verify Arabic and bilingual interface implementation:
+
+1. **Text & Elements Direction (RTL / LTR):**
+   - Verify `dir="rtl"` is applied dynamically to `<html>` for Arabic, and `dir="ltr"` for English.
+   - Use CSS logical properties (`margin-inline`, `padding-inline`, `inset-inline-start/end`, `text-align: start`) to guarantee clean, defect-free bidirectional rendering.
+2. **Directional Iconography Mirroring:**
+   - Directional navigation icons (back/forward arrows, carets, breadcrumbs) must mirror horizontally in RTL (`transform: scaleX(-1)` or directional SVG swap).
+   - Universal, non-directional icons (magnifying glass, clock, calendar, bookmark, shield, checkmark) must maintain their natural orientation without flipping.
+3. **Punctuation, Parentheses & Mixed BiDi Text:**
+   - Trailing punctuation (periods, question marks `؟`, colons) must render on the correct typographical edge in Arabic paragraphs.
+   - Parentheses and brackets enclosing numbers, years, or acronyms must not invert (`(2027)`, `(PhD)`).
+   - Mixed inline Arabic/Latin phrases must maintain clean reading order without text scrambling.
+4. **Form Fields & Buttons Alignment:**
+   - Search inputs, text fields, and select dropdowns must align to the right (`start`) in Arabic and left in English.
+   - Input prefix/suffix icons must position via `inset-inline-start` / `inset-inline-end` with proportional padding to avoid overlapping text.
+5. **Arabic Typography Legibility:**
+   - Arabic text must use self-hosted `@fontsource-variable/noto-sans-arabic` with adequate line-height (`1.6 - 1.8`) to prevent Tashkeel, ascenders, and descenders from clipping.
+   - Maintain minimum legible font sizes ($\ge 14\text{px}$ for secondary tags and metadata, $\ge 16\text{px}$ for body text).
+6. **Mobile Viewport & Zero Horizontal Overflow at 360px:**
+   - Validate layout and card rendering at **360px** viewport width.
+   - Enforce zero unintended horizontal scrolling (`overflow-x`). Ensure badges, chips, and buttons wrap naturally without truncation or clipping.

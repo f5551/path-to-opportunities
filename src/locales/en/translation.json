@@ -6,6 +6,7 @@
     "nav": {
       "home": "Home",
       "opportunities": "Directory",
+      "opportunitiesShort": "Opportunities",
       "scholarships": "Scholarships",
       "courses": "Free Courses",
       "internships": "Internships",
@@ -21,7 +22,9 @@
       "language": "Language",
       "switchLang": "Switch Language",
       "langAr": "العربية",
-      "langEn": "English"
+      "langEn": "English",
+      "more": "More",
+      "mobileNav": "Quick Navigation"
     },
     "meta": {
       "homeTitle": "PATH TO OPPORTUNITIES | Educational & Career Hub",
@@ -171,7 +174,9 @@
       "sortDeadline": "Earliest Deadline",
       "sortNewest": "Recently Verified",
       "sortName": "Scholarship Name",
-      "reset": "Clear Filters"
+      "reset": "Clear Filters",
+      "toggle": "Advanced Filters",
+      "toggleCollapse": "Collapse Filters"
     },
     "countries": {
       "Australia": "Australia",
@@ -206,11 +211,45 @@
     "levels": {
       "Bachelor's": "Bachelor's",
       "Master's": "Master's",
+      "PhD": "PhD / Doctorate",
+      "Postgraduate": "Postgraduate & Professional",
+      "Foundation": "Foundation Program",
+      "Language": "Language Program",
       "Master's by Research": "Master's by Research",
-      "PhD": "PhD",
       "Professional Doctorate": "Professional Doctorate",
       "Postgraduate coursework": "Postgraduate coursework",
-      "Professional postgraduate degree": "Professional postgraduate degree"
+      "Professional postgraduate degree": "Professional postgraduate degree",
+      "بكالوريوس": "Bachelor's",
+      "ماجستير": "Master's",
+      "دكتوراه": "PhD",
+      "بكالوريوس وماجستير": "Bachelor's & Master's",
+      "بكالوريوس وماجستير دراسي": "Bachelor's & Coursework Master's",
+      "بكالوريوس وماجستير مهني": "Bachelor's & Professional Master's",
+      "ماجستير ودكتوراه": "Master's & PhD",
+      "ماجستير ودكتوراه بحثية": "Master's & Research PhD",
+      "بكالوريوس وماجستير ودكتوراه": "Bachelor's, Master's & PhD",
+      "بكالوريوس ودراسات عليا": "Bachelor's & Postgraduate",
+      "برنامج تأسيسي قبل البكالوريوس": "Pre-Bachelor Foundation Program",
+      "برنامج لغة قصير أو فصلي": "Short/Semester Language Program",
+      "دراسة جامعية بدوام كامل": "Full-Time Undergraduate Studies",
+      "الماجستير والدكتوراه، بحسب البرنامج": "Master's & PhD (Program-Dependent)",
+      "البكالوريوس، بحسب فئات المنح وبرامج القبول المؤهلة": "Bachelor's (Eligible Cohorts)",
+      "ماجستير ودكتوراه في البرامج المؤهلة": "Master's & PhD (Eligible Programs)",
+      "ماجستير ودكتوراه في برامج محددة": "Master's & PhD (Specific Programs)",
+      "ماجستير Global Human Development": "Master in Global Human Development",
+      "ماجستير الدراسات العربية (MA in Arab Studies)": "MA in Arab Studies",
+      "برامج جامعية عليا ضمن الجامعات المشاركة والبرامج المحددة": "Postgraduate Programs (Participating Institutions)"
+    },
+    "fields": {
+      "computer_science": "Computer Science & Artificial Intelligence",
+      "engineering": "Engineering & Technology",
+      "health_medicine": "Medicine & Health Sciences",
+      "natural_sciences": "Natural Sciences & Mathematics",
+      "business_economics": "Business, Economics & Finance",
+      "social_humanities_law": "Humanities, Social Sciences & Law",
+      "environment_agriculture": "Environment, Agriculture & Sustainability",
+      "education_development": "Education & International Development",
+      "multidisciplinary": "All Disciplines / Multidisciplinary"
     },
     "demoBanner": {
       "title": "Verified Scholarships Directory",

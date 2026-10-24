@@ -6,6 +6,8 @@
  */
 
 import { toggleLang, setLanguage } from "./i18n.js";
+import { getFavoritesCount } from "./favoritesStore.js";
+import { initServiceWorker } from "./swRegister.js";
 
 /**
  * Initialize shared navigation interactions on any page
@@ -78,6 +80,12 @@ export function initNav(options = {}) {
   // 3. Highlight Current Active Nav Link
   highlightActiveNavLinks();
   window.addEventListener("hashchange", highlightActiveNavLinks);
+
+  // 4. Mobile Bottom Navigation
+  initBottomNav();
+
+  // 5. Service Worker (Offline Support)
+  initServiceWorker();
 }
 
 /**
@@ -265,5 +273,100 @@ function closeAllLangMenus(returnFocus = false) {
     if (returnFocus) {
       trigger?.focus();
     }
+  });
+}
+
+/**
+ * Initialize fixed Mobile Bottom Navigation
+ */
+function initBottomNav() {
+  const bottomNav = document.querySelector(".bottom-nav");
+  if (!bottomNav) return;
+
+  const path = window.location.pathname.toLowerCase();
+  const isHome = path.endsWith("/") || path.endsWith("index.html") || path === "";
+  const isOpportunities = path.endsWith("opportunities.html");
+  const isGuide = path.endsWith("guide.html");
+
+  const homeItem = bottomNav.querySelector('[data-nav="home"]');
+  const oppsItem = bottomNav.querySelector('[data-nav="opportunities"]');
+  const favItem = bottomNav.querySelector('#bottom-nav-fav-btn, [data-nav="favorites"]');
+  const guideItem = bottomNav.querySelector('[data-nav="guide"]');
+  const moreItem = bottomNav.querySelector('#bottom-nav-more-btn, [data-nav="more"]');
+  const favBadge = bottomNav.querySelector("#bottom-fav-count-badge");
+
+  // Sync favorites badge count
+  function syncFavBadge() {
+    try {
+      const count = getFavoritesCount();
+      if (favBadge) {
+        favBadge.textContent = String(count);
+        favBadge.classList.toggle("hidden", count === 0);
+      }
+    } catch {}
+  }
+  syncFavBadge();
+  window.addEventListener("pto:favorites-updated", syncFavBadge);
+
+  // Set active item based on page
+  const updateActiveStates = () => {
+    bottomNav.querySelectorAll(".bottom-nav-item").forEach((el) => {
+      el.classList.remove("active");
+      el.removeAttribute("aria-current");
+    });
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const hasFavParam = urlParams.get("favorites") === "1" || urlParams.get("favorites") === "true";
+    const filterFavBtn = document.getElementById("filter-favorites-btn");
+    const isFavActive = filterFavBtn?.classList.contains("active") || (isOpportunities && hasFavParam);
+
+    if (isHome) {
+      homeItem?.classList.add("active");
+      homeItem?.setAttribute("aria-current", "page");
+    } else if (isOpportunities) {
+      if (isFavActive) {
+        favItem?.classList.add("active");
+      } else {
+        oppsItem?.classList.add("active");
+        oppsItem?.setAttribute("aria-current", "page");
+      }
+    } else if (isGuide) {
+      guideItem?.classList.add("active");
+      guideItem?.setAttribute("aria-current", "page");
+    }
+  };
+
+  updateActiveStates();
+
+  // Wire Favorites button
+  favItem?.addEventListener("click", () => {
+    if (isOpportunities) {
+      const filterFavBtn = document.getElementById("filter-favorites-btn");
+      filterFavBtn?.click();
+    } else {
+      window.location.href = "opportunities.html?favorites=1";
+    }
+  });
+
+  // Wire Opportunities button on opportunities page: exit favorites if active
+  oppsItem?.addEventListener("click", (e) => {
+    if (isOpportunities) {
+      const filterFavBtn = document.getElementById("filter-favorites-btn");
+      if (filterFavBtn && filterFavBtn.classList.contains("active")) {
+        e.preventDefault();
+        const allTab = document.querySelector('.filter-tab[data-filter="all"]');
+        if (allTab) {
+          allTab.click();
+        } else {
+          filterFavBtn.click();
+        }
+      }
+    }
+  });
+
+  // Wire More button
+  moreItem?.addEventListener("click", () => {
+    const menuToggleBtn = document.getElementById("mobile-menu-toggle");
+    menuToggleBtn?.click();
   });
 }
